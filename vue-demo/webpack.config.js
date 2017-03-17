@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    index:  __dirname + '/app/index.js'
+    index:  __dirname + '/app/entry/index.js'
   },
   output: {
     path: __dirname + "/build",//打包后的文件存放的地方
