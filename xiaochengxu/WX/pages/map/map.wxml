@@ -1,0 +1,14 @@
+<!--map.wxml-->
+<view class="map">
+  <map id="myMap" 
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  scale="{{scale}}" 
+  markers="{{markers}}"
+  covers="{{covers}}"
+  bindmarkertap="openmap"
+  show-location
+  style="width: 100%; height:350px;"></map>
+  <button type="primary" bindtap="openmap">go to hotel</button>
+
+</view>

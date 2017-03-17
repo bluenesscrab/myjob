@@ -1,0 +1,176 @@
+.container{}
+.bg-wrap{position:relative;}
+.bg-wrap .bg-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.bg-wrap .comp-wrap{
+  position:absolute;
+  bottom:30rpx;
+  padding:0 30rpx 0 150rpx;
+  height:100rpx;
+  color:#fff;
+  line-height:100rpx;
+}
+.bg-wrap .comp-wrap .comp-logo{
+  position:absolute;
+  left:30rpx;
+  top:0;
+  width:100rpx;
+}
+.detail-wrap{}
+.detail-wrap .detail-tab{
+  display: flex;
+  background: #fff;
+}
+.detail-wrap .detail-tab .tab-item:first-child{
+  border-right:1px solid #e8e8e8;
+}
+.detail-wrap .detail-tab .tab-item{
+  flex:1;
+  text-align:center;
+  line-height:75rpx;
+  color:#666;
+  border-bottom:1px solid #e8e8e8;
+}
+.detail-wrap .detail-tab .active{
+  border-bottom:2px solid #fd904f;
+}
+.detail-wrap .content-info{
+  
+}
+.detail-wrap .content-info .item-card{
+  margin-bottom:20rpx;
+  background: #fff;
+}
+.detail-wrap .content-info .item-card .card-title{
+  padding:15rpx 0;
+}
+.detail-wrap .content-info .item-card .card-title text{
+  border-left:4px solid #fd904f;
+  padding-left:20rpx;
+}
+.detail-wrap .content-info .card-info{
+  padding:20rpx;
+}
+.detail-wrap .content-info .card-info .info-list{
+  display:block;
+  font-size:12px;
+  color:#999;
+}
+.detail-wrap .content-info .card-info .info-list .left-icon{
+  margin-right:10rpx;
+}
+.detail-wrap .content-info .card-address{
+  border-top:1px solid #e8e8e8;
+  padding:15rpx 40rpx 15rpx 20rpx;
+  color:#999;
+  position:relative;
+}
+.detail-wrap .content-info .card-address .icon-right{
+  position:absolute;
+  right:20rpx;
+  top:8rpx;
+}
+.detail-wrap .content-info .info-content{
+  padding:0 20rpx 40rpx;
+  color:#666;
+  max-height:300rpx;
+  overflow:scroll;
+}
+.detail-wrap .content-info .welfare-title{
+  text-align:center;
+  padding:20rpx;
+  position:relative;
+}
+.detail-wrap .content-info .welfare-title .tips-icon-left{
+  position:absolute;
+  left:250rpx;
+  top:5rpx;
+  color:#ccc;
+  font-size:14px;
+}
+.detail-wrap .content-info .welfare-title .tips-icon-right{
+  position:absolute;
+  right:250rpx;
+  top:15rpx;
+  color:#ccc;
+  font-size:14px;
+}
+.detail-wrap .content-info .welfare-img{
+  margin-bottom:20rpx;
+  overflow-x:scroll; 
+  white-space:nowrap;
+}
+.detail-wrap .content-info .welfare-img image{
+  display: inline-block;
+  width:100rpx;
+  height:100rpx;
+  overflow:hidden;
+  margin-right:10rpx;
+  border:1px solid #e8e8e8;
+  padding:3px;
+  border-radius:1px;
+}
+.detail-wrap .content-info .welfare-tags{
+  padding:0 20rpx 20rpx;
+}
+.detail-wrap .content-info .welfare-tags text{
+  padding:5rpx 15rpx;
+  border:1px solid #e8e8e8;
+  border-radius:3px;
+  display:inline-block;
+  margin:0 10rpx 10rpx 0;
+  color:#999;
+}
+/*热招职位*/
+.detail-wrap .content-jobs{}
+.detail-wrap .content-jobs .jobs-tips{
+  padding:20rpx;
+  background:#eee;
+  color:#666;
+  font-size:12px;
+}
+.detail-wrap .content-jobs .jobs-list{
+  background:#fff;
+  padding:0 30rpx;
+}
+.detail-wrap .content-jobs .jobs-list .jobs-item{
+  padding:15rpx 200rpx 15rpx 0;
+  border-bottom:1px solid #e8e8e8;
+  position:relative;
+}
+.detail-wrap .content-jobs .jobs-list .jobs-item .job-title{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.detail-wrap .content-jobs .jobs-list .jobs-item .jobs-info{
+  font-size:12px;
+  color:#999;
+  line-height:1rem;
+}
+.detail-wrap .content-jobs .jobs-list .jobs-item .jobs-info text{
+  margin-right:10rpx;
+}
+.detail-wrap .content-jobs .jobs-list .jobs-item .job-date{
+  font-size:12px;
+  color:#999;
+  line-height:1rem;
+}
+.detail-wrap .content-jobs .jobs-list .jobs-item .jobs-salary{
+  position:absolute;
+  right:20rpx;
+  top:20rpx;
+  color:#fd904f;
+  font-size:16px;
+}
+
+
+
+
+
+
+
+

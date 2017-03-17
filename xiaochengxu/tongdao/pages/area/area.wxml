@@ -1,0 +1,54 @@
+<!-- area.wxml -->
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+
+<view class="container">
+  <view class="sections" style="margin-bottom:10px;">
+    <view class="flex-wrap titles">
+      <text class="flex-item">当前地区:</text>
+    </view>
+    <view class="cont" wx:if="{{activeCityCode}}">
+      <text class="labels active" data-activeCityCode="{{activeCityCode}}" data-code="{{activeCityCode}}" bindtap="selectCity">{{activeCityName}}</text>
+    </view>
+  </view>
+
+  <!-- 
+  <view class="sections">
+    <view class="flex-wrap titles">
+      <view class="flex-item">
+       <text>热门城市</text>
+      </view>
+    </view>
+    <view class="cont">
+      <text class="labels {{010 === activeCityCode ? 'active' : ''}}" data-code="010" bindtap="selectCity">北京</text>
+      <text class="labels {{'280020' === activeCityCode ? 'active' : ''}}" data-code="280020" bindtap="selectCity">成都</text>
+      <text class="labels {{'040' === activeCityCode ? 'active' : ''}}" data-code="040" bindtap="selectCity">重庆</text>
+      <text class="labels {{'210040' === activeCityCode ? 'active' : ''}}" data-code="210040" bindtap="selectCity">大连</text>
+      <text class="labels {{'050020' === activeCityCode ? 'active' : ''}}" data-code="050020" bindtap="selectCity">广州</text>
+      <text class="labels {{'070020' === activeCityCode ? 'active' : ''}}" data-code="070020" bindtap="selectCity">杭州</text>
+      <text class="labels {{'060020' === activeCityCode ? 'active' : ''}}" data-code="060020" bindtap="selectCity">南京</text>
+      <text class="labels {{'020' === activeCityCode ? 'active' : ''}}" data-code="020" bindtap="selectCity">上海</text>
+      <text class="labels {{'050090' === activeCityCode ? 'active' : ''}}" data-code="050090" bindtap="selectCity">深圳</text>
+      <text class="labels {{'060080' === activeCityCode ? 'active' : ''}}" data-code="060080" bindtap="selectCity">苏州</text>
+      <text class="labels {{'030' === activeCityCode ? 'active' : ''}}" data-code="030" bindtap="selectCity">天津</text>
+      <text class="labels {{'170020' === activeCityCode ? 'active' : ''}}" data-code="170020" bindtap="selectCity">武汉</text>
+    </view>
+  </view>
+  -->
+
+  <view class="scroll-view">
+   
+    <radio-group wx:if="{{cityList.length>0}}" class="radio-group">
+      <view class="sections" wx:key="{{index}}" wx:for="{{cityList}}">
+        <view class="flex-wrap titles">
+          <view class="flex-item">
+           <text>{{item[0]}}</text>
+          </view>
+        </view>
+        <view class="cont">
+          <text class="labels {{item[0] === activeCityCode ? 'active' : ''}}" wx:for="{{item[1]}}" wx:key="{{index}}" data-code="{{item[0]}}" bindtap="selectCity">{{item[1]}}</text>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>

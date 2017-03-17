@@ -1,0 +1,41 @@
+<!-- selectjob.wxml -->
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="sections">
+      <view class="flex-wrap titles">
+          <picker class="pickers" bindchange="bindPickerChange" value="{{salaryArray[index]}}" name="salary" range="{{salaryArray}}">
+            <view class="picker">
+              年薪范围: {{ (salaryArray[index] === '请选择' || salaryArray[index] === '100万以上') ? salaryArray[index] : (salaryArray[index]+'万')}}
+            </view>
+          </picker>
+      </view>
+    </view>
+
+    <view class="sections" wx:if="{{refreshData.length>0}}">
+      <view class="flex-wrap titles">
+        <text>刷新时间:</text>
+      </view>
+      <view class="cont">
+        <radio-group name="refreshTime" bindchange="refreshTimeChange">
+          <label wx:for="{{refreshData}}" wx:key="{{index}}" class="labels {{item.value == refreshTime ? 'active' : ''}}">
+            <radio value="{{item.value}}" hidden checked="{{item.value == refreshTime}}"/><text>{{item.name}}</text>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+    <view class="sections" wx:if="{{jobKindData.length>0}}">
+      <view class="flex-wrap titles">
+        <text>职位类型:</text>
+      </view>
+      <view class="cont">
+        <radio-group name="jobKind" bindchange="jobKindChange">
+          <label wx:for="{{jobKindData}}" wx:key="{{index}}" class="labels {{item.value == jobKind ? 'active' : ''}}">
+            <radio value="{{item.value}}" hidden checked="{{item.value == jobKind}}"/><text>{{item.name}}</text>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <button formType="submit" class="btn-submit" type="primary">确定</button>
+  </form>
+</view>

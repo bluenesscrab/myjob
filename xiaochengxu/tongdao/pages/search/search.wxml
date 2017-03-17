@@ -1,0 +1,47 @@
+<!-- search.wxml -->
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+
+<view class="search-container">
+  <view class="search-bar flex-wrap">
+    <view class="search-parent flex-5 flex-item">
+      <form bindsubmit="formSubmit">
+        <input focus="{{focus}}" name="keyword" class="input-text" maxlength="100" value="{{keyword}}" maxlength="10" placeholder="请输入关键词" id="srarch-bar" bindconfirm="KeySearch"/>
+        <button formType="submit" class="search-btn">
+          <text class="iconfont icon-search"></text>
+        </button>
+      </form>
+    </view>
+  </view>
+
+  <!-- hot company -->
+  <view wx:if="{{hotComp.length>0}}" class="sections">
+    <text class="titles">热门公司</text>
+    <view class="content">
+      <text wx:for="{{hotComp}}" wx:key="{{index}}" data-key="{{item}}" bindtap="selectKey" class="labels">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- history -->
+  <view wx:if="{{historyList.length>0}}" class="sections lists">
+    <text class="titles">历史记录</text>
+    <view class="content">
+      <view class="flex-wrap lis" wx:for="{{historyList}}" wx:key="{{index}}">
+        <text class="iconfont icon-time flex-item"></text>
+        <text class="flex-item cont flex-6" data-index="{{index}}" bindtap="selectHistoryKey"> {{item.keyword}} {{item.industry_showName ? ' + '+item.industry_showName : '' }} {{item.dq_showName ? ' + '+item.dq_showName : '' }}</text>
+        <text class="iconfont icon-close flex-item remove" data-index="{{index}}"bindtap="removeHistory"></text>
+      </view>
+    </view>
+  </view>
+  <!-- hot search  -->    
+  <view wx:if="{{!historyList.length && hotSearch.value.length>0 }}" class="sections lists">
+    <text class="titles">热门搜索</text>
+    <view class="content">
+        <view class="flex-wrap lis" wx:for="{{hotSearch.value}}" wx:key="{{index}}" data-key="{{item}}" bindtap="selectKey">
+          <text class="iconfont icon-search flex-item"></text>
+          <text class="flex-item cont flex-7">{{item}}</text>
+        </view>
+    </view>
+  </view>
+
+</view>

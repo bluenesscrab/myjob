@@ -1,0 +1,77 @@
+.flex-box {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.connect-logo {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.connect-logo .connect-icon {
+  margin: 0 20px;
+}
+.connect-logo .connect-icon .iconfont {
+  display: block;
+  margin-top: -20px;
+  font-size: 30px;
+  color: #999;
+}
+.connect-logo .connect-item {
+  text-align: center;
+}
+.connect-logo .connect-item .logo {
+  width: 50px;
+  height: 50px;
+}
+.connect-logo .connect-item:first-child .logo {
+  border-radius: 50%;
+}
+.user-form {
+  flex: 2;
+  padding: 20px;
+}
+.user-form .section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dcdcdc;
+  padding: 10px;
+  margin-top: -1px;
+}
+.user-form .section .label {
+  width: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+.user-form .section .label .iconfont {
+  color: #999;
+  font-size: 18px;
+}
+.user-form .section input {
+  flex: 1;
+}
+.user-form .section button,
+.user-form .actions button {
+  padding: 0 .6em;
+  color: #fff;
+  background-color: #ff8b26;
+  border-radius: 2px;
+}
+.user-form .section button[disabled],
+.user-form .actions button[disabled] {
+  color: #666;
+  text-shadow: 1px 1px 0 #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.user-form .actions {
+  display: flex;
+  margin-top: 20px;
+}
+.user-form .actions button {
+  flex: 1;
+}

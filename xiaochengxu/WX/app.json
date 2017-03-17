@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/we/we",
+    "pages/map/map",
+    "pages/index/index",
+    "pages/logs/logs"
+    
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#bc5a02",
+    "navigationBarTitleText": "Hotel",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":false
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#bc5a02",
+    "borderStyle": "white",
+    "backgroundColor": "#ddd",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath":"images/tabbar/index.png",
+      "selectedIconPath":"images/tabbar/index-hover.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/map/map",
+      "iconPath":"images/tabbar/map.png",
+      "selectedIconPath":"images/tabbar/map-hover.png",
+      "text": "酒店位置"
+    }, {
+      "pagePath": "pages/we/we",
+      "iconPath":"images/tabbar/we.png",
+      "selectedIconPath":"images/tabbar/we-hover.png",
+      "text": "关于我们"
+    }]
+  }
+}

@@ -1,0 +1,78 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+<view class="container">
+  <view class="search-bar flex-wrap">
+    <view class="search-parent flex-item">
+      <form bindsubmit="formSubmit">
+        <input focus="{{focus}}" name="keyword" class="input-text" maxlength="100" value="{{query.keyword}}" placeholder="请输入关键词" bindconfirm="KeySearch"/>
+        <button formType="submit" class="search-btn">
+          <text class="iconfont icon-search"></text>
+        </button>
+      </form>
+    </view>
+    <view class="flex-item right-btn"
+    bindtap="changeMore">
+      <text>更多</text>
+    </view>
+  </view>
+  <view class="flex-wrap selectbar">
+    <view class="flex-item" data-code="{{query.industry}}" bindtap="selectIndustry">
+      <text class="texts">{{industryName}}</text>
+      <text class="iconfont icon-down"></text>
+    </view>
+    <view class="flex-item" data-code="{{query.dq}}" bindtap="selectCity">
+      <text class="texts">{{cityName}}</text>
+      <text class="iconfont icon-down"></text>
+    </view>
+    <view class="flex-item"
+    bindtap="selectJob">
+      <text class="texts">职位筛选</text>
+      <text class="iconfont icon-down"></text>
+    </view>
+  </view>
+  
+  <view class="job-list">
+    <scroll-view class="jobCont" scroll-y="true" bindscrolltolower="loadMore" scroll-top="{{scrollTop}}">
+      
+      <view class="list-refesh" hidden="{{hasRefesh}}">
+        <text class="iconfont icon-loading"></text>
+      </view>
+
+      <!--搜索结果 -->
+      <view class="section" wx:if="{{soJobForms.length>0}}" wx:for="{{soJobForms}}" wx:key="{{index}}">
+        <view>
+          <navigator url="/pages/job/job?id={{item.job_id}}&kind={{item.job_kind}}" hover-class="none">
+            <view class="info">
+              <view class="thumb" wx:if="{{item.job_kind === '1' || item.job_kind === '2'}}">
+                <image wx:if="{{item.url}}" src="https://image0.lietou-static.com/huge/{{item.url}}" />
+                <image wx:if="{{!item.url && item.job_kind === '2'}}" src="/images/searchlist/ic_qy.png" /><!-- 企业职位 -->
+                <image wx:if="{{item.job_kind === '1'}}" src="/images/searchlist/ic_lt_log.png" /><!-- 猎头职位 -->
+              </view>
+              <view class="detail">
+                <view class="job-title">
+                  <text class="title {{item.isApply==1?'title-gray':''}}">{{item.title}}</text>
+                  <text wx:if="{{item.isApply==1}}" class="is-apply">已投递</text>
+                  <text class="salary">{{item.salary}}</text>
+                </view>
+                <view class="sub-title">
+                  <text>{{item.company}}</text>
+                </view>
+                <view class="sub-info">
+                  <text>{{item.date}}</text>
+                  <text>{{item.dq}}</text>
+                  <text>{{item.requireWorkYears}}</text>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view wx:if="{{!soJobForms||soJobForms.length<=0}}" class="nodata">
+        <view class="box-icon"><text class="iconfont icon-empty"></text></view>
+        <view><text>没有搜索到结果</text></view>
+      </view>
+
+      <loading hidden="{{hasHidden}}" bindchange="loadingChange">加载中...</loading>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="search-wrap">
+    <input class="search-input" placeholder="{{placeholder}}" value="{{defaultValue}}" bindinput="inputChange" type="text" />
+    <text class="cancel" bindtap="bindCancel">取消</text>
+  </view>
+  <view wx:if="{{dataType==='object'}}" class="search-main">
+  	<view class="search-item" wx:key="{{index}}" wx:for="{{suggestArray}}" data-code="{{item.code||item.name}}" data-name="{{item.name}}" bindtap="binChoice"> {{item.name}} </view>
+  </view>
+  <view wx:if="{{dataType==='string'}}" class="search-main">
+  	<view class="search-item" wx:key="{{index}}" wx:for="{{suggestArray}}" data-code="{{item}}" data-name="{{item}}" bindtap="binChoice"> {{item}} </view>
+  </view>
+</view>

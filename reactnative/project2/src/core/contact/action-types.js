@@ -1,0 +1,2 @@
+export const GET_CONTACT_SUCC = 'GET_CONTACT_SUCC';
+export const GET_CONTACT_FAIL = 'GET_CONTACT_FAIL';

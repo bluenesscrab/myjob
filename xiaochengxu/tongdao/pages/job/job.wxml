@@ -1,0 +1,170 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+<view class="card job-title-card">
+  <navigator url="/pages/company/company?ecompId={{jobInfoList.ecompDto.ecompId}}" wx:if="{{jobInfoList.jobKind === '2'}}" open-type="redirect">
+    <view class="job-title">
+      <view class="job-title-detail">
+        <text class="job-name">{{jobInfoList.jobTitle}}</text><text class="job-salary">{{jobInfoList.salaryName}}</text>
+      </view>
+      <view class="couple-back">
+        <view wx:if="{{jobInfoList.feedbackTime > 3}}">
+          <text  class="couple-back-time">平均{{jobInfoList.feedbackTime}}天反馈</text>
+        </view>
+        <view wx:elif="{{jobInfoList.feedbackTime <= 3 && jobInfoList.feedbackTime !== 0}}">
+          <text class="couple-back-time">平均{{jobInfoList.feedbackTime*24+"小时反馈"}}</text>
+        </view>
+        <view wx:else="{{jobInfoList.feedbackTime == 0}}">
+        </view>
+      </view>
+    </view>
+    <view class="job-condition">{{jobInfoList.workArea}} | {{jobInfoList.requireEduLevel}} | {{jobInfoList.requireWorkYears}}</view>
+    <view class="welfare" wx:if="{{jobInfoList.jobTags && jobInfoList.jobTags !==''}}">
+      <text class="iconfont icon-quote-left"></text><text>职位诱惑：{{jobInfoList.jobTags}}</text>
+    </view>
+  </navigator>
+  <view wx:if="{{jobInfoList.jobKind === '1'}}">
+    <view class="job-title">
+      <view class="job-title-detail">
+        <text class="job-name">{{jobInfoList.jobTitle}}</text><text class="job-salary">{{jobInfoList.salaryName}}</text>
+      </view>
+    </view>
+    <view class="job-condition">
+      <text wx:if="{{jobInfoList.workArea && jobInfoList.workArea !==''}}">{{jobInfoList.workArea}} | </text>
+      <text wx:if="{{jobInfoList.requireEduLevel && jobInfoList.requireEduLevel !==''}}">{{jobInfoList.requireEduLevel}} |</text>
+      <text wx:if="{{jobInfoList.requireWorkYears && jobInfoList.requireWorkYears !==''}}">{{jobInfoList.requireWorkYears}}</text>
+    </view>
+    <view class="company-name">{{jobInfoList.hunterDto.hunterCompany}}  代理职位</view>
+  </view>
+</view>
+<view class="section-company-info">
+  <navigator wx:if="{{jobInfoList.jobKind === '2'}}" url="/pages/company/company?ecompId={{jobInfoList.ecompDto.ecompId}}" class="company-info" open-type="redirect">
+    <view class="company-logo">
+      <image wx:if="{{jobInfoList.ecompDto.compLogo}}" src="https://image0.lietou-static.com/huge/{{jobInfoList.ecompDto.compLogo}}" />
+      <image wx:if="{{!jobInfoList.ecompDto.compLogo}}" src="/images/jobdetail/icon_company_default.png" />
+    </view>
+    <view class="info-details">
+      <view class="company-name"><text>{{jobInfoList.ecompDto.compName}}</text></view>
+      <!-- <view class="company-description">
+        <text class="comp-text" wx:if="{{jobInfoList.ecompDto.compFields || jobInfoList.ecompDto.compIndustry}}">{{jobInfoList.ecompDto.compFields?jobInfoList.ecompDto.compFields:jobInfoList.ecompDto.compIndustry}} </text> 
+        <text>|</text>
+        <text class="comp-text" wx:if="{{jobInfoList.ecompDto.compScale && jobInfoList.ecompDto.compScale!==''}}">{{jobInfoList.ecompDto.compScale}}</text>
+        <text>|</text>
+        <text class="comp-text" wx:if="{{jobInfoList.ecompDto.compKind && jobInfoList.ecompDto.compKind!== ''}}">{{jobInfoList.ecompDto.compKind}}</text>
+      </view> -->
+      <view class="company-description">
+        {{jobInfoList.ecompDto.compFields?jobInfoList.ecompDto.compFields:jobInfoList.ecompDto.compIndustry}} | {{jobInfoList.ecompDto.compScale}} | {{jobInfoList.ecompDto.compKind}}
+      </view>
+    </view>
+    <view class="icon-box"><text class="iconfont icon-right"></text></view>
+  </navigator>
+  <view class="job-address" wx:if="{{jobInfoList.jobKind === '2' && jobInfoList.ecompDto.compAddress && jobInfoList.ecompDto.compAddress !== ''&& jobInfoList.ecompDto.ecompLng && jobInfoList.ecompDto.ecompLat}}">
+    <view bindtap = "mapShow" class="job-address-info">
+      <navigator url="/pages/map/map?longitude={{jobInfoList.ecompDto.ecompLng}}&latitude={{jobInfoList.ecompDto.ecompLat}}" class="address-detail">
+        <text class="iconfont icon-location"></text>
+        <text>{{jobInfoList.ecompDto.compAddress}}</text>
+      </navigator>
+      <view class="link-icon"><text class="iconfont icon-right"></text></view>
+    </view> 
+  </view>
+</view>
+<view class="section">
+  <view class="section-title">职位介绍</view>
+  <view class="job-duty">
+    <text>{{jobInfoList.jobDuty}}</text>
+  </view>
+  <view>
+    <text>{{jobinfoList.jobQualify}}</text>
+  </view>
+  <view class="other-info">
+    <view>其他信息</view>
+    <view wx:if="{{jobInfoList.requireAge}}"><text>年龄要求：{{jobInfoList.requireAge}}</text></view>
+    <view wx:if="{{jobInfoList.requireLanguage}}"><text>语言要求：{{jobInfoList.requireLanguage}}</text></view>
+    <view wx:if="{{jobInfoList.requireMajor}}"><text>专业要求：{{jobInfoList.requireMajor}}</text></view>
+    <view wx:if="{{jobInfoList.department}}"><text>所属部门：{{jobInfoList.department}}</text></view>
+    <view wx:if="{{jobInfoList.reportObj}}"><text>汇报对象：{{jobInfoList.reportObj}}</text></view>
+  </view>
+</view>
+<view class="publisher-section">
+  <view class="section-title">职位发布人</view>
+  <view class="job-publisher-detail clearfix">
+    <view class="publisher-img">
+      <image wx:if="{{jobInfoList.jobKind === '1' && jobInfoList.hunterDto.hunterPortrait}}" src="https://image0.lietou-static.com/huge/{{jobInfoList.hunterDto.hunterPortrait}}"></image>
+      <image wx:if="{{jobInfoList.jobKind === '2' && jobInfoList.hrDto.hrPortrait}}" src="https://image0.lietou-static.com/huge/{{jobInfoList.hrDto.hrPortrait}}"></image>
+      <image wx:if="{{!jobInfoList.hunterDto.hunterPortrait || !jobInfoList.hrDto.hrPortrait}}" src="/images/jobdetail/icon_boy_80.png"></image>
+    </view>
+    <view class="publisher-detail">
+      <view>
+        <text>{{jobInfoList.jobKind === '1'?jobInfoList.hunterDto.hunterName:jobInfoList.hrDto.hrName}}</text>/
+        <text>{{jobInfoList.jobKind === '1'?jobInfoList.hunterDto.hunterTitle:jobInfoList.hrDto.hrTitle}}</text>
+      </view>
+      <view class="publisher-company" wx:if = "{{jobInfoList.jobKind === '1' && jobInfoList.hunterDto.hunterCompany && jobInfoList.hunterDto.hunterCompany !==''}}">{{jobInfoList.hunterDto.hunterCompany}}</view>
+      <view class="publisher-company" wx:if="{{jobInfoList.jobKind === '2' && jobInfoList.hrDto.hrCompany && jobInfoList.hrDto.hrCompany !== ''}}">{{jobInfoList.hrDto.hrCompany}}</view>
+      <view>
+        <text class="percentage" wx:if="{{jobInfoList.visitPercent > 0}}">查看率：{{jobInfoList.visitPercent}}%</text>
+        <text class="percentage" wx:if="{{jobInfoList.applyFeedbackPercent > 0}}">反馈率：{{jobInfoList.applyFeedbackPercent}}%</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="section" wx:if="{{jobInfoList.jobKind === '1'}}">
+  <view class="section-title">薪酬福利</view>
+  <view class="welfare-content">
+    <view><text>职位年薪：</text><text>{{jobInfoList.salaryName}}</text></view>
+    <view><text>薪资构成：</text><text>{{jobInfoList.salaryStructure}}</text></view>
+    <view><text>年假福利：</text><text>{{jobInfoList.welfareVacation}}</text></view>
+    <view><text>社保福利：</text><text>{{jobInfoList.socialSecurity}}</text></view>
+    <view><text>通讯交通：</text><text>{{jobInfoList.welfareTraffic}}</text></view>
+  </view>
+</view>
+<view class="section" wx:if="{{jobInfoList.jobKind === '1' && jobInfoList.ecompDto.compDesc}}">
+  <view class="section-title">企业介绍</view>
+  <view class="company-intro" wx:if="{{isShort == true}}">
+    <view><text>{{jobInfoList.ecompDto.compDesc}}</text></view>
+    <!-- <view bindtap="substrTap" class="pack-icon"><text class="iconfont icon-down"></text></view> -->
+  </view>
+  <view class="company-intro" wx:else="{{isShort == false}}">
+    <view><text>{{jobInfoList.ecompDto.compDesc}}</text></view>
+    <!-- <view bindtap="substrTap" class="pack-icon"><text class="iconfont icon-down"></text></view> -->
+  </view>
+</view>
+<view class="section" wx:if="{{interestedJobList.length!==0}}">
+  <view class="section-title">感兴趣的职位</view>
+  <view class="recommend-list">
+    <view class="recommend-section"  wx:key="{{index}}" wx:for="{{interestedJobList}}">
+      <navigator url="/pages/job/job?id={{item.job_id}}&kind={{item.job_kind}}" class="items" open-type="redirect">
+        <view class="items-img" wx:if="{{item.job_kind === '1' || item.job_kind === '2'}}">
+          <image wx:if="{{item.url}}" src="https://image0.lietou-static.com/huge/{{item.url}}" />
+          <image wx:if="{{!item.url && item.job_kind === '2'}}" src="/images/searchlist/ic_qy.png" /><!-- 企业职位 -->
+          <image wx:if="{{!item.url && item.job_kind === '1'}}" src="/images/searchlist/ic_lt_log.png" /><!-- 猎头职位 -->
+        </view>
+        <view class="items-info">
+          <view><text class="job-name">{{item.title}}</text></view>
+          <view>{{item.company}}</view>
+          <view class="job-detail"><text>{{item.dq}}  </text><text>{{item.requireWorkYears}}  </text><text>{{item.requireEduLevel}}</text></view>
+        </view>
+        <view class="job-salary"><text>{{item.salary}}</text></view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class="tips-content">
+  <view class="tips">
+    <view class="warn-icon"><text class="iconfont icon-alert"></text></view>
+    <view class="tips-text"><text>在投递、面试过程中遇到招聘方的收费行为，都存在诈骗风险，务必提高警惕。</text></view>
+  </view>
+</view>
+<view class="handle">
+  <view class="favor-job" bindtap="handleTap">
+    <icon class="{{jobInfoList.isFavorite == 1?'icon-favor-strong':'icon-favor'}} iconfont" type="" size=""/>
+    <view>
+      <text>收藏职位</text>
+    </view>
+  </view>
+  <view wx:if="{{jobInfoList.expired == true}}" class="btn_box"><button bindtap="applyTap" disabled="{{true}}" class="btn_apply">已过期</button></view>
+  <view wx:else="{{jobInfoList.expired == false}}" class="btn_section">
+    <view wx:if="{{jobInfoList.isApplied == 1}}" class="btn_box"><button bindtap="applyTap" disabled="{{true}}" class="btn_apply">已应聘</button></view>
+    <view wx:else="{{jobInfoList.isApplied == 0}}" class="btn_box"><button bindtap="applyTap" disabled="{{false}}" class="btn_apply">立即应聘</button></view>
+  </view>
+  
+  <!-- <button disabled="{{disabled}}" class="{{btnDisabled == false?'btn_apply_disabled':''}}btn_apply" bindtap="applyTap">立即应聘</button> -->
+</view>

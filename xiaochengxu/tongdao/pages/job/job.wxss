@@ -1,0 +1,290 @@
+.section{
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+.section-title{
+  font-size: 16px;
+  color: #333;
+  border-left:4px solid #ff9c00;
+  padding-left: 8px;
+  margin-bottom: 10px;
+  line-height: 18px;
+}
+.job-title-card .job-title .job-title-detail{
+  margin-bottom: 2px;
+}
+.job-title-card .job-title .job-name{
+  display: inline-block;
+  font-size: 16px;
+  color: #333;
+  max-width: 80%;
+  margin-right: 8px;
+  vertical-align: top;
+}
+.job-title-card .job-title .job-salary{
+  font-size: 14px;
+  color: #ff9046;
+}
+.job-title-card .job-title .couple-back .couple-back-time{
+  padding:3px 2px;
+  font-size: 12px;
+  color:#ff9046;
+  border: 1px solid #ff9046; 
+  border-radius: 3px;
+}
+.job-title-card .job-title{
+  margin-bottom: 10px;
+}
+.job-title-card .company-name{
+  font-size: 14px;
+  color: #999;
+}
+.job-title-card .job-condition{
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+.welfare{
+  color: #999;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  position: relative;
+  padding: 5px 0 0 24px;
+}
+.welfare .icon-quote-left{
+  color: #ccc;
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+.welfare-sign{
+  font-size: 30px;
+  font-weight:bold;
+  color: #999;
+}
+.section-company-info{
+  margin-bottom: 10px;
+}
+.company-info{
+  display: flex;
+  background-color: #fff;
+  padding: 10px 10px 5px 10px;
+  position: relative;
+}
+.company-info .company-logo{
+  position: relative;
+}
+.company-info .company-logo image{
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+}
+.company-info .info-details{
+  flex: 1;
+  padding: 0 10px;
+  margin-top: 5px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.company-info .info-details .company-name{
+  font-size: 16px;
+  color: #666;
+}
+.company-info .info-details .company-name text{
+  display: inline-block;
+  word-break: normal;
+}
+.company-info .info-details .company-description{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: #999;
+  max-width: 90%;
+}
+.company-info .icon-box{
+  position: absolute;
+  top: 23px;
+  right: 10px;
+}
+.company-info .icon-box .icon-right{
+  color: #999;
+}
+.job-address{
+  border-top: 1px solid #ccc;
+  background: #fff;
+  padding: 5px 10px; 
+  margin-bottom: 10px;
+  color: #666;
+  position: relative;
+}
+.job-address .job-address-info{
+  display: flex;
+}
+.job-address .job-address-info .address-detail{
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #999;
+  max-width: 90%;
+}
+.job-address .job-address-info .link-icon{
+  vertical-align: middle;
+  color: #999;
+  position: absolute;
+  top:4px;
+  right:10px;
+}
+
+.job-duty,.job-demand,.other-info{
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 20px;
+  padding: 0 12px;
+}
+.job-duty text{
+  word-break:break-all;
+}
+.publisher-section{
+  padding:10px 10px 0 0;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.job-publisher-detail{
+  display: flex;
+  position: relative;
+}
+.publisher-img {
+  height: 60px;
+}
+.publisher-img image{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 15px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+.publisher-detail{
+  flex: 1;
+  color: #666;
+  padding-left: 63px;
+}
+.publisher-detail .percentage{
+  color: #ff9046;
+  margin-right: 5px;
+}
+.welfare-content{
+  padding: 0 12px;
+  color: #666;
+}
+.company-intro{
+  text-indent: 2em;
+  color: #666;
+  padding: 0 10px;
+}
+.company-intro .pack-icon{
+  text-align: center;
+  margin-top: 10px;
+}
+.recommend-list{
+  padding: 0 10px;
+}
+.recommend-list .items{
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+.recommend-list .items:last-child{
+  border-bottom: none;
+}
+.recommend-list .items .items-img image{
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+  border:1px solid #e8e8e8;
+}
+.recommend-list .items .items-info{
+  flex: 1;
+}
+.recommend-list .items .items-info{
+  font-size: 12px;
+  color: #666;
+  padding: 0 10px;
+  line-height: 21px;
+}
+.recommend-list .items .items-info .job-name{
+  font-size: 16px;
+  color: #333;
+}
+.recommend-list .items .job-salary{
+  color: #fa0;
+  font-size: 16px;
+}
+.tips{
+  display: flex;
+  background: #fff5bd;
+  color: #ff9349;
+  padding: 10px 30px 10px 10px;
+}
+.tips .warn-icon{
+  margin-right: 10px;
+}
+.tips-content{
+  padding-bottom: 62px;
+}
+.tips .tips-text{
+  font-size: 12px;
+  flex: 1;
+  line-height: 14px;
+}
+.handle{
+  background-color: #fff;
+  display: flex;
+  padding: 5px 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ddd;
+}
+
+.handle .favor-job{
+  color: #999;
+  text-align: center;
+}
+.handle .favor-job icon{
+  font-size: 18px;
+}
+.handle .favor-job .icon-favor-strong{
+  color:#ff9046; 
+}
+.handle .btn_apply{
+  width: 75%;
+  background-color: #ff9046;
+  border: none;
+  color: #fff;
+  height: 38px;
+  line-height: 38px;
+  margin-top: 3px;
+}
+.handle .btn_box{
+  flex: 1;
+  width: 100%;
+}
+.handle .btn_section{
+  flex: 1;
+  width: 100%;
+}
+.handle .btn_apply_disabled{
+  background-color: #ddd;
+  color: #fff;
+}

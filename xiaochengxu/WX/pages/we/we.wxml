@@ -1,0 +1,19 @@
+<!--we.wxml-->
+<view class="container">
+  <!--<view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text> | </text>
+    <text>this is user demo  </text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>-->
+
+  <video src="{{src}}" 
+  controls="{{false}}"
+  id="myVideo"
+  autoplay="{{true}}"
+  bindended="reloads"  
+  ></video>
+</view>

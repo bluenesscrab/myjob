@@ -1,0 +1,46 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+
+<view class="container">
+  <view class="head">
+    <view class="photo">
+      <image
+        wx:if="{{userInfo.usercForm.photo}}"
+        src="https://image0.lietou-static.com/normal/{{userInfo.usercForm.photo}}"
+      />
+    </view>
+    <view class="info">
+      <view class="user-name"><text>{{userInfo.usercForm.name}}</text></view>
+      <view><text>{{userInfo.usercForm.title}}</text></view>
+      <view><text>{{userInfo.usercForm.company}}</text></view>
+    </view>
+    <view class="weixin" wx:if="{{weixinUser.avatarUrl}}">
+      <image
+        src="{{weixinUser.avatarUrl}}"
+      />
+    </view>
+  </view>
+  <view class="list-view">
+    <navigator url="/pages/user/apply-list" hover-stay-time="50">
+      <view class="list-item">
+        <text class="list-icon iconfont icon-apply"></text>
+        <text class="list-title">应聘记录</text>
+        <text class="list-arrow iconfont icon-right"></text>
+      </view>
+    </navigator>
+    <navigator url="/pages/user/favor-list" hover-stay-time="50">
+      <view class="list-item">
+        <text class="list-icon iconfont icon-favor"></text>
+        <text class="list-title">我的收藏</text>
+        <text class="list-arrow iconfont icon-right"></text>
+      </view>
+    </navigator>
+  </view>
+  <view class="list-view">
+    <view class="list-item" hover hover-class="list-item-hover" hover-stay-time="50" bindtap="exitApp">
+      <text class="list-icon iconfont icon-exit"></text>
+      <text class="list-title">切换账号</text>
+      <text class="list-arrow iconfont icon-right"></text>
+    </view>
+  </view>
+</view>

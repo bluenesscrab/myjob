@@ -1,0 +1,5 @@
+<template name="toast">
+  <view class="toast" wx:if="{{title}}">
+    <view class="message">{{title}}</view>
+  </view>
+</template>

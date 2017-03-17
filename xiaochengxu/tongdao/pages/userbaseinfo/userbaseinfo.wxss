@@ -1,0 +1,125 @@
+/**userbaseinfo.wxss**/
+page{
+  background:#fff;
+}
+.container{}
+.top-tips{
+  text-align:center;
+  padding:80rpx;
+  font-size:50rpx;
+  line-height:60rpx;
+  position:relative;
+  color:#333;
+}
+.top-tips .tips-icon-left{
+  color:#bbb;
+  font-size:50rpx;
+  vertical-align:top;
+  position:absolute;
+  left:110rpx;
+  top:60rpx;
+}
+.top-tips .tips-icon-right{
+  color:#bbb;
+  font-size:50rpx;
+  vertical-align:top;
+  position:absolute;
+  right:90rpx;
+  bottom:50rpx;
+}
+.form-content{
+  padding-left:30rpx;
+}
+.form-content .form-item{
+  border-bottom:1px solid #e8e8e8;
+  padding:20rpx 0 20rpx 75rpx;
+  position:relative;
+}
+.icon-color-name{
+  background:#f8a277;
+}
+.icon-color-job{
+  background:#c09cc6;
+}
+.icon-color-company{
+  background:#7fa8db;
+}
+.icon-color-year{
+  background:#f6b95a;
+}
+.form-content .form-item .left-icon{
+  position:absolute;
+  left:0;
+  top:20rpx;
+  font-size:30rpx;
+  color:#fff;
+  border-radius:25rpx;
+  width:50rpx;
+  height:50rpx;
+  text-align:center;
+  line-height:50rpx;
+}
+.form-content .form-item .empty{
+  color:#808080;
+}
+.form-content .form-item .item-text{
+  height:1.4rem;
+  line-height:1.4rem;
+}
+.form-content .form-item .name-wrap{
+  width:400rpx;
+}
+.form-content .form-item .sex-wrap{
+  position:absolute;
+  right:30rpx;
+  top:10rpx;
+  width:180rpx;
+}
+.form-content .form-item .sex-wrap .sex-main{
+  position:absolute;
+  left:0;
+  top:0;
+  border:1px solid #ff9046;
+  border-radius:35rpx;
+  width:180rpx;
+  display:flex;
+  overflow:hidden;
+}
+.form-content .form-item .sex-wrap .sex-main text{
+  display:inline-block;
+  padding:10rpx 0;
+  text-align:center;
+  flex:1;
+}
+.form-content .form-item .sex-wrap .sex-main text.active{
+  background:#ff9046;
+  color:#fff;
+}
+.form-content .form-item .sex-wrap .sex-group{
+  position: absolute;
+  left: 0;
+  top:0;
+  opacity:0;
+  display: flex;
+  width:180rpx;
+}
+.form-content .form-item .sex-wrap .sex-group label{
+  flex:1;
+  height:60rpx;
+}
+.form-content .btn-wrap{
+  margin-top:60rpx;
+  padding-right:30rpx;
+}
+.form-content .btn-wrap .submit-btn{
+  background:#ff9046;
+  color:#fff;
+  border:0 none;
+  border-radius:10rpx;
+}
+.form-content .btn-wrap .submit-btn::after{
+  border:0 none;
+}
+.form-content .btn-wrap .submit-hover{
+  background:#eb8541;
+}

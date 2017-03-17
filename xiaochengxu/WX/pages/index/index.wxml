@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="index">
+  <!--<view class="uer">
+    <text class="userinfo-nickname">{{userInfo.nickName}}，你好！欢迎访问 hotel小程序 !</text>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+  </view>-->
+  <view class="userinfo">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="120"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    
+    <view class="flex-wrap">
+      <view class="flex-item first" hover-class="button-hover" bindtap="phone1">
+        <image class="icons-phone" src="../../images/index/mobile.png"></image>
+        <text>呼叫接送</text>
+      </view>
+      <view class="flex-item" hover-class="button-hover" bindtap="phone2">
+        <image class="icons-phone" src="../../images/index/phone.png"></image>
+        <text>酒店预定</text>
+      </view>
+    </view>
+
+    <view class="list no-border">
+      <text>女神房：380元 （12点之前预定95折）</text>
+      <text class="labels">特色</text>
+    </view>
+    <view class="list">
+      <text>大床：228元 （12点之前预定95折）</text>
+    </view>
+    <view class="list">
+      <text>标间：128元 （12点之前预定95折）</text>
+    </view>
+    <view class="list">
+      <text>钟点房：48元/小时</text>
+    </view>
+
+    <view class="ends">
+      <text class="title">酒店特色：</text>
+      <text class="my-hotel">酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色酒店特色</text>
+    </view>
+
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

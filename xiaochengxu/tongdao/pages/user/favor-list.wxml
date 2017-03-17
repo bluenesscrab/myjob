@@ -1,0 +1,32 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+
+<view class="container">
+  <view class="title">
+    <text>我收藏的职位</text>
+  </view>
+  <view wx:if="{{list}}" class="list-view">
+    <view wx:if="{{list.length > 0}}">
+      <navigator wx:key="{{index}}" wx:for="{{list}}" url="/pages/job/job?id={{item.job_id}}&kind={{item.job_kind}}" hover-stay-time="50">
+        <view class="list-item">
+          <!--text wx:if="{{item.job_kind === '1'}}" class="list-icon iconfont icon-lietou"></text>
+          <text wx:if="{{item.job_kind === '2'}}" class="list-icon iconfont icon-qiye"></text-->
+          <view class="list-title">
+            <view>
+              <text class="job-title">{{item.title}}</text>
+              <text class="apply-status" wx:if="{{item.applied}}">已投递</text>
+              <text class="apply-status" wx:elif="{{item.isTerminated}}">已结束</text>
+            </view>
+            <view><text>{{item.company}}</text></view>
+            <view><text>{{item.dq}} {{item.requireWorkYears}} {{item.requireEduLevel}}</text></view>
+          </view>
+          <text class="salary">{{item.salary}}</text>
+        </view>
+      </navigator>
+    </view>
+    <view wx:else class="nodata">
+      <view class="box-icon"><text class="iconfont icon-empty"></text></view>
+      <view><text>您还没有收藏过任何职位</text></view>
+    </view>
+  </view>
+</view>

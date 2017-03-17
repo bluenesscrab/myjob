@@ -1,0 +1,82 @@
+/**industry.wxss**/
+page {
+  display: block;
+  min-height: 100%;
+  font-size:14px;
+  color:#333;
+  background-color:white;
+}
+/* public */
+.labels{
+  border-radius:4px;
+  padding:6px 12px;
+  margin:5px;
+  color:#6c6c6c;
+  font-size:12px;
+  background-color:#f2f2f2;
+  white-space:nowrap;
+  display:inline-block;
+}
+.labels.active{
+  border:1px solid #ff9148;
+  background-color:white;
+  color:#ff9148;
+}
+.text-warning{
+  color:#f90;
+}
+.sections{ 
+  background-color:#f3f3f3;
+}
+.text-right{
+  text-align:right;
+}
+.flex-wrap{
+  display:flex;
+  flex-direction:row;
+}
+.flex-item{
+  display: flex;
+  flex: 1;
+  display:block;
+  align-items: center;
+  justify-content: center;
+}
+.flex-2{
+  flex:2;
+}
+.flex-3{
+  flex:3;
+}
+.flex-4{
+  flex:4;
+}
+.flex-5{
+  flex:5;
+}
+.flex-6{
+  flex:6;
+}
+.flex-7{
+  flex:7;
+}
+/* end public */
+
+.sections .titles{
+  padding:5px 15px;
+  line-height:30px;
+}
+.sections .titles button{
+  padding:0;
+  height:30px;
+  line-height:30px;
+  font-size:14px;
+}
+.sections .cont{
+  padding: 5px 15px;
+  background-color:white;
+}
+.scroll-view{
+
+}
+

@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/index/welcome",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/searchlist/searchlist",
+    "pages/selectmore/selectmore",
+    "pages/selectjob/selectjob",
+    "pages/industry/industry",
+    "pages/area/area",
+    "pages/job/job",
+    "pages/company/company",
+    "pages/map/map",
+    "pages/userbaseinfo/userbaseinfo",
+    "pages/user/login",
+    "pages/suggest/suggest",
+    "pages/userbaseinfo/workexp",
+    "pages/userbaseinfo/eduexp",
+    "pages/user/settings",
+    "pages/user/apply-list",
+    "pages/user/favor-list",
+    "pages/user/reject"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "招聘求职管家",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#f4f4f4",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#fe9230",
+    "borderStyle": "#cacaca",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "assets/images/tabs/home.png",
+      "selectedIconPath": "assets/images/tabs/home-active.png"
+    }, {
+      "pagePath": "pages/user/settings",
+      "text": "我",
+      "iconPath": "assets/images/tabs/settings.png",
+      "selectedIconPath": "assets/images/tabs/settings-active.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

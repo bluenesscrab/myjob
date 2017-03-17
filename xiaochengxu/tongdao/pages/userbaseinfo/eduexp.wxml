@@ -1,0 +1,50 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+<view class="container">
+  <view class="top-tips">
+    <text class="tips-icon-left iconfont icon-quote-left"></text>
+    <text>填写教育信息\n增加50%招聘方关注度</text>
+    <text class="tips-icon-right iconfont icon-quote-right"></text>
+  </view>
+  <view class="form-content">
+    <form bindsubmit="formSubmit">
+      <input name="eduSchool" value="{{eduExpData.eduSchool}}" type="hidden" />
+      <input name="major" value="{{eduExpData.major}}" type="hidden" />
+      <input name="eduStartYear" value="{{eduExpData.eduStartYear}}" type="hidden" />
+      <input name="eduStartMonth" value="{{eduExpData.eduStartMonth}}" type="hidden" />
+      <input name="eduEndYear" value="{{eduExpData.eduEndYear}}" type="hidden" />
+      <input name="eduEndMonth" value="{{eduExpData.eduEndMonth}}" type="hidden" />
+      <view class="form-item">
+        <text class="left-icon icon-color-home iconfont icon-home-strong"></text>
+        <navigator class="item-text {{eduExpData.eduSchool?'':'empty'}}" url="../suggest/suggest?dataType=string&type=school&isCustom=true&value={{eduExpData.eduSchool}}">{{eduExpData.eduSchool||'请输入您的学校名称'}}</navigator>
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-date iconfont icon-date-strong"></text>
+        <picker class="inline-picker" mode="date" value="{{eduExpData.eduStartDate}}" start="1949" end="{{today}}" fields="day" bindchange="startDateChange">
+          <text class="item-text {{eduExpData.eduStartDate?'':'empty'}}">{{eduExpData.eduStartDateName||'请选择入学时间'}}</text>
+        </picker>
+        <text class="middle-tip">至</text>
+        <picker class="inline-picker" mode="date" value="{{eduExpData.eduEndDate}}" start="1949" end="" fields="day" bindchange="endDateChange">
+          <text class="item-text {{eduExpData.eduEndDate?'':'empty'}}">{{eduExpData.eduEndDateName||'请选择毕业时间'}}</text>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-zhuanye iconfont icon-zhuanye-strong"></text>
+        <navigator class="item-text {{eduExpData.major?'':'empty'}}" url="../suggest/suggest?dataType=string&type=major&isCustom=true&value={{eduExpData.major}}">{{eduExpData.major||'请输入您的专业名称'}}</navigator>
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-xueli iconfont icon-xueli-strong"></text>
+        <picker class="edu-picker" bindchange="eduLevelChange" range-key="name" value="{{eduLevelPickerIndex}}" range="{{educationMap}}">
+          <text class="item-text">{{eduExpData.eduLevelName}}</text>
+        </picker>
+        <input name="eduDegreeCode" value="{{eduExpData.eduLevel}}" type="hidden" />
+        <view class="tz-switch">
+          统招<switch checked="{{eduExpData.eduTZ}}" name="eduTZ" bindchange="eduSwitchChange"/>
+        </view>
+      </view>
+      <view class="btn-wrap">
+        <button class="submit-btn" formType="submit" hover-class="submit-hover">完成</button>
+      </view>
+    </form>
+  </view>
+</view>

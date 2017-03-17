@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+*{font-size:18px;}
+  </style>
+</head>
+<body>
+
+<script>
+(function(){
+  var str='123asd123asd 123asd1234asdd 123asd0123aasd';
+  var re = /([0-9]+)([a-z]+)\1/g;
+  document.write(str+'<br/>');
+  var str1 = str.replace(re,function(v){
+    return '<span style="color:red;">'+v+'</span>';
+  });
+  document.write(str1+'<br/><br/>');
+})();
+</script>
+
+<script>
+(function(){
+  var str='$123.23 $.12 $0.12 $sfdfs $123 $1321.23434 ';
+  var re = /\$[0-9]+(\.[0-9]{2})?\s/g;
+  document.write(str+'<br/>');
+  var str1 = str.replace(re,function(v){
+    return '<span style="color:red;">'+v+'</span>';
+  });
+  document.write(str1+'<br/><br/>');
+})();
+</script>
+
+<script>
+(function(){
+  var str='$123.23 $.12 $0.12 $sfdfs $123 $1321.23434 ';
+  var re = /\$[0-9]+(\.[0-9]{2})?\s/g;
+  document.write(str+'<br/>');
+  var str1 = str.replace(re,function(v){
+    return '<span style="color:red;">'+v+'</span>';
+  });
+  document.write(str1+'<br/><br/>');
+})();
+</script>
+
+<script>
+(function(){
+  var str='9:17 am  ?12:30 pm 32:30 pm 24:00 pm  15:00 pm';
+  var re = /\b(1|2)?[0-9]:[0-9]{2}\s(am|pm)\b/g;
+  document.write(str+'<br/>');
+  var str1 = str.replace(re,function(v){
+    return '<span style="color:red;">'+v+'</span>';
+  });
+  document.write(str1+'<br/><br/>');
+})();
+</script>
+
+<script>
+(function(){
+  var str='01 1 19 21 25 28 31';
+  var re = /\b([01]?[0-9]|2[0-3])\b/g;
+  document.write(str+'<br/>');
+  var str1 = str.replace(re,function(v){
+    return '<span style="color:red;">'+v+'</span>';
+  });
+  document.write(str1+'<br/><br/>');
+})();
+</script>
+
+</body>
+</html>

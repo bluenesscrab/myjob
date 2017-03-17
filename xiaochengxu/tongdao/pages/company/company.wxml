@@ -1,0 +1,75 @@
+<view class="container">
+  <view class="bg-wrap">
+    <image class="bg-img" mode="widthFix" src="{{companyData.bgImg}}"></image>
+    <view class="comp-wrap">
+      <image wx:if="{{companyData.logo}}" class="comp-logo" mode="widthFix" src="https://image0.lietou-static.com/huge/{{companyData.logo}}"></image>
+      <image wx:if="{{!companyData.logo}}" class="comp-logo" mode="widthFix" src="/images/jobdetail/icon_company_default.png"></image>
+      <view class="comp-info">
+        <text class="comp-name">{{companyData.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="detail-wrap">
+    <view class="detail-tab">
+      <text class="tab-item {{isJob?'':'active'}}" data-type="info" bindtap="changeType">公司概况</text>
+      <text class="tab-item {{isJob?'active':''}}" data-type="jobs" bindtap="changeType">热招职位</text>
+    </view>
+    <view wx:if="{{!isJob}}" class="content-info">
+      <view class="item-card">
+        <view class="card-info">
+          <text wx:if="{{companyData.fields||companyData.industry}}" class="info-list"><text class="left-icon iconfont icon-education"></text>{{companyData.fields?companyData.fields:companyData.industry}}</text>          
+          <text wx:if="{{companyData.stage}}" class="info-list"><text class="left-icon iconfont icon-salary"></text>{{companyData.stage}}</text>
+          <text wx:if="{{companyData.scale}}" class="info-list"><text class="left-icon iconfont icon-user"></text>{{companyData.scale}}</text>
+          <text wx:if="{{companyData.kind}}" class="info-list"><text class="left-icon iconfont icon-home"></text>{{companyData.kind}}</text>
+        </view>
+        <navigator wx:if="{{companyData.address}}" class="card-address" url="/pages/map/map?longitude={{companyData.ecompLng}}&latitude={{companyData.ecompLat}}">
+          <text class="iconfont icon-location"></text>
+          <text>{{companyData.address}}</text>
+          <text class="iconfont icon-right"></text>
+        </navigator>
+      </view>
+      <view wx:if="{{companyData.intr}}" class="item-card">
+        <view class="card-title"><text>简介</text></view>
+        <view class="info-content">
+          <text>{{companyData.intr}}</text>
+        </view>
+      </view>
+      <view wx:if="{{(companyData.tags&&companyData.tags.length)||(companyData.styles&&companyData.styles.length)}}" class="item-card">
+        <view class="welfare-title">
+          <text class="tips-icon-left iconfont icon-quote-left"></text>
+          <text>我们的福利</text>
+          <text class="tips-icon-right iconfont icon-quote-right"></text>
+        </view>
+        <view wx:if="{{companyData.styles&&companyData.styles.length}}" class="welfare-img">
+          <image wx:key="{{index}}" wx:for="{{companyData.styles}}" mode="" src="https://image0.lietou-static.com/size_180x90/{{item}}"></image>
+        </view>
+        <view wx:if="{{companyData.tags&&companyData.tags.length}}" class="welfare-tags">
+          <text wx:key="{{index}}" wx:for="{{companyData.tags}}">{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{isJob}}" class="content-jobs">
+      <view class="jobs-tips">{{hotJobs.jobcnt}}个职位正在热招</view>
+      <view wx:if="{{hotJobs.jobForms.length}}" class="jobs-list">
+        <navigator url="../job/job?id={{item.job_id}}&kind=2" open-type="redirect" wx:key="{{index}}" wx:for="{{hotJobs.jobForms}}" class="jobs-item">
+          <view class="job-title">{{item.title}}</view>
+          <view class="jobs-info">
+            <text wx:if="{{item.dq}}">{{item.dq}}</text>
+            <text wx:if="{{item.reqWorkYears}}">{{item.reqWorkYears}}</text>
+            <text wx:if="{{item.reqEduName}}">{{item.reqEduName}}</text>
+          </view>
+          <view wx:if="{{item.date}}" class="job-date">
+            <text>{{item.date}}</text>
+          </view>
+          <view class="jobs-salary">
+            <text>{{item.salary||'面议'}}</text>
+          </view>
+        </navigator>
+      </view>
+      <view wx:if="{{!hotJobs.jobForms.length}}" class="nodata">
+        <view class="box-icon"><text class="iconfont icon-empty"></text></view>
+        <view><text>目前没有热招职位</text></view>
+      </view>
+    </view>
+  </view>
+</view>

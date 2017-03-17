@@ -1,0 +1,47 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+<view class="container">
+  <view class="top-tips">
+    <text class="tips-icon-left iconfont icon-quote-left"></text>
+    <text>充实工作信息\n应聘成功率提升23%</text>
+    <text class="tips-icon-right iconfont icon-quote-right"></text>
+  </view>
+  <view class="form-content">
+    <form bindsubmit="formSubmit">
+      <input name="company" value="{{workExpData.company}}" type="hidden" />
+      <input name="industryCode" value="{{workExpData.industryCode}}" type="hidden" />
+      <input name="jobCode" value="{{workExpData.jobCode}}" type="hidden" />
+      <view class="form-item">
+        <text class="left-icon icon-color-company iconfont icon-company-strong"></text>
+        <text class="item-text">{{workExpData.company}}</text>
+      </view>
+      <navigator url="/pages/industry/industry?&max=1&code={{workExpData.industryCode}}" class="form-item">
+        <text class="left-icon icon-color-industry iconfont icon-industry-strong"></text>
+        <text class="item-text {{workExpData.industryName?'':'empty'}}">{{workExpData.industryName||'请选择公司所在行业'}}</text>
+      </navigator>
+      <view class="form-item">
+        <text class="left-icon icon-color-year iconfont icon-birthday-strong"></text>
+        <picker mode="date" value="{{workExpData.workStart}}" start="1949" end="{{today}}" fields="day" bindchange="workYearChange">
+          <text class="item-text {{workExpData.workStartShow?'':'empty'}}">{{workExpData.workStartShow||'请选择您的入职时间'}}</text>
+          <input name="workStart" value="{{workExpData.workStart}}" type="hidden" />
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-job iconfont icon-job-strong"></text>
+        <navigator class="item-text {{workExpData.jobName?'':'empty'}}" url="../suggest/suggest?type=jobs&value={{workExpData.jobName}}">{{workExpData.jobName||'请选择您的目前职能'}}</navigator>
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-salary iconfont icon-salary-strong"></text>
+        <input type="number" maxlength="7" bindinput="showTips" class="salary-input" name="salary" value="{{workExpData.salary}}" placeholder="请输入您目前的月薪" />
+        <text wx:if="{{workExpData.salary}}" class="salary-tips">元/月</text>
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-email iconfont icon-email-strong"></text>
+        <input name="email" value="{{workExpData.email}}" placeholder="请输入与HR联系的邮箱" />
+      </view>
+      <view class="btn-wrap">
+        <button class="submit-btn" formType="submit" hover-class="submit-hover">下一步</button>
+      </view>
+    </form>
+  </view>
+</view>

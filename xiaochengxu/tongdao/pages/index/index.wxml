@@ -1,0 +1,53 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+
+<view class="container">
+  <view class="search-bar">
+    <navigator url="/pages/search/search" hover-class="none">
+      <view>请输入关键词</view>
+    </navigator>
+  </view>
+  <swiper
+    indicator-dots="{{true}}"
+    autoplay="{{true}}"
+    interval="{{5000}}"
+    duration="{{500}}"
+  >
+    <block wx:key="{{index}}" wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  
+  <view class="job-list">
+    <view class="section" wx:key="{{index}}" wx:for="{{recommendJobList}}">
+      <navigator url="../job/job?id={{item.job_id}}&kind={{item.job_kind}}" hover-class="none">
+        <view class="info">
+          <view class="thumb" wx:if="{{item.job_kind === '1' || item.job_kind === '2'}}">
+            <image wx:if="{{item.url}}" src="https://image0.lietou-static.com/huge/{{item.url}}" />
+            <image wx:if="{{!item.url && item.job_kind === '2'}}" src="/images/searchlist/ic_qy.png" /><!-- 企业职位 -->
+            <image wx:if="{{item.job_kind === '1'}}" src="/images/searchlist/ic_lt_log.png" /><!-- 猎头职位 -->
+          </view>
+          <view class="detail">
+            <view class="job-title">
+              <text class="title">{{item.title}}</text>
+              <text class="salary">{{item.salary}}</text>
+            </view>
+            <view class="sub-title">
+              <text>{{item.company}}</text>
+            </view>
+            <view class="sub-info">
+              <text>{{item.date}}</text>
+              <text>{{item.dq}}</text>
+              <text>{{item.requireWorkYears}}</text>
+            </view>
+          </view>
+        </view>
+        <!--view class="labels" wx:if="{{item.sellingPointList  && item.sellingPointList.length}}">
+          <text class="label" wx:key="{{index}}" wx:for="{{item.sellingPointList}}">{{item}}</text>
+        </view-->
+      </navigator>
+    </view>
+  </view>
+</view>

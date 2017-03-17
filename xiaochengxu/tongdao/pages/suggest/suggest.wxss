@@ -1,0 +1,32 @@
+/**suggest.wxss**/
+page{
+  background:#fff;
+}
+.container{
+  padding-top:100rpx;
+}
+.search-wrap{
+  border-bottom:1px solid #e8e8e8;
+  position:relative;
+  padding:20rpx 30rpx;
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  box-sizing:border-box;
+  background:#fff;
+}
+.search-wrap .search-input{
+  width:600rpx;
+}
+.search-wrap .cancel{
+  position:absolute;
+  right: 30rpx;
+  top:26rpx;
+}
+.search-main .search-item{
+  border-bottom:1px solid #e8e8e8;
+  line-height:1.4rem;
+  padding:15rpx 30rpx;
+  color:#666;
+}

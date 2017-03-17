@@ -1,0 +1,49 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+
+<view class="flex-box">
+  <view class="connect-logo">
+    <view class="connect-item" wx:if="{{weixinUser.nickName}}">
+      <image class="logo" src="{{weixinUser.avatarUrl}}" />
+      <view><text>{{weixinUser.nickName}}</text></view>
+    </view>
+    <view class="connect-icon" wx:if="{{weixinUser.nickName}}">
+      <text class="iconfont icon-connect"></text>
+    </view>
+    <view class="connect-item">
+      <image class="logo" src="/assets/images/logo.png" />
+      <view><text>猎聘同道＋</text></view>
+    </view>
+  </view>
+  <view class="user-form">
+    <form bindsubmit="formSubmit">
+      <view class="section">
+        <view class="label"><text class="iconfont icon-user"></text></view>
+        <input
+          type="number"
+          placeholder="请输入手机号"
+          bindinput="mobileInput"
+        />
+      </view>
+      <view class="section">
+        <view class="label"><text class="iconfont icon-password"></text></view>
+        <input
+          type="text"
+          placeholder="请输入验证码"
+          value="{{veryCode}}"
+          bindinput="veryCodeInput"
+        />
+        <button type="warn" size="mini" disabled="{{!veryBtnEnabled}}" bindtap="getCode" hover-class="none">{{veryBtnText}}</button>
+      </view>
+      <view class="actions">
+        <button
+          type="warn"
+          size="default"
+          disabled="{{false}}"
+          hover-class="none"
+          form-type="submit"
+        >进入小程序</button>
+      </view>
+    </form>
+  </view>
+</view>

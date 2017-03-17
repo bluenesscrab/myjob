@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="nodata">
+    <view class="box-icon">
+      <text class="iconfont icon-cry"></text>
+    </view>
+    <view>
+      <view class="error-code"><text>{{msg}}</text></view>
+      <view><text>请退出后重试，或重启您的设备</text></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+.toast {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 35%;
+  margin: 0 auto;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.toast .message {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: rgba(0,0,0,.8);
+  border-radius: 5px;
+}

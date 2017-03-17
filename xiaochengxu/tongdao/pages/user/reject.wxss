@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  height: 100%;
+}
+.container .error-code {
+  color: #ccc;
+}

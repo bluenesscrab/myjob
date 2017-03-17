@@ -1,0 +1,101 @@
+/**workexp.wxss**/
+page{
+  background:#fff;
+}
+.container{}
+.top-tips{
+  text-align:center;
+  padding:80rpx;
+  font-size:50rpx;
+  line-height:60rpx;
+  position:relative;
+  color:#333;
+}
+.top-tips .tips-icon-left{
+  color:#bbb;
+  font-size:50rpx;
+  vertical-align:top;
+  position:absolute;
+  left:150rpx;
+  top:60rpx;
+}
+.top-tips .tips-icon-right{
+  color:#bbb;
+  font-size:50rpx;
+  vertical-align:top;
+  position:absolute;
+  right:90rpx;
+  bottom:50rpx;
+}
+.form-content{
+  padding-left:30rpx;
+}
+.form-content .form-item{
+  border-bottom:1px solid #e8e8e8;
+  padding:20rpx 0 20rpx 75rpx;
+  position:relative;
+}
+.icon-color-company{
+  background:#f5a17c;
+}
+.icon-color-industry{
+  background:#f8bb62;
+}
+.icon-color-year{
+  background:#fa9a9b;
+}
+.icon-color-job{
+  background:#c5a7cb;
+}
+.icon-color-salary{
+  background:#f5b957;
+}
+.icon-color-email{
+  background:#f79798;
+}
+
+.form-content .form-item .left-icon{
+  position:absolute;
+  left:0;
+  top:20rpx;
+  font-size:30rpx;
+  color:#fff;
+  border-radius:25rpx;
+  width:50rpx;
+  height:50rpx;
+  text-align:center;
+  line-height:50rpx;
+}
+.form-content .form-item .empty{
+  color:#808080;
+}
+.form-content .form-item .item-text{
+  height:1.4rem;
+  line-height:1.4rem;
+}
+.form-content .form-item .salary-input{
+  width:400rpx;
+}
+.form-content .form-item .salary-tips{
+  position:absolute;
+  right:30rpx;
+  top:25rpx;
+  color:#999;
+}
+
+.form-content .btn-wrap{
+  margin-top:60rpx;
+  padding-right:30rpx;
+}
+.form-content .btn-wrap .submit-btn{
+  background:#ff9046;
+  color:#fff;
+  border:0 none;
+  border-radius:10rpx;
+}
+.form-content .btn-wrap .submit-btn::after{
+  border:0 none;
+}
+.form-content .btn-wrap .submit-hover{
+  background:#eb8541;
+}

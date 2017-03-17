@@ -1,0 +1,39 @@
+<!-- industry.wxml -->
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+
+<view class="container">
+  <view class="sections" style="margin-bottom:10px;">
+    <view class="flex-wrap titles">
+      <text class="flex-item flex-3">已选行业:<text class="text-warning">{{activeIndustry.length}}</text>/{{max}}</text>
+      <view class="flex-item text-right">
+        <button type="primary" bindtap="selectIndustry">确定</button>
+      </view>
+    </view>
+    <view class="cont" wx:if="{{activeIndustry.length>0}}">
+      <text wx:key="{{index}}" wx:for="{{activeIndustry}}" class="labels active" data-code="{{item[0]}}" bindtap="removeActiveIndustry">{{item[1]}}</text>
+    </view>
+  </view>
+
+  <view class="scroll-view">
+    <checkbox-group wx:if="{{industries.length>0}}" class="checkbox-group">
+      <view class="sections" wx:key="{{index}}" wx:for="{{industries}}">
+        <view class="flex-wrap titles">
+          <view class="flex-item">
+           <text>{{item.name}}</text>
+          </view>
+        </view>
+        <view class="cont">
+          <text 
+          class="labels {{item.active === true ? 'active' : ''}}" 
+          wx:for="{{item.children}}"
+          wx:key="{{index}}"
+          data-name="{{item.name}}" 
+          data-code="{{item.code}}"
+          data-active="{{item.active}}"
+          bindtap="changeIndustry">{{item.name}}</text>
+        </view>
+      </view>
+    </checkbox-group>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<!-- selectmore.wxml -->
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="sections" wx:if="{{compScaleData.length>0}}">
+      <view class="flex-wrap titles">
+        <text>企业规模:</text>
+      </view>
+      <view class="cont">
+        <radio-group name="compScale" bindchange="compScaleChange">
+          <label wx:for="{{compScaleData}}" wx:key="{{indx}}" class="labels {{item.value == query.compScale ? 'active' : ''}}">
+            <radio value="{{item.value}}" hidden checked="{{item.value == query.compScale}}"/><text>{{item.name}}</text>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+    <view class="sections" wx:if="{{compKindData.length>0}}">
+      <view class="flex-wrap titles">
+        <text>企业类型:</text>
+      </view>
+      <view class="cont">
+        <radio-group name="compKind" bindchange="compKindChange">
+          <label wx:for="{{compKindData}}" wx:key="{{indx}}" class="labels {{item.value == query.compKind ? 'active' : ''}}">
+            <radio value="{{item.value}}" hidden checked="{{item.value == query.compKind}}"/><text>{{item.name}}</text>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <button formType="submit" class="btn-submit" type="primary">确定</button>
+  </form>
+</view>

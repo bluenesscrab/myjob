@@ -1,0 +1,103 @@
+/**eduexp.wxss**/
+page{
+  background:#fff;
+}
+.container{}
+.top-tips{
+  text-align:center;
+  padding:80rpx;
+  font-size:50rpx;
+  line-height:60rpx;
+  position:relative;
+  color:#333;
+}
+.top-tips .tips-icon-left{
+  color:#bbb;
+  font-size:50rpx;
+  vertical-align:top;
+  position:absolute;
+  left:160rpx;
+  top:60rpx;
+}
+.top-tips .tips-icon-right{
+  color:#bbb;
+  font-size:50rpx;
+  vertical-align:top;
+  position:absolute;
+  right:70rpx;
+  bottom:50rpx;
+}
+.form-content{
+  padding-left:30rpx;
+}
+.form-content .form-item{
+  border-bottom:1px solid #e8e8e8;
+  padding:20rpx 0 20rpx 75rpx;
+  position:relative;
+}
+.icon-color-home{
+  background:#b8d175;
+}
+.icon-color-date{
+  background:#85c5e0;
+}
+.icon-color-zhuanye{
+  background:#f99b9b;
+}
+.icon-color-xueli{
+  background:#83d3a0;
+}
+
+.form-content .form-item .left-icon{
+  position:absolute;
+  left:0;
+  top:20rpx;
+  font-size:30rpx;
+  color:#fff;
+  border-radius:25rpx;
+  width:50rpx;
+  height:50rpx;
+  text-align:center;
+  line-height:50rpx;
+}
+.form-content .form-item .empty{
+  color:#808080;
+}
+.form-content .form-item .item-text{
+  height:1.4rem;
+  line-height:1.4rem;
+}
+.form-content .form-item .inline-picker{
+  display:inline-block;
+}
+.form-content .form-item .middle-tip{
+  margin:0 20rpx;
+}
+.form-content .form-item .edu-picker{
+  width:400rpx;
+}
+.form-content .form-item .tz-switch{
+  position:absolute;
+  right:30rpx;
+  top:12rpx;
+  color:#666;
+}
+.form-content .form-item .tz-switch switch{
+  margin-left:10rpx;
+}
+.form-content .btn-wrap{
+  margin-top:60rpx;
+  padding-right:30rpx;
+}
+.form-content .btn-wrap .submit-btn{
+  background:#ff9046;
+  color:#fff;
+  border:0 none;
+  border-radius:10rpx;
+}
+.form-content .btn-wrap .submit-btn::after{
+  border:0 none;
+}
+.form-content .btn-wrap .submit-hover{
+  background:#eb8541;
+}

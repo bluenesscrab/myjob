@@ -1,0 +1,32 @@
+.list-view {
+  background-color: #fff;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.list-view .list-item {
+  display: flex;
+  margin-left: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: -1px;
+}
+.list-view .list-item .list-icon {
+  display: inline-block;
+  width: 20px;
+  font-size: 16px;
+  color: #666;
+  margin-left: -5px;
+  margin-right: 5px;
+  vertical-align: middle
+}
+.list-view .list-item-hover {
+  background-color: #eeeeee;
+  color: #4d4d4d;
+}
+.list-view .list-item .list-title {
+  flex: 1;
+}
+.list-view .list-item .list-arrow {
+  font-size: 16px;
+  color: #666;
+}

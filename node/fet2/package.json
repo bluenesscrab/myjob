@@ -1,0 +1,83 @@
+{
+  "name": "@liepin/fet",
+  "version": "0.30.0",
+  "description": "fet packtools for liepin.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "build": "babel ./src --out-dir ./lib",
+    "postinstall": "npm run build"
+  },
+  "bin": {
+    "fet": "./bin/index"
+  },
+  "author": {
+    "name": "chenbl@liepin.com"
+  },
+  "dependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-core": "^6.7.5",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.5.0",
+    "babel-plugin-transform-es3-property-literals": "^6.5.0",
+    "babel-polyfill": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-stage-3": "^6.11.0",
+    "cli-table-zh": "^0.3.1",
+    "colors": "^1.1.2",
+    "css-loader": "^0.23.1",
+    "extract-text-plus-webpack-plugin": "^1.0.0",
+    "file-plus-loader": "^0.2.0",
+    "fsk-font-loader": "^1.0.0",
+    "fs-path": "0.0.22",
+    "minimist": "^1.2.0",
+    "nodetpl-loader": "2.8.4",
+    "postcss-loader": "^0.9.1",
+    "postcss-lp": "^1.0.1",
+    "spritesify-loader": "2.3.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.14"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.1",
+    "jshint-loader": "^0.8.3",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "maintainers": [
+    {
+      "name": "chenbl",
+      "email": "chenbl@liepin.com"
+    },
+    {
+      "name": "maben",
+      "email": "maben@liepin.com"
+    },
+    {
+      "name": "xubo",
+      "email": "xubo@liepin.com"
+    }
+  ],
+  "_id": "@liepin/fet@0.30.0",
+  "_shasum": "053099354ec7b0423801e41de303e8fcdeb37167",
+  "_from": "@liepin/fet@latest",
+  "_npmVersion": "2.14.22",
+  "_nodeVersion": "7.4.0",
+  "_npmUser": {
+    "name": "chenbl",
+    "email": "chenbl@liepin.com"
+  },
+  "dist": {
+    "shasum": "053099354ec7b0423801e41de303e8fcdeb37167",
+    "size": 7518,
+    "key": "/@liepin/fet/-/@liepin/fet-0.30.0.tgz",
+    "tarball": "http://registry.cnpm.lietou.com/@liepin/fet/download/@liepin/fet-0.30.0.tgz"
+  },
+  "_publish_on_cnpm": true,
+  "_cnpm_publish_time": 1484122787938,
+  "_resolved": "http://registry.cnpm.lietou.com/@liepin/fet/download/@liepin/fet-0.30.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

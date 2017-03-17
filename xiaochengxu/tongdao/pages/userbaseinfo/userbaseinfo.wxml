@@ -1,0 +1,46 @@
+<import src="../../components/toast.wxml" />
+<template is="toast" data="{{...toast}}" />
+<view class="container">
+  <view class="top-tips">
+    <text class="tips-icon-left iconfont icon-quote-left"></text>
+    <text>欢迎加入猎聘同道\n请先做个自我介绍吧</text>
+    <text class="tips-icon-right iconfont icon-quote-right"></text>
+  </view>
+  <view class="form-content">
+    <form bindsubmit="formSubmit">
+      <input name="dq" value="{{userBaseInfo.baseInfo.dqCode}}" type="hidden" />
+      <view class="form-item">
+        <text class="left-icon icon-color-name iconfont icon-user-strong"></text>
+        <input class="name-wrap" value="{{userBaseInfo.baseInfo.name}}" name="name" placeholder="请输入姓名" />
+        <view class="sex-wrap">
+          <view class="sex-main">
+            <text class="{{userBaseInfo.baseInfo.sex=='男'?'active':''}}">男</text>
+            <text class="{{userBaseInfo.baseInfo.sex=='女'?'active':''}}">女</text>
+          </view>
+          <radio-group class="sex-group" name="sex" bindchange="sexRadioChange">
+            <label><radio checked="{{userBaseInfo.baseInfo.sex=='男'?true:false}}" value="男" /></label>
+            <label><radio checked="{{userBaseInfo.baseInfo.sex=='女'?true:false}}" value="女" /></label>
+          </radio-group>
+        </view>
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-job iconfont icon-job-strong"></text>
+        <input name="curJobPosition" value="{{userBaseInfo.baseInfo.curJobPosition}}" placeholder="请输入职位名称" />
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-company iconfont icon-company-strong"></text>
+        <input name="curCompany" value="{{userBaseInfo.baseInfo.curCompany}}" placeholder="请输入公司名称" />
+      </view>
+      <view class="form-item">
+        <text class="left-icon icon-color-year iconfont icon-birthday-strong"></text>
+        <picker mode="date" value="{{userBaseInfo.baseInfo.birthYear}}" start="1949" end="2017" fields="year" bindchange="birthyearChange">
+          <text class="birth-year item-text {{userBaseInfo.baseInfo.birthYear?'':'empty'}}">{{userBaseInfo.baseInfo.birthYear+'年'||'请选择您的出生年份'}}</text>
+          <input name="birthYear" value="{{userBaseInfo.baseInfo.birthYear}}" type="hidden" />
+        </picker>
+      </view>
+      <view class="btn-wrap">
+        <button class="submit-btn" formType="submit" hover-class="submit-hover">完成</button>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,3 @@
+export const SEARCH_BY_KEY_SUCC = 'SEARCH_BY_KEY_SUCC';
+export const SEARCH_BY_KEY_FAIL = 'SEARCH_BY_KEY_FAIL';
+export const INIT_SEARCH = 'INIT_SEARCH';
