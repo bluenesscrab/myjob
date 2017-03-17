@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>文本设置</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+#box2{margin:6px;width:200px;height:50px;border:1px dashed black; outline:1px solid red; outline-offset:3px; }
+
+</style>
+</head>
+<body>
+<pre>
+text-transform
+none：无转换  （默认值）
+capitalize：将每个单词的第一个字母转换成大写
+uppercase：将每个单词转换成大写
+lowercase：将每个单词转换成小写
+
+text-decoration：none | [ underline || overline || line-through ]
+默认值：none   适用于：所有元素
+underline：  指定文字的装饰是下划线
+overline：  指定文字的装饰是上划线
+line-through：  指定文字的装饰是贯穿线
+
+direction  检索设置文本流的方向  <mark>IE6+</mark>
+ltr：文本流从左到右。(默认值) 
+rtl：文本流从右到左。
+
+table  中的 border-collapse 检索单元格边框 独立或者合并
+separate：边框独立
+collapse：相邻边被合并
+
+table-layout:fixed;[auto]
+tableLayout 属性用来显示表格单元格、行、列的算法规则。
+固定表格布局：
+固定表格布局与自动表格布局相比，允许浏览器更快地对表格进行布局。
+在固定表格布局中，水平布局仅取决于表格宽度、列宽度、表格边框宽度、单元格间距，而与单元格的内容无关。
+通过使用固定表格布局，用户代理在接收到第一行后就可以显示表格。
+自动表格布局：
+在自动表格布局中，列的宽度是由列单元格中没有折行的最宽的内容设定的。
+此算法有时会较慢，这是由于它需要在确定最终的布局之前访问表格中所有的内容。
+
+resize：none | both | horizontal | vertical
+none：不允许用户调整元素大小。
+both：用户可以调节元素的宽度和高度。
+horizontal：用户可以调节元素的宽度。
+vertical：用户可以调节元素的高度。
+
+outline  定义轮廓线偏移量（焦点线）   <mark>CSS3     only  IE don't know </mark>
+</pre>
+<div id="box2"></div>
+
+
+<style>
+.test{width:400px;border-collapse:collapse;font:14px/1.5 georgia,arial,serif,sans-serif;}
+.test td{padding:2px 10px;border:1px solid #ddd;}
+.test td:hover{background:#eee;}
+.auto{cursor:auto;}
+.default{cursor:default;}
+.none{cursor:none;}
+.context-menu{cursor:context-menu;}
+.help{cursor:help;}
+.pointer{cursor:pointer;}
+.progress{cursor:progress;}
+.wait{cursor:wait;}
+.cell{cursor:cell;}
+.crosshair{cursor:crosshair;}
+.text{cursor:text;}
+.vertical-text{cursor:vertical-text;}
+.alias{cursor:alias;}
+.copy{cursor:copy;}
+.move{cursor:move;}
+.no-drop{cursor:no-drop;}
+.not-allowed{cursor:not-allowed;}
+.e-resize{cursor:e-resize;}
+.n-resize{cursor:n-resize;}
+.ne-resize{cursor:ne-resize;}
+.nw-resize{cursor:nw-resize;}
+.s-resize{cursor:s-resize;}
+.se-resize{cursor:se-resize;}
+.sw-resize{cursor:sw-resize;}
+.w-resize{cursor:w-resize;}
+.ew-resize{cursor:ew-resize;}
+.ns-resize{cursor:ns-resize;}
+.nesw-resize{cursor:nesw-resize;}
+.nwse-resize{cursor:nwse-resize;}
+.col-resize{cursor:col-resize;}
+.row-resize{cursor:row-resize;}
+.all-scroll{cursor:all-scroll;}
+</style>
+<table class="test">
+	<caption>cursor光标类型</caption>
+	<tr>
+		<td class="auto">auto</td>
+		<td class="default">default</td>
+		<td class="none">none</td>
+		<td class="context-menu">context-menu</td>
+		<td class="help">help</td>
+		<td class="pointer">pointer</td>
+		<td class="progress">progress</td>
+	</tr>
+	<tr>
+		<td class="wait">wait</td>
+		<td class="cell">cell</td>
+		<td class="crosshair">crosshair</td>
+		<td class="text">text</td>
+		<td class="vertical-text">vertical-text</td>
+		<td class="alias">alias</td>
+		<td class="copy">copy</td>
+	</tr>
+	<tr>
+		<td class="move">move</td>
+		<td class="no-drop">no-drop</td>
+		<td class="not-allowed">not-allowed</td>
+		<td class="e-resize">e-resize</td>
+		<td class="n-resize">n-resize</td>
+		<td class="ne-resize">ne-resize</td>
+		<td class="nw-resize">nw-resize</td>
+	</tr>
+	<tr>
+		<td class="s-resize">s-resize</td>
+		<td class="se-resize">se-resize</td>
+		<td class="sw-resize">sw-resize</td>
+		<td class="w-resize">w-resize</td>
+		<td class="ew-resize">ew-resize</td>
+		<td class="ns-resize">ns-resize</td>
+		<td class="nesw-resize">nesw-resize</td>
+	</tr>
+	<tr>
+		<td class="nwse-resize">nwse-resize</td>
+		<td class="col-resize">col-resize</td>
+		<td class="row-resize">row-resize</td>
+		<td class="all-scroll">all-scroll</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

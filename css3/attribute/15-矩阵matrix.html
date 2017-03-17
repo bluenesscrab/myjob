@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>transform 转换（矩阵）</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+li{list-style:none;position:relative;}
+
+ul:after{content:'';display:block;clear:both;}
+ul li{float:left;margin:20px;width:320px;height:320px;border:1px solid black;box-shadow:2px 2px 6px #666;}
+
+</style>
+</head>
+<body>
+
+<ul>
+	
+
+	<li>
+		<style>
+		.box1{width:100px;height:100px;position:absolute;background:red;top:0;left:0;}
+		.box1:nth-of-type(1){opacity:.4;}
+		.box1:nth-of-type(2){
+		-webkit-transform:skew(10deg,10deg) translate(100px,100px) rotate(30deg) scale(.8);}
+		</style>
+				<pre>
+				skew斜切；
+				translate位移；
+				rotate旋转； 
+				scale缩放
+				</pre>
+		<div class="box1"></div>
+		<div class="box1"></div>
+	</li>
+	
+
+	<li>
+		<style>
+		.box2{width:200px;height:100px;-webkit-transform:matrix(1,0,0,1,50,0);background:blue;-webkit-background-size:cover;}
+		.box2:after{content:'matrix(1,0,0,0.5,0,0)';}
+		/* matrix(x轴缩放,0,0,Y轴缩放,x位移,Y位移); */
+		</style>
+		<div class="box2"></div>
+		matrix(x轴缩放,0,0,Y轴缩放,x位移,Y位移)
+
+	</li>
+
+
+	<li>
+		<style>
+		.box4{width:100px;height:100px;border:1px solid #000;}
+		.div{width:100px;height:100px;background:Red;
+		-webkit-transform:matrix(0.9659258262890683,0.25881904510252074,-0.25881904510252074,0.9659258262890683,0,0); -webkit-transition:1s all ease;}
+		li:hover .div{-webkit-transform:matrix(-0.4999999999999998,0.8660254037844387,-0.8660254037844387,-0.4999999999999998,0,0);}
+		.div2{width:100px;height:100px;background:blue;-webkit-transform:rotate(15deg);opacity:0.5;}
+		</style>
+		<script>
+		document.write(Math.cos(120*Math.PI/180)+' — '+Math.sin(120*Math.PI/180));
+		window.onload=function(){
+			var oDiv=document.getElementsByTagName("div");
+			console.log(getComputedStyle(oDiv[1])["WebkitTransform"]);
+		}
+		//matrix(cos(度数*π/180),sin(度数*π/180),-sin(度数*π/180),cos(度数*π/180),0,0)
+		</script>
+		<div class="box4">
+			<div class="div">111</div>
+		</div>
+		<br><br>
+		<div class="div2">222</div>
+
+	</li>
+	
+
+
+	<li>
+		<style>
+		.boxs{width:100px;height:100px;float:left;background:blue;-webkit-background-size:cover;border:1px solid red;margin-left:100px}
+		.box5{-webkit-transform:skew(30deg,0) scale(0.5);}
+		.box6{-webkit-transform:matrix(0.5,0,0.28867513459481287,0.5,0,0);}
+		/*
+			matrix(x轴缩放,y轴拉伸,x轴拉伸,Y轴缩放,x位移,Y位移);
+			如果是先位移，后缩放的话在矩阵里记得位置值乘以缩放值
+			如果是缩放和拉伸同时存在的话的话在矩阵里记得位置值乘以缩放值
+			tan(35*π/180)
+		*/
+		</style>
+		<script>
+		document.write(Math.tan(30*Math.PI/180));
+		document.write(0.5773502691896257/2);
+		</script>
+		<div class="boxs box5"></div>
+		<div class="boxs box6"></div>
+
+	</li>
+
+	
+	<li>
+		<style>
+		.box7{width:200px;height:200px;border:1px solid #000;margin:100px;}
+		.divs{width:200px;height:200px;background:Red; 
+		-webkit-transform:matrix(0.9659258262890683,0.25881904510252074,-0.25881904510252074,0.9659258262890683,0,0);
+		filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.9659258262890683,M12=-0.25881904510252074,M21=0.25881904510252074,M22=0.9659258262890683,SizingMethod='auto expand');}
+		</style>
+		全兼容的缩放，拉伸和旋转
+		<div class="box7">
+			<div class="divs">111</div>
+		</div>
+
+	</li>
+
+</ul>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

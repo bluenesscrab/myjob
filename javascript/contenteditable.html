@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<style>
+#eidter{
+  width: 500px;
+  height: 300px;
+  border:1px dashed #999;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="styleB.css"  media="screen and (min-width: 300px) and (max-width: 500px)">
+<div media="screen and (min-width:500px) and (max-width: 1000px)">12312313</div>
+<ol>
+  <li>01</li>
+  <li>02</li>
+  <li>03</li>
+  <li>04</li>
+  <li>05</li>
+</ol>
+
+<div contenteditable="true" id="eidter"></div>
+
+<input type="button" value="btn" id="btn"/>
+<br>
+
+<input type="text" id="text">
+<script>
+var edt = document.getElementById('eidter');
+var btn = document.getElementById('btn');
+var text = document.getElementById('text');
+edt.ondblclick = function(){
+  var cimg = document.createElement('img');
+  cimg.src = "http://www.baidu.com/img/bd_logo1.png";
+  cimg.style.cssText = 'width:50%;';
+  this.appendChild(cimg);
+};
+btn.onclick = function (){
+  var str = edt.innerHTML;
+  //str = str.replace(/\<\/?(div|br)\/?\>/g,'')
+  text.value = str;
+};
+
+
+edt.addEventListener('paste', function(e) {
+  var copyValue = e.clipboardData.getData('text/plain'); //IEe.originalEvent.clipboardData.getData('Text') ||  Chrome e.clipboardData.getData('text/plain')
+  //console.log(pastedText);
+  var items = e.clipboardData.items;
+  if (items) {
+    if(items[0].type.indexOf('image') > -1 ){
+      var form = new FormData();
+      form.append('imgFile', items[0].getAsFile());
+      form.append('img', 'getAsFile');
+      console.log(form.get('imgFile'));
+    }else{
+      var form = new FormData();
+      form.append('text', copyValue);
+      console.log(form.get('text'));
+    }
+  }
+});
+// edt.addEventListener('paste',function(e){ //paste粘贴事件
+//   //var htmls = this.innerHTML;
+//   var items = e.originalEvent.clipboardData.getData('Text');
+//   console.log(items);
+//   if (items) {
+//     // if (items[i].type.indexOf('image') > -1) {
+//     //   var imageFile = items[i].getAsFile();
+//     //   // var form = new FormData();
+//     //   // form.append('imgFile', imageFile);
+//     // }
+//   }
+// });
+</script>
+</body>
+</html>

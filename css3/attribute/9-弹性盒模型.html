@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>弹性盒模型</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+input{height:30px; background:#f90;}
+</style>
+</head>
+<body>
+
+<style>
+/* 1 文字横向排列 */
+.box1{border:1px solid red;display:flex;margin-bottom:20px;
+flex-direction:column;}
+.box1 div:nth-child(1){width:170px; height: 60px; background: rgba(255,0,0,.5);}
+.box1 div:nth-child(2){width:170px; height: 60px; background: rgba(0,255,0,.5);}
+.box1 div:nth-child(3){width:170px; height: 60px; background: rgba(0,0,255,.5);}
+.box1 div:nth-child(4){width:170px; height: 60px; background: rgba(255,0,255,.5);}
+</style>
+<input type="button" value="子元素排列 flex-direction:[row横向 默认]  [column纵向]；"/>
+<div class="box1">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+</div>
+
+
+
+<style>
+/* 2 子元元素排列顺序 */
+.box2{border:1px solid red;display:flex;margin-bottom:20px;
+flex-direction:row-reverse;}/* reverse 反序 */
+.box2 div:nth-child(1){width:170px; height: 60px; background: rgba(255,0,0,.5);}
+.box2 div:nth-child(2){width:170px; height: 60px; background: rgba(0,255,0,.5);}
+.box2 div:nth-child(3){width:170px; height: 60px; background: rgba(0,0,255,.5);}
+.box2 div:nth-child(4){width:170px; height: 60px; background: rgba(255,0,255,.5);}
+</style>
+<input type="button" value="子元素排列顺序 flex-direction:[initial 默认]  [row-reverse横向反序]； [column-reverse 纵向反序]"/>
+<div class="box2">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+</div>
+
+
+<style>
+/* 4 设置子元素所占的份数 */
+.box4{border:1px solid red;display:flex;margin-bottom:20px;}
+.box4 div:nth-child(1){flex:1;height:60px;background:rgba(255,0,0,.5);}/* box-flex  元素所占份数 */
+.box4 div:nth-child(2){flex:1;height:60px;background:rgba(0,255,0,.5);}
+.box4 div:nth-child(3){flex:3;height:60px;background:rgba(0,0,255,.5);}
+.box4 div:nth-child(4){flex:1;height:60px;background:rgba(255,0,255,.5);}
+</style>
+<input type="button" value="设置子元素所占的份数  flex: [number]；"/>
+<div class="box4">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+</div>
+
+<style>
+/* 4 设置子元素让第3个灵活的项目扩展到其他灵活项目的三倍 */
+.box4-2{border:1px solid red;display:flex;margin-bottom:20px;}
+.box4-2 div:nth-child(1){flex-grow:1;height:60px;background:rgba(255,0,0,.5);}/* box-flex  元素所占份数 */
+.box4-2 div:nth-child(2){flex-grow:1;height:60px;background:rgba(0,255,0,.5);}
+.box4-2 div:nth-child(3){flex-grow:3;height:60px;background:rgba(0,0,255,.5);}
+.box4-2 div:nth-child(4){flex-grow:1;height:60px;background:rgba(255,0,255,.5);}
+</style>
+<input type="button" value="设置子元素所占的份数  flex-grow: [number]；"/>
+<div class="box4-2">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+</div>
+
+
+
+<pre>
+flex-start	默认值。项目位于容器的开头。	
+flex-end	项目位于容器的结尾。	
+center	项目位于容器的中心。	
+space-between	项目位于各行之间留有空白的容器内。	
+space-around	项目位于各行之前、之间、之后都留有空白的容器内。	
+initial	设置该属性为它的默认值。请参阅 initial。	
+inherit	从父元素继承该属性。请参阅 inherit。
+</pre>
+<style>
+/* 5 设置子元素之间 间距 */
+.box5{border:1px solid red;display:flex;margin-bottom:20px;
+justify-content:space-between;
+}/* justify */
+.box5 div:nth-child(1){width:200px;height:60px;background:rgba(255,0,0,.5);}
+.box5 div:nth-child(2){width:160px;height:60px;background:rgba(0,255,0,.5);}
+.box5 div:nth-child(3){width:230px;height:60px;background:rgba(0,0,255,.5);}
+.box5 div:nth-child(4){width:150px;height:60px;background:rgba(255,0,255,.5);}
+</style>
+<input type="button" value="盒子间隙管理 justify-content:[flex-start左侧] [flex-end右侧] [center局中] [space-between均匀分布] [space-around	项目位于各行之前、之间、之后都留有空白]"/>
+<div class="box5">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+</div>
+
+
+
+
+<style>
+/* 6 设置子元素之间 间距 */
+.box6{border:1px solid red;display:flex;margin-bottom:20px;height:200px;
+	align-items:center;
+}
+.box6 div:nth-child(1){width:200px;height:160px;background:rgba(255,0,0,.5);}
+.box6 div:nth-child(2){width:160px;height:100px;background:rgba(0,255,0,.5);}
+.box6 div:nth-child(3){width:230px;height:60px;background:rgba(0,0,255,.5);}
+.box6 div:nth-child(4){width:150px;height:130px;background:rgba(255,0,255,.5);}
+</style>
+<input type="button" value="align-items 属性规定灵活容器内的各项的默认对齐方式 align-items:[flex-star居顶] [flex-end居底] [center上下居中]"/>
+<div class="box6">
+	<div>a</div>
+	<div>b</div>
+	<div>c</div>
+	<div>d</div>
+</div>
+
+
+
+</body>
+</html>

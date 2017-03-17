@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>css3 测试</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+#bdr-out{width:300px;height:300px;border:2px solid #f90;position:relative;border-radius:50%;margin:60px auto;}
+.bdr-inset{width:196px;height:196px;border:2px solid #f90;position:absolute;border-radius:50%;top:50%;left:50%;margin:-100px 0 0 -100px;}
+
+.circle{position:absolute;top:0;left:0;width:200px;height:200px;border-radius:50%;border:50px solid #7c1;}
+.circle-1{display:none;clip:rect(auto 150px auto auto);}
+.circle-2{display:-none;clip:rect(auto auto auto 150px);}
+.circle-3{display:-none;border-color:#fff;clip:rect(auto auto auto 150px);-webkit-transform-origin:center center;}
+
+</style>
+</head>
+<body>
+<pre>
+clip  (只有定位元素才有裁切这个属性)
+auto：对象无剪切
+rect(number|auto number|auto number|auto number|auto)：
+依据上-右-下-左的顺序提供自对象左上角为(0,0)坐标计算的四个偏移数值，其中任一数值都可用auto替换，即此边不剪切。
+上-左 方位的裁剪：从0开始剪裁直到设定值，即 上-左 方位的auto值等同于0；
+右-下 方位的裁剪：从设定值开始剪裁直到最右边和最下边，即 右-下 方位的auto值为盒子的实际宽度和高度；
+示例：clip:rect(auto 50px 20px auto)
+
+inset(number|auto number|auto number|auto number|auto) <mark>暂时所有浏览器都不支持</mark>
+该剪裁方式与 rect() 类似，不同的是 inset() 的剪裁，每个方位都是参照该方位的边界来进行裁剪的。
+</pre>
+<div id="bdr-out">
+		<div class="bdr-inset"></div>
+		<div class="circle circle-1"></div>
+		<div class="circle circle-2"></div>
+		<div class="circle circle-3"></div>
+</div>
+
+<script>
+function rotate(iN){
+	var circle1 = document.querySelector('#bdr-out .circle-1');
+	var circle2 = document.querySelector('#bdr-out .circle-2');
+	var circle3 = document.querySelector('#bdr-out .circle-3');
+	var iNow = 0;
+	var t=null;
+
+	if(t){
+		clearInterval(t);
+		t=null;
+	}
+
+	t=setInterval(function(){
+		iNow++;
+		if(iNow>=180){
+			circle1.style.cssText='display:block;';
+			circle2.style.cssText='z-index:3;';
+			circle3.style.cssText='z-index:2;';
+		}else if(iNow>=360){
+			iNow=360;
+		}
+		circle3.style.WebkitTransform = 'rotate('+iNow+'deg)';
+
+		if(iNow>=iN){
+			iNow=iN;
+			clearInterval(t);
+			t=null;
+		};
+
+	},10);
+};
+setTimeout(function(){
+	rotate(360)
+},1000);
+
+</script>
+
+
+
+</body>
+</html>

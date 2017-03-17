@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <title>Document</title>
+<style>
+html{width:100%;height: 100%;}
+body{width:100%;height: 100%;margin:0;padding:0;background:#7c1;}
+</style>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+function floatsClip(option){
+  var options = {
+    oParent:document.getElementsByTagName('body')[0],//父级容器，默认为body
+    img:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFODI1MTU4M0I2NzkxMUU0OEVBMjlERTJGREFCMjMwNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFODI1MTU4NEI2NzkxMUU0OEVBMjlERTJGREFCMjMwNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU4MjUxNTgxQjY3OTExRTQ4RUEyOURFMkZEQUIyMzA3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU4MjUxNTgyQjY3OTExRTQ4RUEyOURFMkZEQUIyMzA3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ZocZ6QAAAA5JREFUeNpiCA0NBQgwAAICAQBwWc/NAAAAAElFTkSuQmCC',//蒙层图片 默认为灰色
+    opacity:.9,//蒙层滤镜不透明度
+    lineWidth:20, //擦除线的宽度 
+    clears:.5
+  };
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'transition:.4s ease opacity;-webkit-transition:.4s ease opacity;position:absolute;top:0;left:0;opacity:'+options.opacity+';';
+  canvas.width = options.oParent.clientWidth;
+  canvas.height = options.oParent.clientHeight;
+  options.oParent.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+  var timeout;
+  var img = new Image();
+  img.src = options.img;
+  img.onload = function(){
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    tapClip();
+  };
+  
+  function tapClip(){
+    var hastouch = "ontouchstart" in window?true:false,
+      tapstart = hastouch?"touchstart":"mousedown",
+      tapmove = hastouch?"touchmove":"mousemove",
+      tapend = hastouch?"touchend":"mouseup";
+      
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.lineWidth = options.lineWidth;
+    ctx.globalCompositeOperation = "destination-out";
+    
+    canvas.addEventListener(tapstart , function(e){
+      clearTimeout(timeout);
+      e.preventDefault();
+      
+      var x1 = hastouch?e.targetTouches[0].pageX:e.clientX-canvas.offsetLeft;
+      var y1 = hastouch?e.targetTouches[0].pageY:e.clientY-canvas.offsetTop;
+
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      
+      canvas.addEventListener(tapmove, tapmoveHandler);
+      canvas.addEventListener(tapend, function(){
+        canvas.removeEventListener(tapmove, tapmoveHandler);
+        timeout = setTimeout(function(){
+          var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          var dd = 0;
+          for(var x=0;x<imgData.width;x++){
+            for(var y=0;y<imgData.height;y++){
+              var i = (y*imgData.width + x)*4;
+              if(imgData.data[i+3] >0){
+                dd++
+              }
+            }
+          }
+          if(dd/(imgData.width*imgData.height)<options.clears){
+            canvas.style.opacity = 0 ;
+          }
+        },300);
+      });
+      function tapmoveHandler(e){
+        e.preventDefault();
+        var x2 = hastouch?e.targetTouches[0].pageX:e.clientX-canvas.offsetLeft;
+        var y2 = hastouch?e.targetTouches[0].pageY:e.clientY-canvas.offsetTop;
+        ctx.save();
+        ctx.lineTo(x2,y2);
+        ctx.stroke();
+      }
+    })
+  }
+
+};
+
+window.onload=function(){
+  floatsClip();
+};
+
+</script>
+
+</body>
+</html>

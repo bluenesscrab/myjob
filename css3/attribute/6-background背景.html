@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>background</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+.stn{
+  width: 400px;
+  height: 200px;
+}
+
+.demo{text-align:center;font-size:140px;width:650px;
+background:url(http://www.crab.com/images/girl.jpg) no-repeat;
+-webkit-text-fill-color: transparent;
+-webkit-background-clip:text;
+-webkit-animation:cliptext 6s linear infinite;
+}
+
+@-webkit-keyframes cliptext{
+  0%{background-position:left top;}
+  50%{background-position:right top;}
+  100%{background-position:left top;}
+}
+
+.demo1{text-align:center;font-size:80px;width:650px;
+background-image:-webkit-linear-gradient(90deg,#FF0000,#F9F900);
+}
+
+.demo2{text-align:center;font-size:80px;width:500px;height:500px;
+background-image:-webkit-radial-gradient(center, circle contain, #03F 0%, rgba(222, 255, 0, 0) 80%);
+}
+/*
+(closest-side, closest-corner, farthest-side, farthest-corner, contain or cover)
+*/
+
+.demo3{width:500px;height:200px;
+background: -webkit-repeating-radial-gradient(#666 0, #666 10px, #f90 10px, #f90 20px);
+}
+
+.demo4{width:500px;height:200px;
+background:-webkit-repeating-linear-gradient(45deg, #369 0, #369 10px, #7c1 10px, #7c1 20px);
+}
+
+</style>
+<script>
+window.onload=function(){
+  (function(){
+    var preList = document.getElementsByTagName('pre');
+    var reLt = /[<]/g;
+    var reGt = /[>]/g;
+    for (var i = 0; i < preList.length; i++) {
+      var child = preList[i].children[0];
+      if (child && child.tagName.toLowerCase() == 'b' ){
+        preList[i].removeChild(child);
+      }
+      preList[i].innerHTML = preList[i].innerHTML.replace(reGt,'&gt;').replace(reLt,'&lt;');
+      if (child && child.tagName.toLowerCase() == 'b' ){
+        preList[i].insertBefore(child,preList[i].childNodes[0]);
+      }
+    };
+  })();
+}
+</script>
+</head>
+<body>
+<style>
+  .btns{
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius:8px;
+    background-color:#f90;
+    margin:30px;
+    display: inline-block;
+    vertical-align: middle;
+    background-image:-webkit-radial-gradient( center,circle contain,#7c1 0%,#7c1 99%,rgba(255,255,0,0) 99%);
+    background-repeat:no-repeat;
+    background-size: 50px 50px;
+    transition:3s all;
+  }
+  .btns-1:after{
+    content: '';
+    position: absolute; z-index: -1;
+    width: 200px;
+    height: 50px;
+    background-image:-webkit-radial-gradient( center,circle contain,#369 0%,#369 99%,rgba(255,255,0,0) 99%);
+  }
+  .btns:hover{
+    background-size: 400px 400px;
+  }
+</style>
+<a href="javascript:;" class="btns">定对象的</a>
+<a href="javascript:;" class="btns btns-1">定对象的</a>
+<a href="javascript:;" class="btns btns-2"></a>
+<a href="javascript:;" class="btns btns-3"></a>
+<a href="javascript:;" class="btns btns-4"></a>
+
+<pre>
+background  背景：
+  [background-color]： 指定对象的背景颜色。
+  [background-image]： 指定对象的背景图像。可以是真实图片路径或使用渐变创建的“背景图像”
+  [background-repeat]： 指定对象的背景图像如何铺排填充。
+  [background-attachment]： 指定对象的背景图像是随对象内容滚动还是固定的。
+  [background-position]： 指定对象的背景图像位置。
+
+  [background-origin]： 指定对象的背景图像显示的原点。
+  [background-clip]： 指定对象的背景图像向外裁剪的区域。
+  [background-size]： 指定对象的背景图像的尺寸大小。
+
+background-origin
+padding-box：默认值；从padding区域,含padding开始显示背景图像。
+border-box：从border区域,含border开始显示背景图像。
+content-box：从content区域开始显示背景图像。
+
+background-clip
+padding-box：默认值；从padding区域,不含padding开始向外裁剪背景。
+border-box：从border区域,不含border开始向外裁剪背景。
+content-box：从content区域开始向外裁剪背景。
+text: 从文字向外裁切。
+例如： http://demo.doyoe.com/css3/background-clip/mask-text2.html
+
+background-image：none：无背景图。
+
+linear-gradient：使用线性渐变创建背景图像。（CSS3）
+background-image：linear-gradient([top right bottom left 角度 ], color-stop, color-stop]+);
+
+radial-gradient：使用径向(放射性)渐变创建背景图像。（CSS3）
+-webkit-radial-gradient( center,circle(ellipse) , from(#00c9ff), to(rgba(0,201,255,0)), color-stop(80%, #00b5e2)),
+
+repeating-linear-gradient：使用重复的线性渐变创建背景图像。（CSS3）
+repeating-radial-gradient：使用重复的径向(放射性)渐变创建背景图像。（CSS3）
+</pre>
+<div class="demo">
+  遮罩效果
+</div>
+
+<div class="demo1">
+  线性渐变背景
+</div>
+
+<div class="demo2">
+  径向渐变背景
+</div>
+
+<div class="demo3"></div>
+
+<div class="demo4"></div>
+
+<br><br><br><hr><br><br><br>
+
+<style>
+.box{width:300px;padding:5px;margin:5px 5px 20px;display:inline-block;vertical-align:top;border:1px solid black;box-shadow:2px 2px 8px #000;}
+
+.box1 div{height:200px;background:-webkit-linear-gradient(45deg,blue 50%,red 80%,yellow,green);}
+/* deg  正值左转，负值右转 */
+
+.box2 div{height:150px;border:10px solid rgba(255,255,0,.5);padding:25px;background:url(http:www.crab.com/images/1.jpg) no-repeat;
+background-origin:border-box;
+}
+
+.box3 div{height:200px;background:url(http:www.crab.com/images/1.jpg);font-weight:bold;line-height:20px;font-size:18px;text-shadow:none;
+-webkit-background-clip:text;color:transparent;}
+
+.box4 div{height:200px;background:url(http:www.crab.com/images/1.jpg) center center no-repeat;
+background-size:100px 200px;}
+
+.box5 div{height:200px;background:url(http:www.crab.com/images/1.jpg) round;
+background-repeat:round;}
+
+.box6 div{height:200px;background:-webkit-radial-gradient(center center,circle closest-side,#369,#fff);}
+
+.box7 div{height:200px;background:-webkit-radial-gradient(center,ellipse closest-corner,#000,#fff)}
+
+.box8 div{height:200px;background:-webkit-repeating-linear-gradient(30deg,#fff,#000 5%,#369 10%,#fff 15%)}
+
+.box9 div{height:200px;background:-webkit-repeating-radial-gradient(center,circle closest-corner,#000 5%,#369 10%)}
+
+.box10 div{height:200px;background:-webkit-radial-gradient(center,circle closest-corner,#000,transparent 50%,transparent),-webkit-linear-gradient(-45deg,transparent 35%,#fff 45%,transparent 55%,transparent),url(http:www.crab.com/images/1.jpg) no-repeat;}
+</style>
+<div class="box box1">
+  <p>linear-gradient 共有三个参数
+    [第一个参数表示线性渐变的方向top是从上到下,left是从左到右，如果定义成left top，那就是从左上角到右下角] 
+    [第二个和第三个参数分别是起点颜色和终点颜色]你还可以在它们之间插入更多的参数表示多种颜色的渐变。</p>
+  <div></div>
+</div>
+
+
+<div class="box box2">
+  <p>背景显示  background-origin:[padding-box 从padding区域显示图像包含padding][border-box 从border区域开始显示图像包含border][content-box 从content区域开始显示背景图像]</p>
+  <div>border 10px/padding 25px</div>
+</div>
+
+
+<div class="box box3">
+  <p>背景裁切(只chrome/safari 支持)  background-clip:[padding-box 从padding向外裁切不包含padding][border-box 从border向外裁切不包含border][content-box 从content区域开始向外裁剪背景][text 实现使用背景作为填充色的遮罩]</p>
+  <div>背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字剪裁背景文字景文字景文字</div>
+</div>
+
+<div class="box box4">
+  <p>背景图尺寸 background-size:［宽度］ ［高度］(加逗号，可以跟多个值)</p>
+  cover 
+  contain
+  <div></div>
+</div>
+
+<div class="box box5">
+  <a href="http://www.topcss.org/demo/background-size-cover-contain.html">http://www.topcss.org/demo/background-size-cover-contain.html</a>
+  <p>background-repeat 背景重复（round自适应按照盒子大小缩放）</p>
+  <div>暂时只有ie10 和 opera 支持</div>
+</div>
+
+
+<div class="box box6">
+  <p>
+    radial-gradient([用百分比指定圆心点，可以为负值] [circle圆/ellipse圆])
+    closest-side 渐变的半径长度为从圆心到离圆心最近的边
+    closest-corner 渐变的半径长度为从圆心到离圆心最近的角
+  </p>
+  <div></div>
+</div>
+
+<div class="box box7">
+  <p>
+    farthest-side,半径长度为从圆心到离圆心最远的边
+    farthest-corner,半径长度为从圆心到离圆心最远的角
+    contain包含,半径长度为从圆心到离圆心最近的点。同closest-side
+    cover覆盖,半径长度为从圆心到离圆心最远的点。同farthest-corner
+  </p>
+  <div></div>
+</div>
+
+<div class="box box8">
+  <p>repeating-linear-gradient() 用重复的线性渐变创建图像。</p>
+  <div></div>
+</div>
+
+<div class="box box9">
+  <p>repeating-radinal-gradient() 用重复的径向渐变创建图像。</p>
+  <div></div>
+</div>
+
+
+<div class="box box10">
+  <p>Multiple background  多背景图</p>
+  <div></div>
+</div>
+
+<hr>
+<hr>
+<hr>
+
+<style>
+.stn-1{
+  background:repeating-linear-gradient(0,rgba(255,255,0,.5), rgba(255,255,0,.5) 10px, transparent 10px, transparent 20px),repeating-linear-gradient(90deg,rgba(255,255,0,.5), rgba(255,255,0,.5) 10px, transparent 10px, transparent 20px);
+}
+</style>
+<section class="stn stn-1">
+  
+</section>
+
+
+
+
+</body>
+</html>

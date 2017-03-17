@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IE8</title>
+<style>
+*{margin:0;padding:0;}
+li{list-style:none;}
+
+.box{border:1px solid black;margin:30px auto; width:1000px;}
+.box h2{border-bottom:1px solid black;text-indent:3em; font-size:20px;line-height:30px;}
+.box:after{content:'';display:block;clear:both;}
+.box .box-left{height:100%;width:44%;padding:3%;float:left;border-right:1px solid black;margin-right:-1px;}
+.box .box-right{height:100%;width:44%;padding:3%;float:right;}
+.box pre{border-top: 1px solid black;padding:15px 0;}
+.box img{width:100%;}
+</style>
+</head>
+<body>
+以下代码 均为IE7 + 能提升的体验<hr/><hr/><hr/>
+<style>
+.box7-1 .test-old h3{font-size:18px;color:#f90;}
+.box7-1 .test-old p{font-size:12px;color:#7c1;}
+
+.box7-1 .test-new{font-size:12px;color:#7c1;}
+.box7-1 .test-new:first-line{font-size:18px;color:#f90;}
+</style>
+<div class="box box7-1">
+  <h2> first-line选择符  精简代码</h2>
+  <div class="box-left">
+    <div class="test-old">
+      <h3>常见的标题文字</h3>
+      <p>这是标题下的一行描述</p>
+    </div>
+  </div>
+  <div class="box-right">
+    <div class="test-new">
+      常见的标题文字<br/>这是标题下的一行描述
+    </div>
+  </div>
+</div>
+
+
+
+<br/><br/><br/><br/><br/><br/>以下代码 均为IE 8 + 能提升的体验<hr/><hr/><hr/>
+<style>
+.box8-1 .test-old{
+display: inline-block;position:relative;border:1px solid red;
+}
+.box8-1 .test-old p{
+position:absolute;width:100%;height:30px;line-height:30px;background:rgba(0,0,0,.6);color:#fff;left:0;bottom:0;
+}
+
+.box8-1 .test-new{
+display: inline-block;position:relative;border:1px solid red;
+}
+.box8-1 .test-new:after{
+content:attr(title);position:absolute;width:100%;height:30px;line-height:30px;background:rgba(0,0,0,.6);color:#fff;left:0;bottom:0;
+}
+</style>
+<div class="box box8-1">
+  <h2>伪元素 content  精简代码</h2>
+  <div class="box-left">
+    <div class="test-old">
+      <img src="MediaQueries.jpg" alt="">
+      <p>这是一个蒙板遮罩条 一般门户，视频网站常用效果</p>
+    </div>
+  </div>
+  <div class="box-right">
+    <div class="test-new" title="这是一个蒙板遮罩条 一般门户，视频网站常用效果">
+      <img src="MediaQueries.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>css3 选择符</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+hr{margin:10px 0 20px;}
+ol{padding-left:15px;margin-left: 15px;}
+li{height:25px;}
+</style>
+</head>
+<body>
+
+<pre>
+E>F  选择所有作为E元素的子元素F
+</pre>
+<style>
+#box1 div{border:5px solid #369;}
+#box1>div:after{content:'box1 的所有子级元素';}
+</style>
+<div id="box1">
+	<div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+	</div>
+</div><hr/>
+
+
+<pre>
+E+F  选择紧贴在E元素之后F元素 (同级相邻)
+</pre>
+<style>
+#box2 div{background:#7c1;height:25px;}
+#box2 div:nth-child(1)+div:after{content:'第一个div 后相邻的div';}
+</style>
+<div id="box2">
+	<div></div>
+	<div></div>
+	<div></div>
+</div><hr/>
+
+
+
+<pre>
+E~F  选择E元素后面的所有兄弟元素F 
+</pre>
+<style>
+#box3 li{background:#f90;}
+#box3 li:nth-child(1)~li:after{content:'第一个li 后的 所有同级li';}
+</style>
+<ol id="box3">
+	<li></li>
+	<li></li>
+	<li></li>
+</ol><hr>
+
+
+<pre>
+E[att]  选择具有att属性的E元素
+</pre>
+<style>
+#box4 li{background:gray;}
+#box4 li[title]:after{content:'有属性 title 的元素';}
+</style>
+<ol id="box4">
+	<li title="属性1"></li>
+	<li></li>
+	<li title="属性2"></li>
+	<li></li>
+</ol><hr>
+
+
+<pre>
+E[att="val"]  选择具有att属性且属性值等于val的E元素
+</pre>
+<style>
+#box5 li{background:#369;}
+#box5 li[class='list2']:after{content:'class 是 list2';}
+</style>
+<ol id="box5">
+	<li class="list1"></li>
+	<li class="list2"></li>
+	<li class="list2"></li>
+	<li></li>
+</ol><hr>
+
+
+<pre>
+E[att~="val"]  选择具有att属性且属性值为一用空格分隔的字词列表，其中一个等于val的E元素。
+</pre>
+<style>
+#box6 li{background:#f90;}
+#box6 li[class~='list']:before{content: '有一个class 是 list';}
+</style>
+<ol id="box6">
+	<li class="list1 list"></li>
+	<li class="list2"></li>
+	<li class="list list2"></li>
+	<li class="list"></li>
+</ol><hr>
+
+
+<pre>
+E[att|="val"]  选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
+</pre>
+<style>
+#box7 li{background:#7c1;}
+#box7 li[class|='bb']:before{content: 'class是bb－2 以 bb 开头';}
+</style>
+<ol id="box7">
+	<li class="aa-1"></li>
+	<li class="bb-2"></li>
+	<li class="cc-3"></li>
+</ol><hr>
+
+
+<pre>
+E[att^="val"]  选择具有att属性且属性值为以val开头的字符串的E元素。
+</pre>
+<style>
+#box8 li{background:#369;}
+#box8 li[class^='a']:before{content: 'class是以字母a开头';}
+</style>
+<ol id="box8">
+	<li class="aa-1"></li>
+	<li class="abb-2"></li>
+	<li class="bcc-3"></li>
+</ol><hr>
+
+
+<pre>
+E[att$="val"]  选择具有att属性且属性值为以val开头的字符串的E元素。
+</pre>
+<style>
+#box9 a{border:1px solid #f90;padding:10px;display: inline-block;}
+#box9 a[href$='exe']:before{content: '这些a标签是 href 以exe为结尾';}
+</style>
+<div id="box9">
+	<a href="aa.ftp"></a>
+	<a href="aa.html"></a>
+	<a href="aa.exe"></a>
+	<a href="aa.exe"></a>
+</div><hr>
+
+
+<pre>
+E[att*="val"]  选择具有att属性且属性值为包含val的字符串的E元素。
+</pre>
+<style>
+#box10 span{border:2px solid #369;padding:8px;display: inline-block;}
+#box10 span[title*='a']:before{content: '这些span标签的title里含有字母 a ';}
+</style>
+<div id="box10">
+	<span title="abc"></span>
+	<span title="acc"></span>
+	<span title="ddd"></span>
+	<span title="bcd"></span>
+	<span title="adc"></span>
+	<span title="bb"></span>
+</div><hr>
+
+
+<pre>
+伪类选择符： [E:link]    [E:visited]    [E:hover]     [E:active]
+</pre><hr>
+
+
+<pre>
+伪类选择符：E:focus
+</pre>
+<style>
+#box11 input{border:3px solid #333;outline: none;}
+#box11 input:focus{border-color:#f00;}
+</style>
+<div id="box11">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+</div><hr>
+
+
+<pre>
+伪类选择符：E:not(s)   匹配不包含s选择符的元素   <mark>IE9+ CSS3</mark>
+</pre>
+<style>
+#box12 input{border-width:3px;outline: none;}
+#box12 input:not(.a){border-color:#f90;}
+</style>
+<div id="box12">
+	<input type="text" class="a">
+	<input type="text" class="a">
+	<input type="text">
+</div><hr>
+
+
+<pre>
+伪类选择符：
+E:first-child   匹配父元素的第一个子元素E。
+E:last-child   匹配父元素的最后一个子元素E。
+E:only-child   匹配父元素仅有的一个子元素E。
+E:nth-child   匹配父元素的第n个子元素E(从1开始)。 
+E:nth-last-child(n)   匹配父元素的倒数第n个子元素E。 
+E:first-of-type    匹配同类型中的第一个同级兄弟元素E。 
+E:last-of-type    匹配同类型中的最后一个同级兄弟元素E。 
+E:only-of-type    匹配同类型中的唯一的一个同级兄弟元素E。 
+E:nth-of-type(n)    匹配同类型中的第n个同级兄弟元素E。 
+E:nth-of-type(n)    匹配同类型中的第n个同级兄弟元素E。
+E:nth-last-of-type(n)    匹配同类型中的倒数第n个同级兄弟元素E。
+E:empty  匹配没有任何子元素（包括text节点）的元素E。
+E:checked    匹配用户界面上处于选中状态的元素E。(用于input type为radio与checkbox时)
+E:enabled    匹配用户界面上处于可用状态的元素E。
+E:disabled   匹配用户界面上处于禁用状态的元素E。
+E:target     匹配相关URL指向的E元素。（锚点页面跳转了也好使）
+
+E::first-letter    设置对象内的第一个字符的样式。
+E::first-line    设置对象内的第一行字符的样式。
+E::before    设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+E::after    设置在对象后（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+E::selection   设置对象被选择时的样式（FF需要加内核前缀）
+
+
+
+</pre>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>多列布局</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+#box1{margin:20px auto; width:800px; -webkit-columns:4;
+-webkit-column-rule:1px solid #f60;
+}
+#box1 p{background:#7c1;}
+
+#box1 p:nth-of-type(3){
+-webkit-column-span:all;
+background: #163;margin:10px 0;
+}
+#box1 div{background: red;
+-webkit-column-break-before:always;
+}
+
+</style>
+</head>
+<body>
+<pre>
+columns：[ column-width 设置或检索对象每列的宽度] || [ column-count 设置或检索对象的列数]
+可以只跟一个参数，只设置宽度或者只设置列数 ，会根据容器宽度液态分布；（默认有间隙存在）
+
+column-rule:  设置或检索对象的列与列之间的边框。复合属性,类似border属性
+column-span：[none 默认 不跨列] [all 横跨所有列]  设置或检索对象元素是否横跨所有列。
+
+column-break-before：[检索对象之前是否断行] auto | always | avoid | left | right | page | column | avoid-page | avoid-column
+column-break-after：[检索对象之后是否断行] auto | always | avoid | left | right | page | column | avoid-page | avoid-column
+column-break-inside：[检索对象是否断行]  auto | avoid | avoid-page | avoid-column
+auto：既不强迫也不禁止在元素之前断行并产生新列
+always：总是在元素之前断行并产生新列
+avoid：避免在元素之前断行并产生新列
+
+
+</pre>
+
+<div id="box1">
+	<p>多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局</p>
+	<div>不管上一列有没有填满，我都另起一列</div>
+	<p>多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局布局</p>
+	<p>column-span</p>
+	<p>多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局</p>
+	<p>多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局多列布局</p>
+	<p>多列布局多列布局多列布局多列布局多列布局多列布局多列布</p>
+</div>
+
+<hr>
+
+<pre>
+column-gap： 默认值：normal (与font-size大小相同。假设该对象的font-size为16px，则normal值为16px，类推。)
+
+
+</pre>
+
+
+
+</body>
+</html>

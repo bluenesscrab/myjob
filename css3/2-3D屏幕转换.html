@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>屏幕转换</title>
+<style>
+*{margin:0;padding:0;font-size: 14px;list-style: none;color:#333;outline: none;vertical-align: middle;text-decoration: none;border:none;}
+
+body{text-align: center;}
+.parent{margin:0 auto;}
+.parent,.box{width:500px;height:300px;}
+.box{position:relative;
+	border:1px solid #000;
+-webkit-transform-style:preserve-3d;
+-webkit-perspective:1200px;
+}
+.box div{width:100%;height:100%;position:absolute;top:0;
+-webkit-transform:translateX(0px) rotateY(0deg);-webkit-transform-origin:center;
+}
+.box div:nth-child(1){background:#7c1;}
+.box div:nth-child(2){background:#f90;}
+.box div:nth-child(3){background:#369;}
+.box div:nth-child(4){background:#4f6;}
+
+input{width: 110px; height:40px;font-size:30px; background:#ccc;margin:30px 9px 0;}
+.active{background:#369;}
+
+</style>
+</head>
+<body>
+<input type="button" vale="1"/>
+<input type="button" vale="2"/>
+<input type="button" vale="3"/>
+<input type="button" vale="4"/>
+
+<div class="parent">
+	<div class="box">
+		<div>111111111111111111111</div>
+		<div>2222222222222222</div>
+		<div>33333333333333333</div>
+		<div>4444444444444444</div>
+	</div>
+</div>
+
+<script>
+var aBtn = document.querySelectorAll('input');
+var aDiv = document.getElementsByClassName('box')[0].querySelectorAll('div');
+
+var prev = 2;
+var ideg = 65;
+var iWidth = aDiv[0].offsetWidth;
+
+for(var i=0;i<aBtn.length;i++){
+	aBtn[i].index=i;
+	aBtn[i].onclick=function(){
+		if(this.className != 'active'){
+			for(var i=0;i<aDiv.length;i++){
+				aBtn[i].className='';
+			}
+			this.className='active';
+			moves(this.index);
+		}
+	}
+
+	aDiv[i].style.opacity=0;
+	if(i<prev){
+		aDiv[i].pos='left';
+		aDiv[i].style.WebkitTransformOrigin ='right';
+		aDiv[i].style.WebkitTransform='translateX('+-iWidth+'px) rotateY('+ideg+'deg)';
+	}else if(i==prev){
+		aDiv[i].pos='center';
+		aDiv[i].style.WebkitTransform='translateX(0px) rotateY(0deg)';
+	}else{
+		aDiv[i].pos='right';
+		aDiv[i].style.WebkitTransformOrigin ='left';
+		aDiv[i].style.WebkitTransform='translateX('+iWidth+'px) rotateY('+-ideg+'deg)';
+	}
+
+}
+aBtn[prev].className='active';
+aDiv[prev].style.opacity=1;
+
+function moves(i){
+	aDiv[i].style.WebkitTransition = aDiv[prev].style.WebkitTransition='1s ease all';	
+	aDiv[i].style.opacity = 1;
+	aDiv[prev].style.opacity=0;	
+
+	if(aDiv[i].pos=='left'){
+		aDiv[prev].pos='right';
+		aDiv[prev].style.WebkitTransformOrigin ='left';
+		aDiv[prev].style.WebkitTransform='translateX('+iWidth+'px) rotateY('+-ideg+'deg)';
+	}else if(aDiv[i].pos=='right'){
+		aDiv[prev].pos='left';
+		aDiv[prev].style.WebkitTransformOrigin ='right';
+		aDiv[prev].style.WebkitTransform='translateX('+-iWidth+'px) rotateY('+ideg+'deg)';
+	}
+
+	aDiv[i].pos='center';
+	aDiv[i].style.WebkitTransformOrigin ='center';
+	aDiv[i].style.WebkitTransform='translateX(0px) rotateY(0deg)';
+
+	prev = i;
+}
+
+</script>
+
+</body>
+</html>

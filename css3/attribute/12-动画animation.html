@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>动画animation</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+@-webkit-keyframes colors{
+	50%{
+		border-radius: 25%;
+		border-color:#369;
+		background: blue;
+	}
+	100%{
+		border-radius: 50%;
+		border-color:#f60;
+		background: #f90;
+	}
+}
+
+#parent{width:400px;height:200px;background:blue;border:50px solid #369;border-radius:0;
+-webkit-animation:colors 3s ease infinite  alternate forwards;
+-webkit-animation-play-state:paused;
+}
+#parent:hover{
+-webkit-animation-play-state:running;
+}
+
+</style>
+</head>
+<body>
+<pre>
+@keyframes  定义动画名
+
+animation：[[ animation-name ] || [ animation-duration ] || [ animation-timing-function ] || [ animation-delay ] || [ animation-iteration-count ] || [ animation-direction ]] [ , [ animation-name ] || [ animation-duration ] || [ animation-timing-function ] || [ animation-delay ] || [ animation-iteration-count ] || [ animation-direction ]]*
+
+
+[ animation-name ]：检索或设置对象所应用的动画名称
+定义动画名字 
+@keyframes testanimations{
+	0%{transform:translate(0,0);}
+	20%{transform:translate(20,20);}
+	60%{transform:translate(60,20);}
+	100%{transform:translate(100,20);}
+}
+
+animation默认以ease方式过渡，它会在每个关键帧之间插入补间动画，所以动画效果是连贯性的。除了ease，linear、cubic-bezier之类的过渡函数都会为其插入补间。但有些效果不需要补间，只需要关键帧之间的跳跃，这时应该使用steps过渡方式。
+
+[ animation-duration ]：检索或设置对象动画的持续时间
+[ animation-timing-function ]：检索或设置对象动画的过渡类型
+[ animation-delay ]：检索或设置对象动画延迟的时间
+[ animation-iteration-count ]：检索或设置对象动画的循环次数
+infinite：无限循环  
+默认值1次  可以指定对象动画的具体循环次数
+
+
+[ animation-direction ]：检索或设置对象动画在循环中是否反向运动
+normal：正常方向  （默认值）
+alternate：正常与反向交替
+
+
+[ animation-play-state ]：检索或设置对象动画的状态。w3c正考虑是否将该属性移除，因为动画的状态可以通过其它的方式实现，比如重设样式
+running：运动  （默认值）
+paused：暂停
+
+
+animation-fill-mode
+none：默认值。不设置对象动画之外的状态
+forwards：设置对象状态为动画结束时的状态
+backwards：设置对象状态为动画开始时的状态
+both：设置对象状态为动画结束或开始的状态
+
+</pre>
+
+<style>
+.steps-1{
+	width: 100px;height: 100px;background:#7c1;opacity:1;
+	-webkit-animation:fun_steps 5s steps(10,end) forwards,fun_go 2s 5.5s linear forwards;
+}
+@-webkit-keyframes fun_steps{
+	0%{
+		width: 100px;background: #7c1;
+	}
+	100%{
+		width:500px;background: #f90;
+	}
+}
+@-webkit-keyframes fun_go{
+	0%{
+		width: 500px;background: #f90;
+	}
+	100%{
+		width:100px;background: #7c1;
+	}
+}
+</style>
+<div class="steps-1">
+	
+</div>
+
+
+<div id="parent"></div>
+
+<hr>
+<style>
+.boxs{
+	width: 100px; height: 100px;background:#f90;border:1px solid black;margin:100px auto;position: relative;
+	animation:a 1s steps(1) forwards,b 1s 1s linear forwards;
+}
+@keyframes a{
+	to{
+		width: 200px;
+	}
+}
+@keyframes b{
+	frome{
+		opacity:0;
+	}to{
+		opacity:1;
+	}
+}
+</style>
+<div class="boxs">PS多个动画组合，不能改变同一个属性</div>
+
+
+
+</body>
+</html>

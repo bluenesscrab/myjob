@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>变换transform</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+div{font-size:16px;color:#fff;}
+#box1{width:350px;height:50px;background:blue;padding:5px;
+-webkit-transform:translateX(150px) translateY(30px);}
+
+#box2{width:350px;height:50px;background:#f90;padding:5px;
+-webkit-transform-origin:left top;
+-webkit-transform:rotate(10deg);}
+
+#box3{width:300px;margin-top:30px;height:50px;background:#7c1;padding:5px;
+-webkit-transform:skew(-20deg,10deg);}
+
+</style>
+</head>
+<body>
+<pre>
+transform
+
+matrix(number,number,number,number,number,number)：
+以一个含六值的(a,b,c,d,e,f)变换矩阵的形式指定一个2D变换，相当于直接应用一个[a,b,c,d,e,f]变换矩阵
+
+translate(length[, length])：
+指定对象的2D translation（2D平移）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0
+translateX(length)：指定对象X轴（水平方向）的平移
+translateY(length)：指定对象Y轴（垂直方向）的平移
+<div id="box1">这个块往向移动了150px，向下移动了30px</div>
+
+transform-origin：[  center① ] [  center② ]；设置或检索对象以某个原点进行转换。
+如果提供两个，第一个用于横坐标，第二个用于纵坐标。
+如果只提供一个，该值将用于横坐标；纵坐标将默认为50%。
+rotate(angle)：指定对象的2D rotation（2D旋转），需先有transform-origin属性的定义
+<div id="box2">角度为10deg 正值 方向是是顺时针</div>
+
+
+scale(number[, number])：指定对象的2D scale（2D缩放）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认取第一个参数的值
+scaleX X轴的缩放   scaleY Y轴的缩放
+
+
+skew(angle [, angle])：指定对象skew transformation（斜切扭曲）。
+第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0
+skewX(angle)：指定对象X轴的（水平方向）扭曲
+skewY(angle)：指定对象Y轴的（垂直方向）扭曲
+<div id="box3"></div>
+
+</pre>
+
+
+</body>
+</html>

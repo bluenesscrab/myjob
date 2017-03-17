@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>css3 语法规则 / 媒体查询</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+hr{margin:10px 0 20px;}
+ol{padding-left:15px;margin-left: 15px;}
+li{height:25px;}
+
+@media screen and (min-width:900px) and (max-width:1000px){
+	body{background:#ddd;}
+}
+@media screen and (min-width:1000px) and (max-width:1100px){
+	body{background:#f90;}
+}
+@media screen and (min-width:1100px) and (max-width:1200px){
+	body{background:#7c1;}
+}
+
+@media screen and (device-height:900px) and (device-width:1440px){
+	body:before{content:'设备的分辨率高为 900px 并且 设备的分辨宽为 1440px';color:red;font-size:20px;}
+}
+
+#list {padding:20px;}
+#list li{height:20px;line-height:20px;margin:10px 0;background:#999;}
+@media screen and (max-width:900px){
+	#list li:nth-child(1):after{content:"屏幕宽度最大为900，执行";}	
+	#list li:nth-child(1){background:#f90;}
+}
+
+</style>
+<link media="screen and (min-width:900px) and (max-width:1200px)" rel="stylesheet" href="media.css" />
+</head>
+<body>
+
+<ol id="list">
+	<li></li>
+	<li></li>
+	<li></li>
+</ol>
+
+<pre>
+!important    提升指定样式规则的应用优先权。
+@import    使用绝对或相对地址指定导入的外部样式表文件。可以是url(url)或者直接是一个url；
+例如：   @import url("global.css");  @import url(global.css);  @import "global.css"; 
+
+@media  指定设备类型。
+
+@media screen and (width:800px){ … }
+@import url(example.css) screen and (width:800px);
+link media="screen and (width:800px)" rel="stylesheet" href="example.css"
+
+@media all and (width:1024px){
+	body{color:#f00;}
+}
+
+/* 分辨率高 */
+@media all and (device-height:800px){ … }
+
+/* 竖屏 */
+@media screen and (orientation:portrait) and (max-width: 720px) {对应样式}
+
+/* 横屏 */
+@media screen and (orientation:landscape){对应样式}
+
+/* 定义输出设备的屏幕可见宽度与高度的比率。 如常讲的显示器屏幕比率：4/3 */
+@media all and (device-aspect-ratio:16/10){ … }
+
+按照语法，媒体特性与CSS属性类似：它们拥有名字并且接受某些值。但是还是存在几点差异：
+属性用于声明之中，用于给出关于如何呈现文档的信息。媒体特性用于表达式之中，用于描述对输出设备的要求。
+大多数媒体特性接受可选的“min-”或“max-”前缀，用于表达“大于等于”和“小于等于”的限制。该语法用于避免“<”和“>”字符可能会出现的与HTML及XML的冲突。这些接受前缀的媒体特性大多数情况下都会使用前缀，但也可以单独使用。
+在声明中属性总是需要一个值。另一方面，媒体特性可以不需要值。对于一个媒体特性feature，如果(feature:x)中的x在不是零或零之后跟随单位标识符（例如：不是0、0px、0em等）的情况下评估为真，则对(feature)的评估为真。拥有min/max前缀的媒体特性不能没有值。如果拥有min/max前缀的媒体特性没有值，则这回使得媒体查询畸形。
+属性可能会接受复杂值。媒体特性仅接受单一值：一个关键字、一个数字或者一个带单位标识符的数字。（仅存的例外是“aspect-ratio”和“device-aspect-ratio”媒体特性。）
+举例说明，媒体类型“color”可以使用不含值的表达式（“(color)”）或包含值的表达式（“(min-color: 1)”）。
+本规范定义的媒体特性适用于视觉和触觉设备。同样的，媒体特性也可被定义为适用于听觉媒体类型。
+@media all and (min-color:1){ … }
+
+“monochrome”媒体特性描述单色帧缓冲区中每像素所使用的位数。如果设备不是单色设备，则输出设备值为0。
+@media all and (monochrome:0){ … }
+
+grid”媒体特性用于查询输出设备是等宽还是位图。如果输出设备是基于等宽的（例如“tty”中断或者仅能显示一种固定字体的移动电话），其值为1。否则其值为0。
+有效值仅包含0和1。（包含-0。）其他所有值均造成媒体查询畸形。
+@media all and (grid:0){ … }
+
+@font-face{font-family:name;src:url;sRules;}
+设置嵌入HTML文档的字体。
+通常使用.ttf(TrueType)和.otf(OpenType)两种字体格式。
+@font-face{
+	font-family:YH;
+	src:url(http://domain/fonts/MSYH.TTF);
+}
+
+如何设置IE下的iframe背景透明？
+方法：设置iframe元素的标签属性allowtransparency="allowtransparency"然后设置iframe内部页面的body背景色为transparent。 
+不过由此会引发IE下一些其它问题，如：设置透明后的iframe将不能遮住select
+
+
+____________________________________________________________________________________________________________________________________________
+
+
+
+Media Features
+媒体特性	Value
+取值	Accepts min/max
+接受min/max	Description
+简介
+width	［length］	yes	定义输出设备中的页面可见区域宽度
+height	［length］	yes	
+
+device-width	［length］	yes	定义输出设备的屏幕可见宽度
+device-height	［length］	yes	定义输出设备的屏幕可见高度
+
+orientation	portrait | landscape	no	定义'height'是否大于或等于'width'。值portrait代表是，landscape代表否
+
+aspect-ratio	［ratio］	yes	定义'width'与'height'的比率
+
+device-aspect-ratio	［ratio］	yes	定义'device-width'与'device-
+height'的比率。如常见的显示器比率：4/3, 16/9, 16/10
+
+color	［integer］	yes	定义每一组输出设备的彩色原件个数。如果不是彩色设备，则值等于0
+
+color-index	［integer］	yes	定义在输出设备的彩色查询表中的条目数。如果没有使用彩色查询表，则值等于0
+monochrome	［integer］	yes	定义在一个单色框架缓冲区中每像素包含的单色原件个数。如果不是单色设备，则值等于0
+resolution	［resolution］	yes	定义设备的分辨率。如：96dpi, 300dpi, 118dpcm
+scan	progressive | interlace	no	定义电视类设备的扫描工序
+grid	［integer］	no	用来查询输出设备是否使用栅格或点阵。只有1和0才是有效值，1代表是，0代表否
+
+</pre>
+
+
+
+
+
+</body>
+</html>

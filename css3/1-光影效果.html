@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>css3</title>
+<style>
+*{margin:0;padding:0;font-size: 14px;list-style: none;color:#333;outline: none;vertical-align: middle;text-decoration: none;border:none;}
+body{background-color:#ccc;}
+
+.parent{
+  margin:20px;border:1px solid red;display:-webkit-box; -webkit-box-orient:horizontal; -webkit-box-pack:justify;
+}
+
+.parent li{width:150px;height:150px;border-radius:50%;-webkit-transition:.9s all;
+background:-webkit-linear-gradient(30deg,transparent,rgba(255,255,255,0) 40%,rgba(255,255,255,.8) 50%,rgba(255,255,255,0) 60%,transparent) -150px 0 no-repeat;}
+.parent li:hover{background-position:150px 0;}
+
+.parent li:nth-child(1){background-color:#369;}
+.parent li:nth-child(2){background-color:#7c1;}
+.parent li:nth-child(3){background-color:#333;}
+.parent li:nth-child(4){background-color:#f90;}
+</style>
+</head>
+<body>
+
+<ul class="parent">
+	<li><i></i></li>
+	<li><i></i></li>
+	<li><i></i></li>
+	<li><i></i></li>
+</ul>
+
+</body>
+</html>

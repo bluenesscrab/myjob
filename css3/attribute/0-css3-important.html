@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>css3</title>
+<style>
+*{margin:0;padding:0;font:14px/1.6 'microsoft yahei';list-style: none;outline: none;text-decoration: none;}
+body{padding:10px 10px 60px;background-color:#ccc;}
+pre strong{background:#f00;}
+hr{margin:20px 0;}
+a:hover{text-decoration: underline;}
+
+
+</style>
+</head>
+<body>
+
+<pre>
+<strong>@supports</strong> CSS3条件判断 <mark>IE12+</mark>
+and 并声明          not 排除声明          or 或声明
+
+是否支持某CSS属性声明的AT规则，浏览器对齐支持性越来越好了,基本上是在实际项目中当作hack使用。
+
+语法：
+@supports (条件规则) and (条件规则){
+  /* 特殊样式规则 */
+}
+@supports(filter:blur(0)){
+  .box1 {background-color: rgba(255,0,0,.2);}
+}
+@supports (border:3px solid #fff){
+  .box1 {box-shadow:0 0 6px #000;}
+}
+</pre>
+<style>
+.box1{
+  border:3px solid #fff;
+  width: 400px;
+  height: 50px;
+}
+@supports(filter:blur(0)){
+  .box1 {
+    background-color: rgba(255,0,0,.2);
+  }
+}
+@supports (border:3px solid #fff){
+  .box1 {
+    box-shadow:0 0 6px #000;
+  }
+}
+</style>
+<div class="box1">click me</div>
+
+<hr>
+
+<pre>
+<strong>calc()</strong> calc(四则运算) <mark>IE9+</mark>
+用于动态计算长度值。
+需要注意的是，运算符前后都需要保留一个空格，例如：width: calc(100% - 10px)；
+任何长度值都可以使用calc()函数进行计算；
+calc()函数支持 "+", "-", "*", "/" 运算；
+calc()函数使用标准的数学运算优先级规则；
+
+PS:负数表示需要特别注意；
+</pre>
+<style>
+.box2{
+  border:3px solid #000;
+  width: 50%;
+  height: 30px;
+  margin-left:calc( (100% - 50%)/2 );
+  box-sizing:border-box;
+}
+</style>
+<div class="box2"></div>
+
+<hr>
+
+<pre>
+  <mark>filter: blur() grayscale() drop-shadow();</mark>
+  -webkit-filter: saturate(0); 图片去色
+  -webkit-filter:blur(); 模糊度 单位px
+</pre>
+<style>
+.box3:before{
+  content: '';width: 20px; height: 20px;border-radius: 50%;background: #fff; left:10px; top:50%; margin-top:-10px; position: absolute;
+}
+.box3{margin:20px;width: 150px; height:60px;padding:0 30px 0 50px; position: relative;
+background:
+linear-gradient(-135deg,transparent,transparent 20px,#369 20px, #369) right top /100% 50% no-repeat,
+linear-gradient(-45deg,transparent,transparent 20px,#369 20px, #369) right bottom/100% 50% no-repeat;
+-webkit-filter:drop-shadow(4px 4px 4px rgba(0,0,0,.5));
+}
+</style>
+<div class="box3">????</div>
+
+<hr>
+
+<pre>
+<strong>placeholder</strong> 
+::-webkit-input-placeholder
+::-moz-placeholder
+:-ms-input-placeholder
+</pre>
+<style>
+input[placeholder^="test"]::-webkit-input-placeholder{color:#f90;}
+input[placeholder^="test"]:-moz-placeholder{color:#f90;}
+input[placeholder^="test"]::-moz-placeholder{color:#f90;}
+input[placeholder^="test"]:-ms-input-placeholder{color:#f90;}
+</style>
+<input type="text" style="width:200px;" placeholder="test color"/>
+
+<hr>
+
+<pre>
+<mark>webkit 滚动条样式</mark>
+::-webkit-scrollbar 滚动条整体部分
+::-webkit-scrollbar-button 滚动条两端的按钮
+::-webkit-scrollbar-track 外层轨道
+::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）
+::-webkit-scrollbar-thumb （拖动条？滑块？滚动条里面可以拖动的那个，肿么翻译好呢？）
+::-webkit-scrollbar-corner 边角
+::-webkit-resizer 定义右下角拖动块的样式
+:horizontal – horizontal伪类应用于水平方向的滚动条
+:vertical – vertical伪类应用于竖直方向的滚动条
+:decrement – decrement伪类应用于按钮和内层轨道(track piece)。它用来指示按钮或者内层轨道是否会减小视窗的位置(比如，垂直滚动条的上面，水平滚动条的左边。)
+:increment – increment伪类和decrement类似，用来指示按钮或内层轨道是否会增大视窗的位置(比如，垂直滚动条的下面和水平滚动条的右边。)
+:start – start伪类也应用于按钮和滑块。它用来定义对象是否放到滑块的前面。
+:end – 类似于start伪类，标识对象是否放到滑块的后面。
+:double-button – 该伪类以用于按钮和内层轨道。用于判断一个按钮是不是放在滚动条同一端的一对按钮中的一个。对于内层轨道来说，它表示内层轨道是否紧靠一对按钮。
+:single-button – 类似于double-button伪类。对按钮来说，它用于判断一个按钮是否自己独立的在滚动条的一段。对内层轨道来说，它表示内层轨道是否紧靠一个single-button。
+:no-button – 用于内层轨道，表示内层轨道是否要滚动到滚动条的终端，比如，滚动条两端没有按钮的时候。
+:corner-present – 用于所有滚动条轨道，指示滚动条圆角是否显示。
+:window-inactive – 用于所有的滚动条轨道，指示应用滚动条的某个页面容器(元素)是否当前被激活。(在webkit最近的版本中，该伪类也可以用于::selection伪元素。webkit团队有计划扩展它并推动成为一个标准的伪类)
+</pre>
+<style>
+.scrollP{overflow-y:scroll;width:400px;height:300px;margin:20px auto;}
+.scrollP::-webkit-scrollbar{background:none;width:12px;}
+.scrollP::-webkit-scrollbar-track,
+.scrollP::-webkit-scrollbar-thumb{
+width:12px;border-radius:50% 50% 50% 50%/6px 6px 6px 6px;
+}
+.scrollP::-webkit-scrollbar-track{box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;}
+.scrollP::-webkit-scrollbar-thumb {background:#7c7c7c;}
+.scrollP li{height:80px; background:#f90;margin-bottom:30px;}
+</style>
+<ul class="scrollP">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<hr>
+
+<pre>
+<strong>pointer-events</strong> 元素穿透 <mark>IE11+ Firefox3.6+/Safari4+/Chrome</mark>
+pointer-events:none; 
+pointer-events:auto|none|visiblePainted|visibleFill|visibleStroke|visible|painted|fill|stroke|all|inherit;
+</pre>
+<style>
+.box4-1,.box4-2{padding:10px; position: relative;margin: 10px 50px;}
+.box4-1:before,.box4-2:before{content:'';position: absolute;top:0;left:0;width: 100%;height:100%;background:rgba(255,0,0,.4);}
+.box4-2:before{pointer-events:none;}
+</style>
+<div class="box4-1"><a href="http://www.baidu.com">遮罩下的链接A，能点到吗！</a></div>
+<div class="box4-2"><a href="http://www.baidu.com">遮罩下的链接B，能点到吗？</a></div>
+
+<hr>
+
+<pre>
+<strong>backface-visibility</strong> 隐藏被旋转元素的背面 <mark>IE10+ Firefox/Safari/Chrome</mark> 
+隐藏被旋转元素的背面:[实测：当角度大于90° 元素就会隐藏,不只是背面]
+backface-visibility
+backface-visibility: visible|hidden;
+</pre>
+<style>
+.box5 {border:1px solid red;}
+.box5 li{display:inline-block;width:100px;height:100px;background:#7c1;margin:10px;
+backface-visibility:hidden;
+-webkit-backface-visibility:hidden;
+}
+.box5 li:nth-child(1){ -webkit-transform:rotateY(210deg); }
+.box5 li:nth-child(2){ -webkit-transform:rotateY(40deg); }
+</style>
+<ol class="box5">
+  <li>A</li>
+  <li>B</li>
+</ol>
+
+<hr>
+
+<h1>only webkit <mark>CSS3 only（Chrome Safair）</mark></h1>
+<pre>
+text-fill-color CSS3  有 设置或检索对象中的文字填充颜色
+
+text-stroke CSS3  有 复合属性。设置或检索对象中的文字的描边
+text-stroke-width CSS3  有 设置或检索对象中的文字的描边厚度
+text-stroke-color CSS3  有 设置或检索对象中的文字的描边颜色
+
+box-reflect CSS3  有 设置或检索对象的倒影
+box-reflect： direction offset? mask-box-image?
+direction = above | below | left | right （倒影的方向）
+offset = length  （倒影与图像之间的距离）
+mask-box-image = none | url | linear-gradient | radial-gradient | repeating-linear-gradient | repeating-radial-gradient
+ 
+text-strike  文字描边   
+</pre>
+
+<style>
+.text-stroke{
+  font-size: 40px;color:#000;
+  -webkit-text-stroke:1px #f90;
+}
+</style>
+<div class="text-stroke">这是描边文字  只支持  webkit 内核</div>
+
+<style>
+.text-fill-color{
+  font-size: 40px;color:#000;
+  background:-webkit-linear-gradient(top,#000,#eee,#000);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+</style>
+<div class="text-fill-color">文字填充颜色 text-fill-color</div>
+
+<style>
+.box-reflect{
+  width:950px;
+  margin:20px auto;
+  -webkit-box-reflect:below 0 -webkit-linear-gradient(transparent,transparent 30%,rgba(255,255,255,.3));
+  font:bold 40px/1.2 sans-serif;
+}
+</style>
+<div class="box-reflect">你看到倒影了么？ box-reflect</div>
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>css3</title>
+<style>
+*{margin:0;padding:0;font-size: 14px;list-style: none;color:#333;outline: none;vertical-align: middle;text-decoration: none;}
+
+</style>
+</head>
+<body>
+
+<style>
+.nav1{width:700px;margin:20px auto; overflow: hidden;}
+.nav1 li{float:left;padding:0 2px;}
+.nav1 li a{background-color:#f90;float:left;transform:skewX(30deg);}
+.nav1 li a:hover{ background-color:#369;}
+.nav1 li a span{float: left;height:40px;line-height:40px;padding:0 27px;color:#fff;transform:skewX(-30deg);}
+.nav1 li:first-child{margin-left: -13px;}
+.nav1 li:last-child{margin-right: -15px;}
+</style>
+<ul class="nav1">
+  <li><a href="#"><span>斜切</span></a></li>
+  <li><a href="#"><span>斜切导航</span></a></li>
+  <li><a href="#"><span>斜切</span></a></li>
+  <li><a href="#"><span>斜切导航条</span></a></li>
+  <li><a href="#"><span>导航条</span></a></li>
+  <li><a href="#"><span>导航</span></a></li>
+  <li><a href="#"><span>斜切导航条</span></a></li>
+</ul>
+
+<style>
+.nav1-2{width:800px;margin:20px auto; height: 40px;}
+.nav1-2 li{float:left;padding:0 2px;}
+.nav1-2 li a{float:left;position:relative;height:40px;line-height:40px;padding:0 27px;color:#fff;}
+.nav1-2 li a:before{
+  content:'';
+  background-color:#f90;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 40px;
+  z-index: -1;
+  transform:skewX(30deg);
+}
+.nav1-2 li a:hover:before{ background-color:#369;}
+</style>
+<ul class="nav1-2">
+  <li><a href="#">斜切</a></li>
+  <li><a href="#">斜切导航</a></li>
+  <li><a href="#">斜切</a></li>
+  <li><a href="#">斜切导航条</a></li>
+  <li><a href="#">导航条</a></li>
+  <li><a href="#">导航</a></li>
+  <li><a href="#">斜切导航条</a></li>
+</ul>
+
+<hr>
+
+<style>
+.nav2{width:700px;margin:20px auto; overflow: hidden;}
+.nav2 li{float:left;position: relative;
+-ms-perspective: 200px;
+-moz-perspective: 200px;
+-webkit-perspective: 200px;
+perspective: 200px;
+}
+.nav2 li a{display: block;
+transition:.4s ease-out all;
+-ms-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;
+transform-style: preserve-3d;
+
+-ms-transform:translateZ(-20px);
+-moz-transform:translateZ(-20px);
+-webkit-transform:translateZ(-20px);
+transform:translateZ(-20px);
+}
+.nav2 li a *{display: block; font-size: 14px; color:#fff; line-height: 40px;padding:0 20px; height:40px; background:#51938f;}
+.nav2 li a span{
+  -ms-transform:translateZ(20px);
+  -moz-transform:translateZ(20px);
+  -webkit-transform:translateZ(20px);
+  transform:translateZ(20px);
+}
+.nav2 li a i{
+  position: absolute;top:0;left:0;
+  -ms-transform-origin:bottom;
+  -moz-transform-origin:bottom;
+  -webkit-transform-origin:bottom;
+  transform-origin:bottom;
+
+  -ms-transform:translateZ(-20px) rotateX(-90deg);
+  -moz-transform:translateZ(-20px) rotateX(-90deg);
+  -webkit-transform:translateZ(-20px) rotateX(-90deg);
+  transform:translateZ(-20px) rotateX(-90deg);
+}
+.nav2 li:hover a{
+  z-index: 2;
+ -ms-transform:translateZ(-20px) rotateX(90deg); 
+ -moz-transform:translateZ(-20px) rotateX(90deg); 
+ -webkit-transform:translateZ(-20px) rotateX(90deg); 
+ transform:translateZ(-20px) rotateX(90deg); 
+}
+.nav2 li:hover a *{
+  background:#369;
+}
+
+/*@supports (transition:.4s ease-out all){
+  .nav2 li a{
+    opacity: 1;
+  }
+}
+*/
+</style>
+<ul class="nav2">
+  <li><a href="#"><span>3D</span><i>3D</i></a></li>
+  <li><a href="#"><span>3D导航</span><i>3D导航</i></a></li>
+  <li><a href="#"><span>3D</span><i>3D</i></a></li>
+  <li><a href="#"><span>3D导航条</span><i>3D导航条</i></a></li>
+  <li><a href="#"><span>导航条</span><i>导航条</i></a></li>
+  <li><a href="#"><span>导航</span><i>导航</i></a></li>
+  <li><a href="#"><span>3D导航条</span><i>3D导航条</i></a></li>
+</ul>
+
+</body>
+</html>
+

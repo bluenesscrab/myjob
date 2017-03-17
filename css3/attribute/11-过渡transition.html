@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>变换transition</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+p{width:400px;-webkit-transition:all .4s ease;height:200px; text-align:center;line-height:200px;border:1px solid black;}
+p:hover{font-weight:bold;}
+</style>
+</head>
+<body>
+<pre>
+transition 过渡
+transition:[transition-porperty][transition-duration][transition-timing-function][transition-delay]
+
+[transition-property]： 检索或设置对象中的参与过渡的属性,如果提供多个属性值，以逗号进行分隔;
+transition-property:border-color,background-color,color;默认为all；
+
+[transition-duration]：检索或设置对象过渡的持续时间(单位s);
+
+[transition-timing-function]：检索或设置对象中过渡的动画类型
+transition-timing-function：
+linear：线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)
+ease：平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)
+ease-in：由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)
+ease-out：由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)
+ease-in-out：由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)
+cubic-bezier(＜number＞, ＜number＞, ＜number＞, ＜number＞)：特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内
+
+[transition-delay]：指定对象过渡的延迟时间，默认是0
+
+</pre>
+
+<p>过渡个文字看看(文字粗细和italic 过渡不了)</p>
+</body>
+</html>

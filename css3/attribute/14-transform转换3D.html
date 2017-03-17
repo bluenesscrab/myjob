@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>transform 转换3D</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+a{text-decoration:none;margin-right:18px;white-space:nowrap;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+h3{font-size:18px;padding-top:10px;}
+
+body{margin:0; font:14px/1.5 '微软雅黑';text-shadow:1px 1px 3px #666;text-align:center;}
+img{vertical-align:middle;width:230px;}
+
+.trans{border:1px solid blue; display:inline-block;margin:40px;}
+.trans{-webkit-transform-style:preserve-3d;}
+
+.trans:nth-of-type(1) img{-webkit-transform:rotateX(0deg);-webkit-transition:all 1s ease-out;}
+.trans:nth-of-type(1):hover img{-webkit-transform:rotateX(120deg);}
+
+.trans:nth-of-type(2) img{-webkit-transform:rotateZ(-30deg);-webkit-transition:all 1s ease-out;}
+.trans:nth-of-type(2):hover img{-webkit-transform:rotateZ(30deg);}
+
+.trans:nth-of-type(3){-webkit-perspective:300px; -webkit-transform-style:preserve-3d;}
+.trans:nth-of-type(3) img{-webkit-transition:all 1s ease-out;-webkit-transform:translateZ(0);}
+.trans:nth-of-type(3):hover img{-webkit-transform:translateZ(-100px);}
+
+
+
+
+</style>
+</head>
+<body>
+<pre>
+perspective  景深；
+perspective-origin  定义镜头坐标
+transform-style:preserve-3d; 指定一个3D元素；
+rotateX  （X＋垂直向上转；）
+rotateY  （Y＋水平右转；）
+rotateZ  （Z＋平面顺时针旋转；）
+perspective （景深）
+translateZ    Z轴景深
+
+</pre>
+
+<div class="trans">
+	<img src="http://www.crab.com/images/1.jpg" alt=""/>
+</div>
+
+<div class="trans">
+	<img src="http://www.crab.com/images/2.jpg" alt=""/>
+</div>
+
+<div class="trans">
+	<img src="http://www.crab.com/images/3.jpg" alt=""/>
+</div>
+
+
+<br><br><br><br>
+<style>
+.out{width:300px;height:300px;margin:70px;display:inline-block;-webkit-perspective:1000px;}
+.in{-webkit-transform-style:preserve-3d;-webkit-transition:1s all ease;width:300px;height:300px;position:relative;}
+.in p{position: absolute;top:0;left:0;width:300px;height:300px;}
+.in p:first-child{background:url(http://www.crab.com/images/4.jpg) no-repeat;-webkit-background-size:100% 100%;
+-webkit-transform:translateZ(0.1px);}
+.in p:last-child{background:url(http://www.crab.com/images/5.jpg) no-repeat;-webkit-background-size:100% 100%;
+-webkit-transform:translateZ(0);}
+.out:hover .in{-webkit-transform:rotateX(0) rotateY(-180deg);}
+
+</style>
+<div class="out">
+	<div class="in">
+		<p></p>
+		<p></p>
+	</div>
+</div>
+
+
+<style>
+#box4{border:1px solid black;display:inline-block;margin:70px;width:300px; height:300px;
+-webkit-perspective:1000px;padding:30px;}
+#box4 *{width:300px;height:300px;text-align: center; font-size:60px;line-height: 300px;}
+#box4 div{position:relative;background:rgba(50,50,50,.3);-webkit-transform-style:preserve-3d;-webkit-transition:1s all ease;}
+#box4 div:hover{-webkit-transform:rotateX(60deg) rotateY(60deg) rotateZ(60deg);}
+#box4 p{position: absolute;top:0;left:0;}
+#box4 p:nth-child(1){background: rgba(255,0,0,.5);-webkit-transform:translateZ(-150px);}
+#box4 p:nth-child(2){background: rgba(255,255,0,.5);-webkit-transform:translateZ(150px);}
+#box4 p:nth-child(3){background: rgba(0,255,0,.5);-webkit-transform-origin:left;-webkit-transform: translateZ(150px) rotateY(90deg);}
+#box4 p:nth-child(4){background: rgba(0,0,255,.5);-webkit-transform-origin:right;-webkit-transform: translateZ(150px) rotateY(-90deg);}
+#box4 p:nth-child(5){background: rgba(0,255,255,.5);-webkit-transform-origin:top;-webkit-transform: translateZ(150px) rotateX(-90deg);}
+#box4 p:nth-child(6){background: rgba(255,0,255,.5);-webkit-transform-origin:bottom;-webkit-transform: translateZ(150px) rotateX(90deg);}
+</style>
+<div id="box4"><div><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>6</p></div></div>
+
+
+
+
+<br><br><br><br><br><br><br><br>
+</body>
+</html>

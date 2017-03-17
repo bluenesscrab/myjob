@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>百叶窗</title>
+<style>
+*{margin:0;padding:0;font-size: 14px;list-style: none;color:#333;outline: none;vertical-align: middle;text-decoration: none;border:none;}
+
+#box{width:500px;height:300px;margin:30px auto;}
+ul{ width:500px;position:relative;
+display:flex;
+}
+
+ul li{height:300px;
+transition:all .6s ease;
+flex:1;
+}
+ul li:hover{
+flex:4; 
+}
+ul li:nth-child(1){background-color:#369;}
+ul li:nth-child(2){background-color:#666;}
+ul li:nth-child(3){background-color:#f90;}
+ul li:nth-child(4){background-color:#7c1;}
+ul li:nth-child(5){background-color:#f00;}
+
+</style>
+
+</head>
+<body>
+
+<div id="box">
+	<ul>
+  	<li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+</body>
+</html>

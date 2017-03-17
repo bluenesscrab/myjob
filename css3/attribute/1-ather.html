@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title> </title>
+  <base href="_blank">
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+hr{margin: 20px 0;}
+
+</style>
+</head>
+<body>
+<p><a href="http://verou.me/css3patterns/">http://verou.me/css3patterns/(css3背景图)</a></p>
+<hr>
+
+<pre>
+CSS3条件判断—— <mark>@supports</mark>  
+and  并声明
+not  排除声明
+or   或声明
+
+
+语法：
+@supports (条件规则) and (条件规则){
+  /* 特殊样式规则 */
+}
+@supports (transition:.4s ease-out all){
+  .nav2 li a{
+    opacity: .8;
+  }
+}
+</pre>
+<style>
+.box1{
+  box-shadow:0 0 6px #000;
+  transition:1s ease all;
+  width: 100px;
+  height: 100px;
+  padding:10px;
+  box-sizing:border-box;
+}
+@supports(transition:1s ease all) and (box-shadow:0 0 6px #000){
+  .box1 {
+    background-color: rgba(255,0,0,.2);
+  }
+}
+</style>
+<div class="box1"></div>
+
+<hr>
+
+<pre>
+<mark>calc()</mark> calc(四则运算)
+用于动态计算长度值。
+需要注意的是，运算符前后都需要保留一个空格，例如：width: calc(100% - 10px)；
+任何长度值都可以使用calc()函数进行计算；
+calc()函数支持 "+", "-", "*", "/" 运算；
+calc()函数使用标准的数学运算优先级规则；
+</pre>
+<style>
+.box2{
+  width:calc(200*2px);
+  height:calc(20*2px);
+  background-color:rgba(255,255,0,.6);
+}
+</style>
+<div class="box2"></div>
+
+<hr>
+
+<pre>
+  <mark>内圆角边框</mark>
+</pre>
+<style>
+.box3{margin:10px;width:200px;height:60px;background-color:#f90;
+outline:10px solid #369;
+border-radius:10px;
+box-shadow:0 0 0 10px #369;
+}
+</style>
+<div class="box3"></div>
+
+<hr>
+
+<pre>
+  <mark>filter: blur() grayscale() drop-shadow();</mark>
+  -webkit-filter: saturate(0); 图片去色
+  -webkit-filter:blur(); 模糊度
+</pre>
+<style>
+.box4{margin:30px;width: 150px; height:60px;
+padding:0 30px 0 50px;
+background:-webkit-radial-gradient(20px center,circle,#fff 0, #fff 10px, transparent 11px,transparent),
+linear-gradient(-135deg,transparent,transparent 20px,#369 20px, #369) top right/100% 50%,
+linear-gradient(-45deg,transparent,transparent 20px,#369 20px, #369) bottom right/100% 50%;
+
+background-repeat: no-repeat;
+
+-webkit-filter:drop-shadow(4px 4px 4px rgba(0,0,0,.5));
+}
+</style>
+<div class="box4">????</div>
+
+<style>
+.box4-1 {
+  height: 200px;
+  padding:100px 0;
+  width: 1000px;
+  margin: 0;
+}
+
+.box4-1{
+  background: url(tiger.jpg) 0 / cover;
+  transition:1s ease all;
+}
+.box4-1:hover{
+  -webkit-filter:blur(3px);
+  filter:blur(3px);
+}
+.box4-1 main::before {
+  background: url(tiger.jpg) 0 / cover;
+}
+
+.box4-1 main {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  width: 400px;
+  height: 200px;
+  font-size: 18px;
+  background: hsla(0,0%,100%,.25) border-box;
+  overflow: hidden;
+  border-radius: .3em;
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+              0 .5em 1em rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+}
+
+.box4-1 main:before {
+  content: '';
+  z-index: -1;
+  height: 300px;
+  width: 1000px;
+  position: absolute;
+  top:-50px;left: -300px;
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+  
+}
+
+</style>
+<div class="box4-1">
+  <main>
+    “The only way to get rid of a temptation is to yield to it. Resist it, and your soul grows sick with longing for the things it has forbidden to itself, with desire for what its monstrous laws have made monstrous and unlawful.”
+  </main>
+</div>
+
+<hr>
+
+
+<style>
+.box5 {
+  margin: 0;
+  border:1px solid red;
+  line-height: 30px;
+}
+.box5 dt{display: inline;font-size: 18px;}
+.box5 dt:after{
+  content:'\2713';
+}
+.box5 dd{display: inline-block;color:#369;text-transform:capitalize;font-size: 18px;}
+.box5 dt:not(:first-child):before{
+  content: '\A';
+  white-space: pre;
+}
+.box5 dd + dd::before { content: ', ';margin-left: -.2em;
+font-weight: normal; }
+</style>
+<dl class="box5">
+  <dt>01</dt>
+  <dd>abc1</dd> <dd>abc1</dd> <dd>abc1</dd>
+  <dt>02</dt>
+  <dd>abc2</dd>
+  <dt>03</dt>
+  <dd>abc3</dd> <dd>abc3</dd>
+  <dt>04</dt>
+  <dd>abc4</dd>
+  <dt>05</dt>
+  <dd>abc5</dd>
+</dl>
+<hr>
+
+
+
+
+
+
+
+<pre>
+ <mark>placeholder</mark> 
+WebKit和Blink（Safari,Google Chrome, Opera15+）使用伪元素
+
+::-webkit-input-placeholder
+
+Mozilla Firefox 19+ 使用伪元素
+::-moz-placeholder
+
+IE10使用伪类
+:-ms-input-placeholder
+
+<style>
+input[type="text"]::-webkit-input-placeholder{
+  color:#f90;
+}
+input[type="text"]:-moz-placeholder{
+  color:#f90;
+}
+input[type="text"]::-moz-placeholder{
+  color:#f90;
+}
+input[type="text"]:-ms-input-placeholder{
+  color:#f90;
+}
+</style>
+<input type="text" style="width:200px;" placeholder="test color"/>
+
+</pre>
+
+
+<pre>
+<mark>webkit 滚动条样式</mark>
+::-webkit-scrollbar 滚动条整体部分
+::-webkit-scrollbar-button 滚动条两端的按钮
+::-webkit-scrollbar-track 外层轨道
+::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）
+::-webkit-scrollbar-thumb （拖动条？滑块？滚动条里面可以拖动的那个，肿么翻译好呢？）
+::-webkit-scrollbar-corner 边角
+::-webkit-resizer 定义右下角拖动块的样式
+:horizontal – horizontal伪类应用于水平方向的滚动条
+:vertical – vertical伪类应用于竖直方向的滚动条
+:decrement – decrement伪类应用于按钮和内层轨道(track piece)。它用来指示按钮或者内层轨道是否会减小视窗的位置(比如，垂直滚动条的上面，水平滚动条的左边。)
+:increment – increment伪类和decrement类似，用来指示按钮或内层轨道是否会增大视窗的位置(比如，垂直滚动条的下面和水平滚动条的右边。)
+:start – start伪类也应用于按钮和滑块。它用来定义对象是否放到滑块的前面。
+:end – 类似于start伪类，标识对象是否放到滑块的后面。
+:double-button – 该伪类以用于按钮和内层轨道。用于判断一个按钮是不是放在滚动条同一端的一对按钮中的一个。对于内层轨道来说，它表示内层轨道是否紧靠一对按钮。
+:single-button – 类似于double-button伪类。对按钮来说，它用于判断一个按钮是否自己独立的在滚动条的一段。对内层轨道来说，它表示内层轨道是否紧靠一个single-button。
+:no-button – 用于内层轨道，表示内层轨道是否要滚动到滚动条的终端，比如，滚动条两端没有按钮的时候。
+:corner-present – 用于所有滚动条轨道，指示滚动条圆角是否显示。
+:window-inactive – 用于所有的滚动条轨道，指示应用滚动条的某个页面容器(元素)是否当前被激活。(在webkit最近的版本中，该伪类也可以用于::selection伪元素。webkit团队有计划扩展它并推动成为一个标准的伪类)
+<style>
+.scrollP{overflow-y:scroll;width:400px;background:#ccc;height:600px;margin:50px auto;
+}
+
+.scrollP::-webkit-scrollbar{background:none;width:12px;}
+.scrollP::-webkit-scrollbar-track,
+.scrollP::-webkit-scrollbar-thumb{
+width:12px;
+border-radius:50% 50% 50% 50%/6px 6px 6px 6px;
+}
+.scrollP::-webkit-scrollbar-track{
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+}
+.scrollP::-webkit-scrollbar-thumb {  
+  background:#7c7c7c;
+}
+
+.scrollP li{height:80px; background:#f90;margin-bottom:30px;}
+</style>
+<ul class="scrollP">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+</pre>
+
+
+<pre>
+<mark>IE11+ Firefox3.6+/Safari4+/Chrome</mark>
+元素穿透;
+pointer-events:none; 
+
+pointer-events:auto|none|visiblePainted|visibleFill|visibleStroke|visible|painted|fill|stroke|all|inherit;
+</pre>
+<div class="box1"><a href="http://www.baidu.com">遮罩下的链接A，能点到吗！</a></div>
+<div class="box2"><a href="http://www.baidu.com">遮罩下的链接B，能点到吗？</a></div>
+
+<pre>
+autocomplete="off"  FF下禁止表单记忆功能;
+
+backface-visibility 属性定义当元素不面向屏幕时是否可见。[PS:多用于css3过渡动画需要隐藏的元素身上]
+visible	背面是可见的。
+hidden	背面是不可见的。
+
+</pre>
+
+
+
+<pre>
+<mark>IE10+ Firefox/Safari/Chrome</mark> 
+隐藏被旋转的 div 元素的背面:[实测：当角度大于90° 元素就会隐藏,不只是背面]
+backface-visibility
+backface-visibility: visible|hidden;
+</pre>
+<style>
+.demo-2 {display:inline-block;border:1px solid red;}
+.demo-2 li{display:inline-block;width:100px;height: 100px;background:#7c1;margin:10px;
+backface-visibility:hidden;
+-webkit-backface-visibility:hidden;
+}
+.demo-2 li:nth-child(1){ -webkit-transform:rotateY(210deg); }
+.demo-2 li:nth-child(2){ -webkit-transform:rotateY(40deg); }
+</style>
+<ol class="demo-2">
+  <li>A</li>
+  <li>B</li>
+</ol>
+
+
+
+
+
+</body>
+</html>
