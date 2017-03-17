@@ -13,7 +13,7 @@
 	5. react
 	6. reactnative
 	7. webpack
-	8. node
+	8. node (npm包)
 	9. xiaochengxu(微信小程序)
 	10. Tools
 		-- dateURL  转换器
