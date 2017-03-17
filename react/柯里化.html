@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>React App</title>
+</head>
+<body>
+
+<h1>柯里化(currying)</h1>
+<p>把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术</p>
+<pre>
+特点：
+  1、需要多次调用传递参数
+  2、最后一次调用才会调用最内层函数
+意义：
+  1、参数复用
+  2、提前返回
+  3、延迟计算/运行
+
+
+function add(x,y,z){
+  return x+y+z;
+}
+function add(x){
+  return function(y){
+    return function(z){
+      return x+y+z;
+    }
+  }
+}
+var add=x=>y=>z=>x+y+z;
+
+
+</pre>
+
+<script>
+function add1(x,y,z){
+ return x+y+z;
+};
+document.write(add1(1,2,3)+'\n');
+
+var cost = (function(){
+    var money = 0;
+    return function(){
+        for ( var i = 0, l = arguments.length; i < l; i++ ){
+            money += arguments[ i ];
+        }
+        console.log(money);
+        return money;
+    }
+})();
+var costcurrying = (function( fn ){
+  var args = [];//储存参数
+  return function(){
+    if ( arguments.length === 0 ){
+      return fn.apply( this, args );
+    }else{
+      args = args.concat([].slice.call(arguments))
+    }
+  }
+})( cost );
+costcurrying( 100 );    
+costcurrying( 200 );    
+costcurrying( 300 );    
+costcurrying();
+
+</script>
+
+
+</body>
+</html>
