@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>二维码</title>
+</head>
+<body>
+<script src="jq.js"></script>
+<!-- <script type="text/javascript" src="jquery.qrcode.min.js"></script>
+二维码链接：<input type="text" style="width：200px;" name="url"><br/><br/>
+二维码宽高：<input type="text" value="300" style="width：200px;" name="wh">（备注：二维码为正方形）<br/><br/>
+<input type="button" value="生成二维码" name="btn"> -->
+<script>
+$('[name]').click(function() {
+  var code = $('<div style="margin:20px auto;" id="qrcode"/>');
+  $('#qrcode').remove();
+  $('body').append(code)
+  code.qrcode({
+    width: $('[name="wh"]').val(),
+    height: $('[name="wh"]').val(),
+    text: $('[name="url"]').val()
+  });
+});
+</script>
+
+<hr>
+<style>
+section input{display:none;}
+section label{display: inline-block; width: 50px; height:30px;background:gray;}
+section input:checked+label{background:red;}
+</style>
+
+<form action="" class="form">
+<section>
+  <input type="radio" name="a" value="1" id="r1" checked="checked">
+  <label for="r1"></label>
+
+  <input type="radio" name="a" value="2" id="r2">
+  <label for="r2"></label>
+
+  <input type="radio" name="a" value="3" id="r3">
+  <label for="r3"></label>
+</section>
+</form>
+<script>
+console.log($('form').serializeArray());
+$('form').change(function(event) {
+  console.log($(this).serializeArray());
+});
+</script>
+
+
+
+</body>
+</html>
+
+
+
+

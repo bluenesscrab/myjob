@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>dataURL</title>
+<style>
+body{margin: 0;background: #ccc;}
+input[type='button']{width:120px;height:40px; font-size: 16px;display: block;}
+textarea{width: 600px;height:200px;word-wrap:break-word;}
+</style>
+</head>
+<body>
+<input type="file" id="fe"/>
+<input type="button" value="转换成dataURL" id="btn"/>
+<textarea id="text" ></textarea>
+<script>
+var fe= document.getElementById('fe');
+var btn= document.getElementById('btn');
+var text= document.getElementById('text');
+var reader = new FileReader();// HTML5 File API中通过 FileReader接口，我们可以异步地将文件内容加载到内存中，赋予某个js变量。
+if(typeof FileReader == 'undefined'){
+alert('没有 FileReader 接口')
+}; 
+btn.onclick=function(){
+fe=fe.files[0];
+reader.readAsDataURL(fe);//将图片读取成 dataURL 格式
+reader.onload=function(e){
+text.innerHTML=this.result;
+};
+};
+</script>
+</body>
+</html> 
