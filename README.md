@@ -15,7 +15,7 @@
 	7. webpack
 	8. node (npm包)
 	9. xiaochengxu(微信小程序)
-	10. Tools
+	10. tools
 		-- dateURL  转换器
 		-- Tween  运动形式
 
