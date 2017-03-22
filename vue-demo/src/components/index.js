@@ -1,11 +1,14 @@
-import TButton from './button/button.vue'
-import TText from './text/text.vue'
+import Loading from './loading/loading.vue'
+
+import Icons from './icons/icons.vue'
+
+
 
 console.log(`UI组件 : this is components/index.js!`);
 
 const components = [
-  TButton,
-  TText
+  Loading,
+  Icons
 ];
 
 const install = function(Vue, opts = {}) {
