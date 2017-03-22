@@ -9,7 +9,8 @@
 		-- es5
 		-- es6
 		-- regexp 正则
-	4. vue
+	4. vue-demo(test vue)
+		vue-elm（饿了么vue组件）
 	5. react
 	6. reactnative
 	7. webpack

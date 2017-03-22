@@ -10,7 +10,7 @@
 	 	
 	 4. npm install vuex vue-loader vue vue-template-compiler --save-dev
 	 
-	 直接执行 webpack 编译 加 -w 监听
+	 直接执行 webpack -w  编译、监听
 	 
 
 ####目录结构	
