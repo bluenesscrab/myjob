@@ -34,8 +34,7 @@
       <Icons type="account" color="warning"/>
       <Icons type="account" color="error"/>
       <Icons type="account" color="disabled"/>
-      ————————————————————————————
-
+      ————————————————————————————————————————————————————————
       <Icons type="account"/> -> ＜Icons type="account"/＞
       <Icons type="branches" /> -> ＜Icons type="branches" /＞
       <Icons type="briefcase" /> -> ＜Icons type="briefcase" /＞
@@ -87,6 +86,34 @@
       <Icons type="suggset-major" /> -> ＜Icons type="suggset-major" /＞
       <Icons type="suggset-school" /> -> ＜Icons type="suggset-school" /＞
       <Icons type="freeaccount" /> -> ＜Icons type="freeaccount" /＞
+
+    </pre>
+
+
+    <pre>
+    Labels: color = ['gray','blue','orange','yellow','red','green','disabled']
+      ————————————————————————————————————————————————————————
+      <span class="labels labels-gray">灰色</span>
+      <span class="labels labels-blue">蓝色</span>
+      <span class="labels labels-orange">橙色</span>
+      <span class="labels labels-yellow">黄色</span>
+      <span class="labels labels-red">红色</span>
+      <span class="labels labels-green">绿色</span>
+      <span class="labels labels-disabled">禁用</span>
+    </pre>
+
+    <pre>
+    Button:
+      type = ['primary', 'warning' ,'success' ,'error' ]
+      size = ['small','large']
+      ————————————————————————————————————————————————————————
+      <Button type="primary" >提交</Button> <Button type="primary" size="small">提交</Button> <Button type="primary" disabled>提交</Button> <Button type="primary" size="large">提交</Button>
+
+      <Button type="warning" >提交</Button> <Button type="warning" size="small">提交</Button> <Button type="warning" disabled>提交</Button> <Button type="warning" size="large">提交</Button>
+
+      <Button type="success" >提交</Button> <Button type="success" size="small">提交</Button> <Button type="success" disabled>提交</Button> <Button type="success" size="large">提交</Button>
+
+      <Button type="error" >提交</Button> <Button type="error" size="small">提交</Button> <Button type="error" disabled>提交</Button> <Button type="error" size="large">提交</Button>
 
     </pre>
  

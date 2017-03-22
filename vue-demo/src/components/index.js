@@ -1,6 +1,8 @@
 import Loading from './loading/loading.vue'
 
 import Icons from './icons/icons.vue'
+import Labels from './labels/labels.vue'
+import Button from './button/button.vue'
 
 
 
@@ -8,7 +10,9 @@ console.log(`UI组件 : this is components/index.js!`);
 
 const components = [
   Loading,
-  Icons
+  Icons,
+  Labels,
+  Button
 ];
 
 const install = function(Vue, opts = {}) {

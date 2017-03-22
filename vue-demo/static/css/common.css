@@ -239,8 +239,7 @@ ul, ol {
 /* ========================================= basic ===================================== */
 body {
   font: 14px/1.8 "microsoft yahei", Arial, sans-serif;
-  color: #33444c;
-  background-color: #e6e6e6;
+  color: #333;
 }
 var, em, i, dfn, cite {
   font-style: normal;
@@ -417,6 +416,10 @@ a.text-disabled {
 }
 .labels-green {
   background-color: #6b6;
+}
+.labels-disabled {
+  background-color: #f2f2f2 !important;
+  color: #ccc !important;
 }
 
 /* =============================================== face & logo =============================================== */

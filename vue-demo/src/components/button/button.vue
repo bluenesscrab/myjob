@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: 'TButton',
+  name: 'Button',
   props: {
     disabled: false,
     type:{
@@ -19,7 +19,7 @@ export default {
     },
     size:{
       type:String,
-      default:'large'
+      default:''
     }
   },
   methods: {
