@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>猎聘通RTS首页</title>
+<style>
+*{padding:0px;margin:0;}
+
+body{
+  text-align: center;
+}
+
+.tree{
+  overflow: hidden;
+  display: inline-block;
+}
+.card{
+  float: left;
+  position: relative;
+  padding:10px 10px 0;
+}
+.box{
+  margin: 0 auto;
+  border: 3px solid #7fbdf0;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px;
+  height: 60px;
+  width: 120px;
+  position: relative;
+}
+.child{
+  position: relative;
+  overflow: hidden;
+  padding:10px 0 0;
+}
+.child:before{
+  content: '';
+  position: absolute;
+  height:10px;
+  width: 2px;
+  left:50%;
+  top:0px;
+  margin-left: -1px;
+  background:#369;
+}
+
+.card:before{
+  content: '';
+  position: absolute;
+  height:10px;
+  width: 2px;
+  left:50%;
+  top:0px;
+  margin-left: -1px;
+  background:#369;
+}
+.card:after{
+  content: '';
+  position: absolute;
+  height:2px;
+  width:100%;
+  left:0;
+  top:0px;
+  background:#369;
+}
+
+
+.tree .card:first-child:after{
+  width:50%;
+  left:50%;
+}
+.tree .card:last-child:after{
+  width:50%;
+  left:0;
+}
+.tree .card:only-child:after{
+  display: none;
+}
+.child:empty{
+  display: none;
+}
+.tree>.card:before,.tree>.card:after{
+  display: none;
+}
+.tree .box.active+.child{
+  display: none;
+}
+
+</style>
+</head>
+<body>
+
+
+<section class="tree">
+  
+  <div class="card">
+    <div class="box"><div>1</div></div>
+    <div class="child">
+      
+      <div class="card">
+        <div class="box"><div>2</div></div>
+        <div class="child">
+          <div class="card">
+            <div class="box"><div>3</div></div>
+            <div class="child">
+              <div class="card">
+                <div class="box"><div>4</div></div>
+                <div class="child"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box"><div>3</div></div>
+            <div class="child">
+              
+              <div class="card">
+                <div class="box"><div>4</div></div>
+                <div class="child"></div>
+              </div>
+              <div class="card">
+                <div class="box"><div>4</div></div>
+                <div class="child"></div>
+              </div>
+              <div class="card">
+                <div class="box"><div>4</div></div>
+                <div class="child"></div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="box"><div>2</div></div>
+        <div class="child">
+          <div class="card">
+            <div class="box"><div>4</div></div>
+            <div class="child">
+              <div class="card">
+                <div class="box"><div>4</div></div>
+                <div class="child"></div>
+              </div>
+              <div class="card">
+                <div class="box"><div>4</div></div>
+                <div class="child">
+                  <div class="card">
+                    <div class="box"><div>5</div></div>
+                    <div class="child"></div>
+                  </div>
+                  <div class="card">
+                    <div class="box"><div>5</div></div>
+                    <div class="child"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+</body>
+</html>
