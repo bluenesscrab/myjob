@@ -1583,6 +1583,10 @@ input.text-error, textarea.text-error {
   padding: 7px;
   vertical-align: middle;
 }
+.alert-cont {
+  display: inline;
+  vertical-align: middle;
+}
 .alert-success {
   background-color: #edfced;
   color: #6b6;
@@ -1612,6 +1616,9 @@ input.text-error, textarea.text-error {
   font-size: 18px;
   font-family: serif;
   line-height: 16px;
+}
+.alert-inline a.close {
+  float: none;
 }
 .alert a.close {
   color: #3b9bcb;

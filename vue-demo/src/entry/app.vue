@@ -35,57 +35,57 @@
       <Icons type="account" color="error"/>
       <Icons type="account" color="disabled"/>
       ————————————————————————————————————————————————————————
-      <Icons type="account"/> -> ＜Icons type="account"/＞
-      <Icons type="branches" /> -> ＜Icons type="branches" /＞
-      <Icons type="briefcase" /> -> ＜Icons type="briefcase" /＞
-      <Icons type="company" /> -> ＜Icons type="company" /＞
-      <Icons type="contract" /> -> ＜Icons type="contract" /＞
-      <Icons type="doctor" /> -> ＜Icons type="doctor" /＞
-      <Icons type="downarrow" /> -> ＜Icons type="downarrow" /＞
-      <Icons type="dropout" /> -> ＜Icons type="dropout" /＞
-      <Icons type="fold" /> -> ＜Icons type="fold" /＞
-      <Icons type="mark" /> -> ＜Icons type="mark" /＞
-      <Icons type="message" /> -> ＜Icons type="message" /＞
-      <Icons type="mail" /> -> ＜Icons type="mail" /＞
-      <Icons type="message-fill" /> -> ＜Icons type="message-fill" /＞
-      <Icons type="resume-buy" /> -> ＜Icons type="resume-buy" /＞
-      <Icons type="phone" /> -> ＜Icons type="phone" /＞
-      <Icons type="prompt-close" /> -> ＜Icons type="prompt-close" /＞
-      <Icons type="prompt-correct" /> -> ＜Icons type="prompt-correct" /＞
-      <Icons type="prompt-failure" /> -> ＜Icons type="prompt-failure" /＞
-      <Icons type="prompt-question" /> -> ＜Icons type="prompt-question" /＞
-      <Icons type="prompt-warning" /> -> ＜Icons type="prompt-warning" /＞
-      <Icons type="resources" /> -> ＜Icons type="resources" /＞
-      <Icons type="save" /> -> ＜Icons type="save" /＞
-      <Icons type="setting" /> -> ＜Icons type="setting" /＞
-      <Icons type="subaccount" /> -> ＜Icons type="subaccount" /＞
-      <Icons type="time" /> -> ＜Icons type="time" /＞
-      <Icons type="affixation" /> -> ＜Icons type="affixation" /＞
-      <Icons type="user" /> -> ＜Icons type="user" /＞
-      <Icons type="self" /> -> ＜Icons type="self" /＞
-      <Icons type="certification" /> -> ＜Icons type="certification" /＞
-      <Icons type="skill" /> -> ＜Icons type="skill" /＞
-      <Icons type="project" /> -> ＜Icons type="project" /＞
-      <Icons type="language" /> -> ＜Icons type="language" /＞
-      <Icons type="favorite" /> -> ＜Icons type="favorite" /＞
-      <Icons type="favorite-cancel" /> -> ＜Icons type="favorite-cancel" /＞
-      <Icons type="relation" /> -> ＜Icons type="relation" /＞
-      <Icons type="relation-cancel" /> -> ＜Icons type="relation-cancel" /＞
-      <Icons type="print" /> -> ＜Icons type="print" /＞
-      <Icons type="report" /> -> ＜Icons type="report" /＞
-      <Icons type="export" /> -> ＜Icons type="export" /＞
-      <Icons type="forwarding" /> -> ＜Icons type="forwarding" /＞
-      <Icons type="inttention" /> -> ＜Icons type="inttention" /＞
-      <Icons type="similar" /> -> ＜Icons type="similar" /＞
-      <Icons type="trash" /> -> ＜Icons type="trash" /＞
-      <Icons type="backtop" /> -> ＜Icons type="backtop" /＞
-      <Icons type="eyes" /> -> ＜Icons type="eyes" /＞
-      <Icons type="right" /> -> ＜Icons type="right" /＞
-      <Icons type="suggset-company" /> -> ＜Icons type="suggset-company" /＞
-      <Icons type="suggset-resume" /> -> ＜Icons type="suggset-resume" /＞
-      <Icons type="suggset-major" /> -> ＜Icons type="suggset-major" /＞
-      <Icons type="suggset-school" /> -> ＜Icons type="suggset-school" /＞
-      <Icons type="freeaccount" /> -> ＜Icons type="freeaccount" /＞
+      <Icons type="account"/>  ＜Icons type="account"/＞
+      <Icons type="branches" />  ＜Icons type="branches" /＞
+      <Icons type="briefcase" />  ＜Icons type="briefcase" /＞
+      <Icons type="company" />  ＜Icons type="company" /＞
+      <Icons type="contract" />  ＜Icons type="contract" /＞
+      <Icons type="doctor" />  ＜Icons type="doctor" /＞
+      <Icons type="downarrow" />  ＜Icons type="downarrow" /＞
+      <Icons type="dropout" />  ＜Icons type="dropout" /＞
+      <Icons type="fold" />  ＜Icons type="fold" /＞
+      <Icons type="mark" />  ＜Icons type="mark" /＞
+      <Icons type="message" />  ＜Icons type="message" /＞
+      <Icons type="mail" />  ＜Icons type="mail" /＞
+      <Icons type="message-fill" />  ＜Icons type="message-fill" /＞
+      <Icons type="resume-buy" />  ＜Icons type="resume-buy" /＞
+      <Icons type="phone" />  ＜Icons type="phone" /＞
+      <Icons type="prompt-close" />  ＜Icons type="prompt-close" /＞
+      <Icons type="prompt-correct" />  ＜Icons type="prompt-correct" /＞
+      <Icons type="prompt-failure" />  ＜Icons type="prompt-failure" /＞
+      <Icons type="prompt-question" />  ＜Icons type="prompt-question" /＞
+      <Icons type="prompt-warning" />  ＜Icons type="prompt-warning" /＞
+      <Icons type="resources" />  ＜Icons type="resources" /＞
+      <Icons type="save" />  ＜Icons type="save" /＞
+      <Icons type="setting" />  ＜Icons type="setting" /＞
+      <Icons type="subaccount" />  ＜Icons type="subaccount" /＞
+      <Icons type="time" />  ＜Icons type="time" /＞
+      <Icons type="affixation" />  ＜Icons type="affixation" /＞
+      <Icons type="user" />  ＜Icons type="user" /＞
+      <Icons type="self" />  ＜Icons type="self" /＞
+      <Icons type="certification" />  ＜Icons type="certification" /＞
+      <Icons type="skill" />  ＜Icons type="skill" /＞
+      <Icons type="project" />  ＜Icons type="project" /＞
+      <Icons type="language" />  ＜Icons type="language" /＞
+      <Icons type="favorite" />  ＜Icons type="favorite" /＞
+      <Icons type="favorite-cancel" />  ＜Icons type="favorite-cancel" /＞
+      <Icons type="relation" />  ＜Icons type="relation" /＞
+      <Icons type="relation-cancel" />  ＜Icons type="relation-cancel" /＞
+      <Icons type="print" />  ＜Icons type="print" /＞
+      <Icons type="report" />  ＜Icons type="report" /＞
+      <Icons type="export" />  ＜Icons type="export" /＞
+      <Icons type="forwarding" />  ＜Icons type="forwarding" /＞
+      <Icons type="inttention" />  ＜Icons type="inttention" /＞
+      <Icons type="similar" />  ＜Icons type="similar" /＞
+      <Icons type="trash" />  ＜Icons type="trash" /＞
+      <Icons type="backtop" />  ＜Icons type="backtop" /＞
+      <Icons type="eyes" />  ＜Icons type="eyes" /＞
+      <Icons type="right" />  ＜Icons type="right" /＞
+      <Icons type="suggset-company" />  ＜Icons type="suggset-company" /＞
+      <Icons type="suggset-resume" />  ＜Icons type="suggset-resume" /＞
+      <Icons type="suggset-major" />  ＜Icons type="suggset-major" /＞
+      <Icons type="suggset-school" />  ＜Icons type="suggset-school" /＞
+      <Icons type="freeaccount" />  ＜Icons type="freeaccount" /＞
 
     </pre>
 
@@ -100,6 +100,7 @@
       <span class="labels labels-red">红色</span>
       <span class="labels labels-green">绿色</span>
       <span class="labels labels-disabled">禁用</span>
+      
     </pre>
 
     <pre>
@@ -116,6 +117,27 @@
       <Button type="error" >提交</Button> <Button type="error" size="small">提交</Button> <Button type="error" disabled>提交</Button> <Button type="error" size="large">提交</Button>
 
     </pre>
+
+
+    <pre>
+      Alert 
+        inline ['true']
+        type ['success', 'question', 'error']
+      <Alert>提升优质招聘职位</Alert>
+      <Alert type="success">职位已通过审核</Alert>
+      <Alert type="question">您的操作存在一定风险</Alert>
+    <Alert type="error">操作失败！</Alert>
+    </pre>
+    <Alert inline="true">提升优质招聘职位</Alert>
+    <Alert inline="true" type="success">职位已通过审核</Alert>
+    <Alert inline="true" type="question">您的操作存在一定风险</Alert>
+    <Alert inline="true" type="error">操作失败！</Alert>
+
+    <pre>
+
+    </pre>
+      
+
  
 
   </div>

@@ -3,6 +3,7 @@ import Loading from './loading/loading.vue'
 import Icons from './icons/icons.vue'
 import Labels from './labels/labels.vue'
 import Button from './button/button.vue'
+import Alert from './alert/alert.vue'
 
 
 
@@ -12,7 +13,8 @@ const components = [
   Loading,
   Icons,
   Labels,
-  Button
+  Button,
+  Alert
 ];
 
 const install = function(Vue, opts = {}) {
