@@ -10269,6 +10269,12 @@ const actions = { // ajax 通常放在这里处理
       console.log(`执行ADD`);
       context.commit('ADD');
     }, 3000);
+  },
+  ACTION_REMOVE(context) {
+    console.log(` action，执行3m后 ‘REMOVE’ `);
+    setTimeout(function () {
+      context.commit('REMOVE');
+    }, 3000);
   }
 };
 
@@ -10337,6 +10343,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
@@ -10357,6 +10369,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     fnRemove() {
       this.$store.commit('REMOVE', { a: 1 });
+    },
+    fnAdd1() {
+      this.$store.dispatch('ACTION_ADD', 'n');
+    },
+    fnRemove1() {
+      this.$store.dispatch('ACTION_REMOVE', { a: 1 });
     }
   }
 });
@@ -12574,11 +12592,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.fnAdd
     }
-  }, [_vm._v("buttons add")]), _vm._v(" "), _c('button', {
+  }, [_vm._v("同步 buttons add")]), _vm._v(" "), _c('button', {
     on: {
       "click": _vm.fnRemove
     }
-  }, [_vm._v("buttons remove")])])
+  }, [_vm._v("同步 buttons remove")]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('button', {
+    on: {
+      "click": _vm.fnAdd1
+    }
+  }, [_vm._v("异步 buttons add 延时3m")]), _vm._v(" "), _c('button', {
+    on: {
+      "click": _vm.fnRemove1
+    }
+  }, [_vm._v("异步 buttons remove 延时3m")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

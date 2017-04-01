@@ -26,6 +26,12 @@ const actions = { // ajax 通常放在这里处理
       console.log(`执行ADD`);
       context.commit('ADD');
     },3000);
+  },
+  ACTION_REMOVE (context) {
+    console.log(` action，执行3m后 ‘REMOVE’ `);
+    setTimeout(function(){
+      context.commit('REMOVE');
+    },3000);
   }
 };
 

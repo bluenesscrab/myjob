@@ -2,8 +2,14 @@
   <section>
     <h1>{{notes}}</h1>
     <h2>{{notesAdd}}</h2>
-    <button v-on:click="fnAdd">buttons add</button>
-    <button v-on:click="fnRemove">buttons remove</button>
+    <button v-on:click="fnAdd">同步 buttons add</button>
+    <button v-on:click="fnRemove">同步 buttons remove</button>
+
+    <hr>
+    
+    <button v-on:click="fnAdd1">异步 buttons add 延时3m</button>
+    <button v-on:click="fnRemove1">异步 buttons remove 延时3m</button>
+
   </section>
 </template>
 <script>
@@ -25,6 +31,12 @@ export default {
     },
     fnRemove(){
       this.$store.commit('REMOVE',{a:1});
+    },
+    fnAdd1(){
+      this.$store.dispatch('ACTION_ADD','n');
+    },
+    fnRemove1(){
+      this.$store.dispatch('ACTION_REMOVE',{a:1});
     }
   }
 }
