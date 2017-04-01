@@ -10249,28 +10249,33 @@ const state = {
   activeNote: {}
 };
 
+const watch = {
+  notes(val) {
+    console.log(`store.js watch: ${val}`);
+  }
+};
+
 const mutations = {
-  ADD(state) {
-    // 变更状态
+  ADD(state, {}) {
+    //变更状态;
     state.notes++;
     console.log(state.notes);
   },
-  REMOVE(state) {
-    // 变更状态
+  REMOVE(state, {}) {
+    //变更状态;
     state.notes--;
     console.log(state.notes);
   }
 };
 
-const actions = { // ajax 通常放在这里处理
-  ACTION_ADD(context) {
+const actions = { //ajax 通常放在这里处理;
+  ACTION_ADD(context, {}) {
     console.log(` action，执行3m后 ‘ADD’ `);
     setTimeout(function () {
-      console.log(`执行ADD`);
       context.commit('ADD');
     }, 3000);
   },
-  ACTION_REMOVE(context) {
+  ACTION_REMOVE(context, {}) {
     console.log(` action，执行3m后 ‘REMOVE’ `);
     setTimeout(function () {
       context.commit('REMOVE');
@@ -10288,6 +10293,7 @@ const getters = {
   state,
   mutations,
   actions,
+  watch,
   getters
 }));
 
@@ -10350,6 +10356,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     notes() {
@@ -10357,6 +10364,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     notesAdd() {
       return this.$store.getters.notesAdd;
+    }
+  },
+  watch: {
+    notes(val) {
+      console.log(`app.vue watch: ${val}`);
     }
   },
   methods: {
@@ -10404,6 +10416,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // store.dispatch('ACTION_ADD');
 console.log(`index.js  入口文件！`);
 // 创建根实例
+
+// 通过 subscribe 来监听 mutation
+__WEBPACK_IMPORTED_MODULE_3__store_store__["a" /* default */].subscribe((mutation, state) => {
+  console.log(mutation);
+});
 
 new __WEBPACK_IMPORTED_MODULE_0_vue_dist_vue_js___default.a({
   el: '#app',

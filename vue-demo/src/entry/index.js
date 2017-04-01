@@ -12,6 +12,12 @@ import store from '../store/store'
 console.log(`index.js  入口文件！`);
 // 创建根实例
 
+// 通过 subscribe 来监听 mutation
+store.subscribe((mutation, state) => {
+  console.log(mutation)
+});
+
+
 new Vue({
   el: '#app',
   store,
