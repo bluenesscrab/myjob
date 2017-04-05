@@ -1,5 +1,5 @@
 
-##myjob
+## myjob
 
 	目录：
 	1.html5
@@ -23,7 +23,7 @@
 		-- 影梭
 		-- 魔棒（mobang.md）
 
-####学习文档
+#### 学习文档
 
 > ES6文档 [http://www.nodeclass.com/api/ECMAScript6.html](http://www.nodeclass.com/api/ECMAScript6.html)
 > 
@@ -60,8 +60,8 @@
 >canvas API [http://javascript.ruanyifeng.com/htmlapi/canvas.html#toc2](http://javascript.ruanyifeng.com/htmlapi/canvas.html#toc2)
 >
 >
-
-
+>
+>
 
 	
 git 操作：

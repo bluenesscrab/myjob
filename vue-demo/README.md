@@ -1,5 +1,4 @@
-
-##vue
+## vue
 
 	 1. npm init
 	 2. npm install babel babel-core babel-loader --save-dev
@@ -13,7 +12,8 @@
 	 直接执行 webpack -w  编译、监听
 	 
 
-####目录结构	
+#### 目录结构	
+
 	api ：封装与后端接口交互的操作
 	common ：放置一些 reset.css 之类的
 	components ：组件
@@ -169,12 +169,14 @@ methods 将被混入到 Vue 实例中。可以直接通过 VM 实例访问这些
 	    }
 	  }
 	})
+
 你不能直接调用一个 mutation handler。这个选项更像是事件注册：“当触发一个类型为 increment 的 mutation 时，调用此函数。”要唤醒一个 mutation handler，你需要以相应的 type 调用 store.commit 方法：
 
 	store.commit('increment')
 
 
-####提交载荷（Payload）
+#### 提交载荷（Payload）
+
 	你可以向 store.commit 传入额外的参数，即 mutation 的 载荷（payload）：
 
 	mutations: {
@@ -195,7 +197,7 @@ methods 将被混入到 Vue 实例中。可以直接通过 VM 实例访问这些
 	  amount: 10
 	})
 	
-####Actions(一般用作异步操作，不是直接修改state，而是调用Mutations)
+#### Actions(一般用作异步操作，不是直接修改state，而是调用Mutations)
 
 	Action 类似于 mutation，不同在于：
 	Action 提交的是 mutation，而不是直接变更状态。
@@ -218,7 +220,7 @@ methods 将被混入到 Vue 实例中。可以直接通过 VM 实例访问这些
 	  }
 	})
 	
-####分发 Action
+#### 分发 Action
 
 	Action 通过 store.dispatch 方法触发：
 	store.dispatch('increment')
@@ -247,7 +249,7 @@ Actions 支持同样的载荷方式和对象方式进行分发：
 	})
 	
 	
-####Modules
+#### Modules
 
 使用单一状态树，导致应用的所有状态集中到一个很大的对象。但是，当应用变得很大时，store 对象会变得臃肿不堪。
 
