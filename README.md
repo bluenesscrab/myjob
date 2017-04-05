@@ -66,5 +66,5 @@
 git 操作：
 
 	git add .
-	git commit -m 'description'
+	git commit -m 'add'
 	git push origin master
