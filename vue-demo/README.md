@@ -350,3 +350,14 @@ Vuex 允许我们在 store 中定义『getters』（可以认为是 store 的计
 	    }
 	  }
 	})
+
+
+### vue-dialog
+
+	npm install hsy-vue-dialog -S
+	
+在入口 entry/index.js ->
+	
+	import Dialog from 'hsy-vue-dialog'
+	Vue.use(Dialog)
+	

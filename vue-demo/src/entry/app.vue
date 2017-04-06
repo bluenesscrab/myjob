@@ -10,11 +10,31 @@
     <button v-on:click="fnAdd1">异步 buttons add 延时3m</button>
     <button v-on:click="fnRemove1">异步 buttons remove 延时3m</button>
 
+    <hr>
+
+    <button @click="visible = true">dialog</button>
+ 
+    <hsy-dialog class="confirm" v-model="visible">
+      <div slot="title">Remove</div>
+      <div slot="body">
+        <div>This operation is irreversible, are you sure?</div>
+        <div>
+          <button @click="handleYes">Yes</button>
+          <button>No</button>
+        </div>
+      </div>
+    </hsy-dialog>
+
   </section>
 </template>
 <script>
 
 export default {
+  data() {
+    return {
+      visible: false
+    }
+  },
   computed:{
     notes() {
       return this.$store.state.notes
@@ -43,6 +63,10 @@ export default {
     },
     fnRemove1() {
       this.$store.dispatch('ACTION_REMOVE',{a:1});
+    },
+    handleYes() {
+      alert('Yes');
+      this.visible = false
     }
   }
 }

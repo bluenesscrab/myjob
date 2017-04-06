@@ -3,6 +3,9 @@ import Vue from 'vue/dist/vue.js'
 //
 import Vuex from 'vuex'
 
+import Dialog from 'hsy-vue-dialog'
+Vue.use(Dialog);
+
 import App from './app.vue'
 import store from '../store/store'
 
@@ -16,6 +19,7 @@ console.log(`index.js  入口文件！`);
 store.subscribe((mutation, state) => {
   console.log(mutation)
 });
+
 
 
 new Vue({

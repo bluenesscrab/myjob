@@ -29,6 +29,8 @@
 > 
 > VUE官网 [http://cn.vuejs.org/](http://cn.vuejs.org/)
 >
+> IVUE [https://www.iviewui.com/components/modal](https://www.iviewui.com/components/modal)
+>
 > ElementUI/element-starter [https://github.com/ElementUI/element-starter](https://github.com/ElementUI/element-starter)
 > 
 > VUEX API [https://vuex.vuejs.org/zh-cn/installation.html](https://vuex.vuejs.org/zh-cn/installation.html)
