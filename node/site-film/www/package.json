@@ -1,0 +1,34 @@
+{
+  "name": "node-vue-demo",
+  "version": "1.0.0",
+  "description": "vue-demo",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "hsy-vue-dialog": "0.0.7",
+    "lp-dialog": "^1.0.3",
+    "vue": "^2.0.5",
+    "vue-router": "^2.4.0",
+    "vuex": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "css-loader": "^0.27.3",
+    "style-loader": "^0.14.1",
+    "vue": "^2.2.4",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^11.1.4",
+    "vue-template-compiler": "^2.2.4",
+    "vuex": "^2.2.1",
+    "webpack": "^2.3.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  }
+}

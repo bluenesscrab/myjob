@@ -16,7 +16,9 @@
 	8. webpack
 	9. node (npm包)
 	10. xiaochengxu(微信小程序)
-	11. tools
+	11. bootstrap
+	12. mongodb
+	13. tools
 		-- dateURL  转换器
 		-- Tween  运动形式
 		-- jquery 二维码生成器
@@ -29,11 +31,13 @@
 > 
 > VUE官网 [http://cn.vuejs.org/](http://cn.vuejs.org/)
 >
-> IVUE [https://www.iviewui.com/components/modal](https://www.iviewui.com/components/modal)
+> iViewUI [https://www.iviewui.com/components/modal](https://www.iviewui.com/components/modal)
 >
 > ElementUI/element-starter [https://github.com/ElementUI/element-starter](https://github.com/ElementUI/element-starter)
 > 
 > VUEX API [https://vuex.vuejs.org/zh-cn/installation.html](https://vuex.vuejs.org/zh-cn/installation.html)
+> 
+> Router [http://router.vuejs.org/zh-cn/essentials/dynamic-matching.html](http://router.vuejs.org/zh-cn/essentials/dynamic-matching.html)
 > 
 > Vuex 构建一个笔记应用 [http://www.open-open.com/lib/view/open1462026812188.html](http://www.open-open.com/lib/view/open1462026812188.html)
 > 

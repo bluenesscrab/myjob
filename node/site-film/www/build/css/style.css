@@ -1,0 +1,43 @@
+*{
+  margin:0;
+  padding:0;
+  list-style:none;
+  outline:none;
+  vertical-align: middle;
+}
+body{
+  font-size:14px;
+  color:#333;
+}
+a img{
+  border:none;
+}
+
+ul{
+  display: flex;
+}
+ul li{width: 200px; height: 100px;position: relative;background:#000;margin:10px;}
+ul li:before,ul li:after{
+  content: '';
+  transition:.6s ease all;
+  position: absolute;
+  top:20px;
+  right:20px;
+  bottom:20px;
+  left:20px;
+}
+ul li:before{
+  border-top: 1px solid rgba(255,255,255,.8);
+  border-bottom: 1px solid rgba(255,255,255,.8);
+  transform:scale(0,1);
+}
+ul li:after{
+  border-left: 1px solid rgba(255,255,255,.8);
+  border-right: 1px solid rgba(255,255,255,.8);
+   transform:scale(1,0);
+}
+ul li:hover:before,
+ul li:hover:after
+{
+  transform:scale(1);
+}

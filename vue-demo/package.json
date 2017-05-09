@@ -5,8 +5,9 @@
   "main": "webpack.config.js",
   "dependencies": {
     "hsy-vue-dialog": "0.0.7",
+    "lp-dialog": "^1.0.3",
     "vue": "^2.0.5",
-    "vue-router": "^2.3.1",
+    "vue-router": "^2.4.0",
     "vuex": "^2.2.1"
   },
   "devDependencies": {

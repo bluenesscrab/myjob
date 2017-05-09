@@ -361,3 +361,14 @@ Vuex 允许我们在 store 中定义『getters』（可以认为是 store 的计
 	import Dialog from 'hsy-vue-dialog'
 	Vue.use(Dialog)
 	
+
+### vue-router
+	
+	npm install vue-router --save
+	
+如果在一个模块化工程中使用它，必须要通过 Vue.use() 明确地安装路由功能：
+
+	import Vue from 'vue'
+	import VueRouter from 'vue-router'
+	Vue.use(VueRouter)
+	
