@@ -1,0 +1,43 @@
+#im-root .chatwin .chat-title {
+  .attention-drop {
+    background: #fff;
+    padding: 0 8px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+    position: absolute;
+    right: 0;
+    top: 94px;
+    z-index: 1;
+  }
+  .attention-drop:before{
+    content:'';
+    border-width:8px;
+    border-style:solid;
+    border-color:transparent transparent #ddd transparent;
+    width:0;
+    height:0;
+    position:absolute;
+    top:-16px;
+    left:34px;
+
+  }
+  .attention-drop:after{
+    content:'';
+    border-style:solid;
+    border-width:8px;
+    border-color:transparent transparent #fff transparent;
+    position:absolute;
+    top:-15px;
+    left:34px;
+
+  }
+  .attention-drop a {
+    width: 72px;
+    line-height: 22px;
+    text-align: center;
+    color: #2c99fe;
+    border: 1px solid #2c99fe;
+    border-radius: 2px;
+    margin: 8px 0;
+    display: block;
+  }
+}

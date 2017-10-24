@@ -1,0 +1,81 @@
+#im-root {
+  .shield-box {
+    position:absolute;
+    right:15px;
+    top:35px;
+    padding:5px 8px;
+    background-color:#fff;
+    box-shadow: 0px 1px 3px 0px rgba(66, 123, 152, 0.53);
+    z-index:1;
+
+    a {
+      display:block;
+      width:55px;
+      height:19px;
+      border:1px solid #0077ba;
+      border-radius:1px;
+      color:#0077ba;
+      font-size:12px;
+      line-height:19px;
+      text-align:center;
+      margin-bottom:4px;
+      outline:none;
+
+      &:hover{
+        border:1px solid #fa0;
+        color:#fa0;
+      }
+      &:last-child{
+        margin-bottom:0;
+      }
+    }
+  }
+  .shield-dialog-box{
+    padding:0 15px;
+    p{
+      font-size:12px;
+      line-height:20px;
+    }
+    .btns-group{
+      text-align:center;
+      font-size:12px;
+      margin-top:25px;
+    }
+    a.btn{
+      color:#fff;
+      margin-left:10px;
+    }
+  }
+  .report-dialog-box{
+    padding:0 15px;
+    p{
+      margin-left:-8px;
+      a{
+        padding:5px 15px;
+        line-height:28px;
+        font-size:12px;
+        border:1px solid #666;
+        color:#666;
+        white-space:nowrap;
+        text-decoration:none;
+        margin-left:8px;
+        &:focus{
+          outline:none;
+        }
+        &.active{
+          color:#2c99fe;
+          border:1px solid #2c99fe;
+        }
+      }
+    }
+    .btns-group{
+      text-align:center;
+      font-size:12px;
+      margin-top:25px;
+    }
+    a.btn{
+      color:#fff;
+      margin-left:10px;
+    }
+  }
+}

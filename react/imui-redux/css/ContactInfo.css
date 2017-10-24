@@ -1,0 +1,62 @@
+#im-root .main-content .contact-list ul li .contact-info,
+#im-root .main-content .history-contact-list ul li .contact-info {
+  padding: 12px 15px 12px 25px;
+  .photo{
+    float:left;
+    position:relative;
+    margin-right:10px;
+  }
+  .photo img{
+    width:40px;
+    height:40px;
+  }
+  .photo .dot {
+    position: absolute;
+    right: -3px;
+    top: -1px;
+    width: 10px;
+    height: 10px;
+    background: #f00;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+  .photo em.connected {
+    position: absolute;
+    background-color: #29c;
+    color: #fff;
+    padding: 0 3px;
+    top: 28px;
+    left: -3px;
+    width: 40px;
+    text-align: center;
+  }
+  .user-name{
+    color:#333;
+    em{
+      margin-left: 6px;
+    }
+  }
+  .user-name:hover{
+    color:#333;
+  }
+  .info{
+    float:left;
+    width:135px;
+  }
+  .info time{
+    float:right;
+    margin-right: -10px;
+    color: #cecece;  
+  }
+  .info .last{
+    width: 135px;
+    min-height: 20px;
+    color: #999;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .info .job-title{
+    padding-left:8px;
+  }
+}

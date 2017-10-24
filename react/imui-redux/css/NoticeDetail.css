@@ -1,0 +1,53 @@
+#im-root .scroll-dialog-main{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  .sd-close{
+    left: 50%;
+    position: absolute;
+    text-decoration: none;
+    top: 70px;
+  }
+  .sd-no-padding {
+    border: 0;
+    border-radius: 0;
+  }
+  article{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -60px;
+    min-width: 48px;
+    border-radius: 4px;
+    background-color: #2c99fe;
+    text-align: center;
+    color: #fff;
+    .change-page{
+      height: 44px;
+      text-align: center;
+      line-height: 69px;
+      a{
+        display: inline-block;
+      }
+    }
+    span{
+      border-bottom: 1px solid #1684e9;
+      border-top: 1px solid #1684e9;
+      display: block;
+      line-height: 30px;
+      width: 100%;
+    }
+  }
+}
+#im-root .scroll-dialog-modal {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  opacity: .6;
+  background-color: #000;
+  filter: alpha(opacity=60);
+}  

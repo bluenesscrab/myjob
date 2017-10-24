@@ -1,0 +1,54 @@
+#im-root {
+  .set-box{
+    position:absolute;
+    left:3px;
+    bottom:40px;
+    width:168px;
+    padding-top:8px;
+    background-color: #fefefe;
+    box-shadow: 0px 0px 4px #999;
+    text-align:left;
+    z-index:4;
+  }
+  .set-box a{
+    display:inline;
+    margin-left:5px;
+    padding-bottom:5px;
+  }
+  .set-box dl{
+    border-top:1px solid #f6f6f6;
+    padding-top:5px;
+  }
+  .set-box dl:first-child{
+    border:none;
+  }
+  .set-box dl dt{
+    font-size: 12px;
+    color: #666;
+    padding:0 9px;
+    margin-bottom:8px;
+  }
+  .set-box dl dd .radio {
+    margin: -2px 10px 0px 0px;
+  }
+  .set-box dl dd{
+    padding:0 9px;
+    margin-bottom:8px;    
+  }
+  .set-box dl dd a{
+    vertical-align:middle;
+    &.muted:hover{
+      color:#999;
+    }
+  }
+  .set-box .triangle{
+    position:absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 8px solid #f8f7f7;
+    bottom: -8px;
+    left: 7px;
+  }
+}

@@ -1,0 +1,106 @@
+#im-root .contacts {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  .no-contacts {
+    position: relative;
+    height: calc(100% - 60px);
+  }
+  .contactlist-with-recent-contacts .no-contacts{
+    height: calc( 100% - 122px);
+  }
+  .no-contacts span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -45px;
+    padding-top: 70px;
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    background: url(../images/no-msg.png) center 0 no-repeat;
+  }
+  .msg-list {
+    overflow-y: auto;
+  }
+  .msg-list::-webkit-scrollbar {
+    width: 0;
+  }
+  .contact-list{
+    height: 100%;
+    width: 100%;    
+    overflow-y:auto;
+  }
+  .contact-list .btn-recent-contacts{
+    border-bottom: 1px solid #f6f6f6;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 8px;
+    padding: 10px;
+    color: #333;
+    vertical-align: middle;
+    .recent-contacts{
+      background: url(../images/recent-contacts.png) no-repeat scroll center 0;
+      cursor: pointer;
+      display: inline-block;
+      height: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+      width: 40px;
+    }
+  }
+  .contact-list .btn-recent-contacts:hover{
+    color: #333;
+    text-decoration: none;
+  }
+  .lihover{
+    padding-left:340px;
+    margin-left:-340px;
+  }  
+  .contact-list ul{
+    padding-bottom: 60px;
+  }
+  .contact-list ul li{
+    border-bottom: 1px solid #f6f6f6;
+    cursor:pointer;
+    position:relative;
+  }
+  .contact-list ul li .close{
+    display:none;
+    position: absolute;
+    padding: 5px;
+    left:0;
+    top:16px;
+    font-family: 'simsun';
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    z-index: 2;
+  }
+  .contact-list ul li:hover .close{
+    display:block;
+  }
+  .contact-list.lihover li:hover .contact-card {
+    display: block;
+    animation-duration: .4s;
+    animation-name: fadeInRight;
+  }
+  .to-old-version {
+    position:absolute;
+    bottom:0;
+    padding: 8px 15px;
+    text-align: right;
+    left:0;
+    right:0;
+  }
+  .to-old-version a{
+    color:#007eff;
+  }
+  .to-old-version a .webim-icons16{
+    margin-left:10px;
+  }
+}

@@ -1,0 +1,76 @@
+@import './im.css';
+
+#im-root{
+  aside{
+    position:absolute;
+    top:0;
+    width:44px;
+    height:100%;
+    text-align: center;
+    background:linear-gradient(to bottom, #007eff, #2c99fe);
+    min-height:256px;
+    z-index:3;
+  }
+  aside a{
+    display:block;
+    outline:none;
+  }
+  aside a.link-close-panel{
+    line-height:44px;
+    height:44px;
+    border-bottom:1px solid #0073ea;
+  }
+  aside a.link-open-setting{
+    position:absolute;
+    bottom:0;
+    padding:12px 0;
+    width: 100%;
+    text-align: center;
+  }
+  aside ul li a{
+    color: #fff;
+    line-height: 36px;
+    height: 36px;
+    margin-top: 18px;
+  }
+  aside ul li a i{
+    margin: 6px 0;
+  }
+  aside ul li a span, aside ul li a:hover i{
+    display:none;
+  }
+  aside ul li a:hover span, aside ul li a i{
+    display:block;
+  }
+  aside ul li a .dot {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 8px;
+    height: 8px;
+    background: #f00;
+    border-radius: 50%;
+  }
+  .main-content{
+    position:absolute;
+    left:44px;
+    right:0;
+    top:0;
+    bottom:0;
+  }
+  .main-content .list-loading{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-bottom: -8px;
+    width:16px;
+    height:16px;
+  }
+  .main-content .list-loading em{
+    width:16px;
+    height:16px;
+    display:block;
+    background: url(../images/loading1.gif) center 0 no-repeat;
+  }
+}

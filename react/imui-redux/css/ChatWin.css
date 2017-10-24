@@ -1,0 +1,111 @@
+#im-root .chatwin {
+  {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: 300px;
+    bottom: 10px;
+    padding: 6px 5px 5px;
+    margin: 5px auto;
+    width: 370px;
+    max-height: 580px;
+    background: #f0f0f0;
+    box-shadow: 0 0 6px rgba(124,155,170, 1);
+    overflow:hidden;
+  }
+  .chatwin-loading{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-bottom: -8px;
+    width:16px;
+    height:16px;
+  }
+  .chatwin-loading em{
+    width:16px;
+    height:16px;
+    display:block;
+    background: url(../images/loading1.gif) center 0 no-repeat;
+  }
+  .msg-list-loading{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-bottom: -8px;
+    width:16px;
+    height:16px;
+  }
+  .msg-list-loading em{
+    width:16px;
+    height:16px;
+    display:block;
+    background: url(../images/loading1.gif) center 0 no-repeat;
+  }
+  .close-chat{
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    z-index: 1;
+    font-size: 16px;
+    font-family: 'simsun';
+    color: #999a9b;
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+  a{
+    color:#2c99fe;
+  }
+
+  .blur{    
+    filter: blur(15px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=15, MakeShadow=false);
+  }
+  .chat-main{
+    height: calc(100% - 106px);
+  }
+  .chat-main .chat-list{
+    padding: 10px 16px 16px;
+    overflow-y: auto;
+    background: #fff;
+    margin-bottom: 1px;
+    border-radius: 4px 4px 0 0;
+    height: calc(100% - 136px);
+  }
+  .chat-main .chat-list .check-all-history{
+    text-align: center;
+    line-height: 26px;
+    color: #bfbfbf;
+  }
+  span.btn-select-feedback{
+    background-color: #359bfb;
+    color: #fff;
+    padding: 5px;
+    line-height: 20px;
+  }
+  img.emoji {
+    width: 32px;
+    height: 32px;
+  }
+  .chat-list {
+    .tinyFace {
+      width: 40px;
+      height: 40px;
+    }
+    .time,
+    .all-history,
+    .more-history {
+      margin: 10px 0 -7px;
+      text-align: center;
+      line-height: 26px;
+      color: #bfbfbf;
+    }
+    .all-history,
+    .more-history {
+      margin-top: 0;
+    }
+  }
+}

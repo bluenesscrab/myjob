@@ -1,0 +1,94 @@
+#im-root .chatwin .chat-title {
+  {
+    position: relative;
+    padding: 18px 10px 16px 14px;
+    border-bottom: 4px solid #2c99fe;
+    background-color: #fff;
+    margin-bottom:5px;
+    border-radius:4px;
+    box-shadow: 0 0 3px rgba(124,155,170, 0.6);
+    line-height:18px;
+  }
+  .link-img{
+    float:left;
+  }
+  .target-info{
+    margin-left: 60px;
+  }
+  .target-info h3 {
+    margin: -2px 0 0 ;
+    line-height: 22px;
+    font-size: 18px;
+    font-weight: normal;
+  }
+  .target-info h3 a{
+    color:#333;
+  }
+  .target-info h3 em {
+    margin-left:10px;
+  }
+  .target-info h3 em.hr {
+    background: #ff9d5a;
+  }
+  .target-info h3 em.hunter {
+    background: #0099e6;
+  }
+  .target-info h3 .usersetting-btn{
+    position: absolute;
+    top:12px;
+    right:40px;
+    padding:10px 0;
+    outline:none;
+    cursor:pointer;
+    em{
+      display:block;
+      width:25px;
+      height:5px;
+      font-size:0;
+      background:url(../images/user-setting.png) no-repeat 0 0;
+    }
+    &:hover em{
+      background:url(../images/user-setting.png) no-repeat 0 -5px;
+    }
+  }
+  .target-info h3 .job-info em{
+    padding-left:0px;
+    font-size: 12px;
+  }
+  .target-info .title-company a{
+    display: inline-block;
+    max-width: 290px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:#999;
+  }
+  .target-info .title-company i{
+    padding:0 4px;
+  }
+  .target-info .title-company i:first-child{
+    padding-left:0px;
+  }
+  .target-info .btn-controller {
+    position: absolute;
+    right: 15px;
+    bottom: 8px;
+    width: 50px;
+    line-height: 18px;
+    padding:2px 8px;
+    text-align: center;
+    color: #2c99fe;
+    border: 1px solid #2c99fe;
+    border-radius: 2px;
+    text-decoration: none;
+  }
+  .target-info .btn-attention-cancel {
+    color: #999;
+    border-color: #999;
+  }
+  .target-info .btn-controller:hover{
+    background-color:#eef7ff;
+    border-color: #0482f7;
+  }
+}

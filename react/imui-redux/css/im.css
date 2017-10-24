@@ -1,0 +1,78 @@
+@import './public.css';
+
+#im-root{
+  position: fixed;
+  top: 0;
+  right: -290px;
+  bottom: 0;
+  z-index: 210;
+  width: 290px;
+  font-family: 'Microsoft Yahei';
+  background: #fff;
+  box-shadow: 0 0 7px #475359;
+  transition: right 0.4s ease-in-out;
+  /* icons */
+  .webim-icons16, .webim-icons24 {
+      display: inline-block;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      overflow: hidden;
+  }
+  .webim-icons16 {
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      margin-top: -1px;
+      margin-right: .3em;
+      background-image: url(../images/icons/icons16.png);
+  }
+  .webim-icons24 {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      margin-top: -3px;
+      margin-right: .3em;
+      background-image: url(../images/icons/icons24.png);
+  }
+  .webim-icons32 {
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      background-image: url(../images/icons/icons32.png);
+  }
+  .side-icon {
+    display:inline-block;
+    width:24px;
+    height:24px;
+    background:url(../images/panel-side.png) no-repeat;
+    vertical-align:middle;
+    position:relative;
+  }
+  .side-icon-contacts{
+    background-position:0 0;
+  }
+  .side-icon-contacts.active{
+    background-position:0 -24px;
+  }
+  .side-icon-sns{
+    background-position:0 -48px;
+  }
+  .side-icon-sns.active{
+    background-position:0 -72px;
+  }
+  .side-icon-notice{
+    background-position:0 -96px;
+  }
+  .side-icon-notice.active{
+    background-position:0 -120px;
+  }
+  .side-icon-historycontacts{
+    background-position:0 -48px;
+  }
+  .side-icon-historycontacts.active{
+    background-position:0 -72px;
+  }
+}
+#im-root.move-to-show{
+  right: 0;
+}

@@ -1,0 +1,98 @@
+#im-root .main-content .contact-list ul li .contact-card,
+#im-root .main-content .history-contact-list ul li .contact-card {
+  display: none;
+  padding: 10px 15px 15px;
+  width: 290px;
+  position: absolute;
+  margin: 0;
+  top: 0px;
+  left: -330px;
+  background-color: #fff;
+  box-shadow: -1px -1px 16px rgba(184,211,225, 1);
+  z-index:203;
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  a:hover{
+    text-decoration: none;
+  }
+  &:before{
+    content:'';
+    position: absolute;
+    top: 28px;
+    right: -19px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: #fff;
+  }
+  .target-info{
+    position: relative;
+  }
+  .target-info img {
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    width: 40px;
+    height: 40px;
+  }
+  .target-info a{
+    color: #007eff;
+    text-decoration: none;
+  }
+  .target-info dd{
+    padding-left: 56px;
+    width: 230px;
+    padding-left: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #898c8f;
+  }
+  .target-info .name {
+    font-size: 16px;
+    margin-right: 8px;
+    color: #007eff;
+  }
+  .target-info .job-info span{
+    height: 11px;
+    line-height: 9px;
+    padding: 0 4px;
+  }
+  .target-info .job-info span:first-child{
+    padding-left: 0px;
+  }
+  .last-full-msg{
+    padding:10px 12px;
+    background-color: #e7edf3;
+    color: #333;
+    max-height: 58px;
+    margin-top:10px;
+    word-wrap: break-word;
+  }  
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-10%, 0, 0);
+    transform: translate3d(-10%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-10%, 0, 0);
+    transform: translate3d(-10%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

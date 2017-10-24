@@ -1,0 +1,49 @@
+#im-root .scroll-dialog-main .scroll-box{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  padding-top: 70px;
+  .scroll-item{
+    font-family: "Microsoft Yahei";
+    color: #333;
+    min-height: 300px;
+    padding-bottom:20px;
+    height:70%;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .scroll-item .title{
+    border-bottom: 1px solid #f6f6f6;
+    font-size: 16px;
+    padding: 0 16px;
+    line-height: 50px;
+  }
+  .scroll-item .content-box{
+    margin: 0 20px;
+    padding:16px 10px;
+    min-height: 216px;
+    height: 72%;
+    overflow-y: auto;
+    .time{
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      line-height: 30px;
+    }
+  }
+  .scroll-item .content-box .content-main{
+    margin: 10px 0;
+  }
+  .scroll-item .content-box .content-main img{
+    max-width: 100%;
+  }
+  .scroll-item .content-box .content-main p{
+    text-indent:2em;
+    margin-top:5px;
+  }
+  .scroll-item .content-box .content-main p:first-child{
+    text-indent:0;
+    font-size: 14px;
+  }
+}

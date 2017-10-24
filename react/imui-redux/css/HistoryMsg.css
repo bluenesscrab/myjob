@@ -1,0 +1,40 @@
+#im-root .chatwin .chat-history .historymsg{
+  {
+    line-height:18px;
+    padding: 0 20px;
+    margin-top:10px
+  }
+  .send{
+    color:#ff5600;
+  }
+  .receive{
+    color: #2c99fe;
+  }
+  h4 {
+    margin: 0;
+    text-align: center;
+    color: #bbb;
+    font-weight:normal;
+    font-size:12px;
+  }
+  p label, p time{
+    line-height: 24px;
+    vertical-align: middle
+  }
+  p time{
+    display:inline-block;
+    margin-left:10px;
+  }
+  .content {
+    word-break: break-all;
+  }
+  .content a.preview-image img{
+    max-width: 150px;
+    max-height:200px;
+    vertical-align: top;
+  }
+  .content .job label {
+    color: #666;
+    padding-right: 0.5em;
+  }
+}

@@ -1,0 +1,86 @@
+//MSG
+export const PANEL_RECEIVE_MSG = 'PANEL_RECEIVE_MSG';
+export const PANEL_SEND_MSG = 'PANEL_SEND_MSG';
+export const PANEL_UPDATE_MSG = 'PANEL_UPDATE_MSG';
+export const PANEL_CONN_MSG = 'PANEL_CONN_MSG';
+
+//panel
+export const OPEN_PANEL = 'OPEN_PANEL';
+export const CLOSE_PANEL = 'CLOSE_PANEL';
+export const INIT_TAB = 'INIT_TAB';
+export const SELECT_TAB = 'SELECT_TAB';
+export const SELECT_CONTACT = 'SELECT_CONTACT';
+export const UNSELECT_ACTIVE_CONTACT = 'UNSELECT_ACTIVE_CONTACT';
+export const SET_PANEL_UNREAD = 'SET_PANEL_UNREAD';//设置panel红点（打开panel时，收到新消息时……）
+export const SET_TABS_UNREAD = 'SET_TABS_UNREAD';//设置tabs红点
+export const SELECT_CONTACT_CANSEND_ERR = 'SELECT_CONTACT_CANSEND_ERR';//cansend errormsg
+export const SELECT_CONTACT_START = 'SELECT_CONTACT_START';
+export const UPDATE_MSGLIST = 'UPDATE_MSGLIST';
+
+//sns
+export const SELECT_SNS = 'SELECT_SNS';
+
+//contact
+export const GET_CONTACTS_START = 'GET_CONTACTS_START';
+export const GET_CONTACTS_SUCC = 'GET_CONTACTS_SUCC';
+export const GET_CONTACTS_FAIL = 'GET_CONTACTS_FAIL';
+export const DELETE_CONTACT = 'DELETE_CONTACT';
+export const UPDATE_CONTACTS_BY_SEND_MSG = 'UPDATE_CONTACTS_BY_SEND_MSG'; //发送消息-更新contacts里的最新信息
+export const UPDATE_CONTACTS_BY_RECEIVE_MSG = 'UPDATE_CONTACTS_BY_RECEIVE_MSG'; //收到消息-更新contacts里的最新信息
+
+//notice
+export const GET_NOTICELIST_START = 'GET_NOTICELIST_START'; //通知列表
+export const GET_NOTICELIST_SUCC = 'GET_NOTICELIST_SUCC'; //通知列表
+export const GET_NOTICELIST_FAIL = 'GET_NOTICELIST_FAIL'; //通知列表
+export const DELETE_NOTICEITEM = 'DELETE_NOTICEITEM'; //删除通知列表中的一个
+export const HASREAD_NOTICE = 'HASREAD_NOTICE'; //选择一个通知
+export const UNSELECT_NOTICE = 'UNSELECT_NOTICE';//取消选择一个通知
+export const READ_NOTICE = 'READ_NOTICE' //已读通知
+
+//drag
+export const DRAG_DISTANCE = 'DRAG_DISTANCE';//拖动聊天窗，变更位置
+export const DRAG_DONE = 'DRAG_DONE';//结束拖动聊天窗，设定当前top,right
+
+//history
+export const GET_INITIAL_SERVER_HISTORY = 'GET_INITIAL_SERVER_HISTORY';//聊天窗打开时获得初始50条历史信息
+export const CLEAR_INITIAL_SERVER_HISTORY = 'CLEAR_INITIAL_SERVER_HISTORY';//清空初始历史信息
+export const SHOW_HISTORY = 'SHOW_HISTORY';
+export const HIDE_HISTORY = 'HIDE_HISTORY';
+export const GET_SERVER_HISTORY_STARTED = 'GET_SERVER_HISTORY_STARTED';
+export const GET_SERVER_HISTORY_SUCCESS = 'GET_SERVER_HISTORY_SUCCESS';
+export const GET_SERVER_HISTORY_FAILED = 'GET_SERVER_HISTORY_FAILED';
+export const GET_INITIAL_SERVER_HISTORY_START = 'GET_INITIAL_SERVER_HISTORY_START';
+export const GET_INITIAL_SERVER_HISTORY_FAIL = 'GET_INITIAL_SERVER_HISTORY_FAIL';
+export const UPDATE_INITIAL_SERVER_HISTORY = 'UPDATE_INITIAL_SERVER_HISTORY';
+
+//historycontacts
+export const GET_HISTORYCONTACTS_START = 'GET_HISTORYCONTACTS_START';//获取历史联系人列表
+export const GET_HISTORYCONTACTS_SUCC = 'GET_HISTORYCONTACTS_SUCC';//获取历史联系人列表
+export const GET_HISTORYCONTACTS_FAIL = 'GET_HISTORYCONTACTS_FAIL';//获取历史联系人列表
+export const UPDATE_HISTORYCONTACTS_BY_SEND_MSG = 'UPDATE_HISTORYCONTACTS_BY_SEND_MSG' //发送消息-更新historycontacts里的最新信息
+export const UPDATE_HISTORYCONTACTS_BY_RECEIVE_MSG = 'UPDATE_HISTORYCONTACTS_BY_RECEIVE_MSG'; //
+//setting
+export const OPEN_SETTING = 'OPEN_SETTING'; //打开设置
+export const SELECT_SETTING = 'SELECT_SETTING'; //设置选项
+export const OPEN_SETGREETING = 'OPEN_SETGREETING';//打开打招呼语弹层
+export const SETGREETING_LIST = 'SETGREETING_LIST';//打招呼语列表
+export const SELECT_GREETING = 'SELECT_GREETING';//选择打招呼
+
+//toast
+export const OPEN_TOAST = 'OPEN_TOAST'; //打开toast
+export const CLOSE_TOAST = 'CLOSE_TOAST'; //关闭toast
+
+//H
+export const GET_ISATTENTION = 'GET_ISATTENTION';//是否已关注
+export const UPDATE_ATTENTION = 'UPDATE_ATTENTION';//更新关注状态
+
+//屏蔽
+export const USERSETTING_DIALOG = 'USER_SETTING';//打开屏蔽举报
+export const INBLACK_STATUS = 'INBLACK_STATUS';//屏蔽
+export const INBLACK_DIALOG = 'INBLACK_DIALOG';//屏蔽弹层
+//举报
+export const REPORT_CODE = 'REPORT_CODE';//举报code
+export const REPORT_DIALOG = 'REPORT_DIALOG';//举报弹层
+//职位操作
+export const REFUSEJOB_CODE = 'REFUSEJOB_CODE';//暂不考虑code
+export const REFUSEJOB_DIALOG = 'REFUSEJOB_DIALOG'; //拒绝弹层

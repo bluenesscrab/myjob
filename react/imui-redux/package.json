@@ -1,0 +1,53 @@
+{
+  "name": "@liepin/imui",
+  "version": "1.1.6",
+  "description": "IM UI components based on React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "shiyinghua"
+  },
+  "devDependencies": {
+    "classnames": "^2.2.5",
+    "immutable": "^3.8.1"
+  },
+  "license": "ISC",
+  "maintainers": [
+    {
+      "name": "shiyh",
+      "email": "shiyh2012@foxmail.com"
+    },
+    {
+      "name": "lihx",
+      "email": "lihx@liepin.com"
+    },
+    {
+      "name": "ytt",
+      "email": "yantt@liepin.com"
+    },
+    {
+      "name": "jinjingjing",
+      "email": "jinjj@liepin.com"
+    }
+  ],
+  "_id": "@liepin/imui@1.1.6",
+  "_shasum": "faa5c57a75024054a51fa4d7cd952b24f451ba80",
+  "_from": "@liepin/imui@latest",
+  "_npmVersion": "2.14.22",
+  "_nodeVersion": "7.4.0",
+  "_npmUser": {
+    "name": "ytt",
+    "email": "yantt@liepin.com"
+  },
+  "dist": {
+    "shasum": "faa5c57a75024054a51fa4d7cd952b24f451ba80",
+    "size": 603384,
+    "key": "/@liepin/imui/-/@liepin/imui-1.1.6.tgz",
+    "tarball": "http://registry.cnpm.lietou.com/@liepin/imui/download/@liepin/imui-1.1.6.tgz"
+  },
+  "_publish_on_cnpm": true,
+  "_cnpm_publish_time": 1493798724589,
+  "_resolved": "http://registry.cnpm.lietou.com/@liepin/imui/download/@liepin/imui-1.1.6.tgz"
+}

@@ -1,0 +1,13 @@
+body {
+  font-size: 12px; }
+
+#h3 {
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 5px; }
+  #h3 #content article h1 {
+    color: #333; }
+  #h3 #content article p {
+    margin-bottom: 1.4em; }
+  #h3 #content aside {
+    background-color: #EEE; }

@@ -1,0 +1,128 @@
+#im-root .notice{
+  opacity: 1;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .noticeWrap{
+    overflow-y: auto;
+    height:100%;
+  }
+  ul.notice-list::-webkit-scrollbar {
+    width: 0;
+  }
+  ul.notice-list li {
+    padding: 12px 15px 12px 7px;
+    border-bottom: 1px solid #f6f6f6;
+    cursor: pointer;
+  }
+  ul.notice-list li:hover {
+    background: #f6f6f6;
+  }
+  ul.notice-list li .close {
+    display: none;
+    float: left;
+    margin-top: 10px;
+    font-family: 'simsun';
+    color: #000;
+    text-decoration: none;
+    outline: none;
+  }
+  ul.notice-list li:hover .close {
+    display: block;
+  }
+  ul.notice-list li dl {
+    margin-left: 18px;
+  }
+  ul.notice-list li dl dd {
+    float: left;
+    width: 100%;
+  }
+  ul.notice-list li dl dd span label {
+    float: left;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  ul.notice-list li dl dd span label em {
+    padding: 0 3px;
+    color: #fff;
+    background: #fe9c5b;
+  }
+  ul.notice-list li dl dd span label em.back-primary {
+    background: #3689b3;
+  }
+  ul.notice-list li dl dd span i.dot {
+    background-color: #fc5943;
+    border-radius: 10px;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    height: 12px;
+    line-height: 11px;
+    margin: 2px 0 0 8px;
+    padding: 2px 4px;
+    text-align: center;
+  }
+  ul.notice-list li dl dd span time {
+    color: #cecece;
+  }
+  ul.notice-list li dl dd p {
+    word-wrap:break-word;
+    color: #999;
+    padding-top:4px;
+    line-height: 18px;
+  }
+  ul.notice-list li time {
+    float: right;
+  }
+  ul.notice-list .item-simple dd {
+    margin: 0;
+    line-height: 40px;
+    font-size: 16px;
+  }
+  ul.notice-list dl dt span {
+    display: inline-block;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  ul.notice-list dl dt span .webim-icons24 {
+    margin-right: 0;
+  }
+  .back-blue {
+    background-color: #5e7fc2;
+  }
+  .back-orange {
+    background-color: #fd9a70;
+  }
+  .fail-loading{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    font-size: 14px;
+    color:#999;
+    text-align: center;
+  }
+}
+#im-root .no-message {
+  height: 100%;
+  span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -45px;
+    padding-top: 70px;
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    background: url(../images/no-msg.png) center 0 no-repeat;
+  }
+}
+

@@ -1,0 +1,31 @@
+#im-image-preview-dialog{
+  .im-image-preview-container{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 300;
+    background: #ffffff;
+    background: rgba(255,255,255,0.9);
+    text-align: center;
+  }
+  a.close-preview{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 40px;
+    color: #999;
+    text-decoration: none;
+  }
+  img{
+    margin: 30px auto;
+    border: 1px solid #cfd2d3;
+    padding: 10px;
+  }
+  .im-image-preview-wrap{
+    height:100%;
+    width:100%;
+    overflow:auto;
+  }
+}

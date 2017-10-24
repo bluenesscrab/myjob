@@ -1,0 +1,63 @@
+#im-root .chatwin .chat-history{
+  {
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color:rgba(243,252,255,0.6);
+    z-index:2;
+  }
+  .close-history{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    line-height:40px;
+    background: #369efe;
+    color: #fff;
+    text-align:center;
+    z-index:10;
+  }
+  .history-content {
+    height: calc(100% - 40px);
+    overflow-y: auto;
+  }
+  a{
+    color:#2c99fe;
+  }
+  .no-history{
+    position: absolute;
+    left:0;
+    width: 100%;
+    top: 50%;
+    bottom:0;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+    font-size: 16px;
+    color: #bbb;
+    margin-top: -40px;
+    padding-top: 60px;
+    background: url(../images/empty-history.png) center 0 no-repeat;
+  }
+  .history-nomore, .history-more, .history-loading{
+    line-height:30px;
+    text-align:center;
+    color:#bbb;
+    padding-top:10px;
+  }
+  .history-loading em{
+    vertical-align:middle;
+    width:16px;
+    height:16px;
+    display:inline-block;
+    background: url(../images/loading1.gif) center 0 no-repeat;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   /* IE10-specific styles go here */
+   #im-root .chatwin .chat-history {
+    background-color:rgba(243,252,255,.9);
+   }
+}

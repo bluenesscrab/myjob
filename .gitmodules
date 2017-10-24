@@ -1,0 +1,3 @@
+[submodule "node/site/blog/themes/tranquilpeak"]
+	path = node/site/blog/themes/tranquilpeak
+	url = https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme

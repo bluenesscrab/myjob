@@ -1,0 +1,57 @@
+@import './im.css';
+
+#im-root .sns{
+  .back-blue {
+    background-color: #5e7fc2;
+  }
+  .back-brown {
+    background-color: #cd9d89;
+  }
+  .back-red {
+    background-color: #ff5600;
+  }
+  .back-pink {
+    background-color: #f38787;
+  }
+  ul.contact-list li a {
+    display: block;
+    padding: 9px 15px 9px 7px;
+    color: #333;
+    border-bottom: 1px solid #f6f6f6;
+  }
+  ul.contact-list li a:hover {
+    background: #f6f6f6;
+  }
+  ul.contact-list li dl {
+    margin-left: 18px;
+  }
+  ul.contact-list li dl dt {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+  }
+  ul.contact-list li dl dt span {
+    display: inline-block;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  ul.contact-list li dl dt span .webim-icons24 {
+    margin-right: 0;
+  }
+  ul.contact-list li dl dd {
+    float: left;
+    width: 50%;
+    line-height: 40px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  ul.contact-list li dl .number {
+    width: 42px;
+    text-align: right;
+    font-size: 14px;
+  }
+}

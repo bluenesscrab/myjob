@@ -1,0 +1,32 @@
+export const OPEN_PANEL = 'c:C000010709';//打开面板 
+export const CLOSE_PANEL = 'c:C000010710';//关闭面板
+export const OPEN_NOTICE = 'c:C000010711'; //打开tab之通知
+export const OPEN_CONTACTS = 'c:C000010729';//打开tab之联系人
+export const OPEN_HISTORYLIST = 'c:C000010712';//打开tab之历史消息
+export const OLD_VERSION = 'c:C000010713'; //B端回到旧版私信
+export const OPEN_EMOJI = 'c:C000010714';//打开表情选择浮层
+export const SEND_IMAGE = 'c:C000010715';//发送图片
+export const CLICK_HISTORY_ICON = 'c:C000010716';//点击发送窗口历史消息icon
+export const CLICK_SEND_BTN = 'c:C000010717';//点击发送按钮
+export const CLICK_HISTORY_LINK = 'c:C000010718';//查看全部历史消息a标签
+export const PANEL_SETTING = 'c:C000010719';//panel设置按钮
+export const SELECT_REMIND = 'c:C000010720';//打开消息提醒
+export const SELECT_NOREMIND = 'c:C000010721';//关闭消息提醒
+export const SELECT_DIALOG_ENTER = 'c:C000010722';//按enter发送
+export const SELECT_DIALOG_CTRLENTER = 'c:C000010723';//按ctrl+enter发送
+export const DEL_CURRENT_MESSAGE = 'c:C000010724';//删除消息列表当前联系人
+export const OPEN_DIALOG_C = 'c:C000010725';//打开与C的对话框
+export const CLOSE_NOTICE_LAYER = 'c:C000010726';//关闭系统消息弹层
+export const OPEN_NOTICE_LAYER = 'c:C000010727';//打开系统消息弹层
+export const CLICK_HISTORYCONTACTS = 'c:C000010728';//点击最近联系人
+export const DELETE_NOTICE = 'c:C000010732';//删除公告     一会儿更改
+ 
+export const EMPLOY_SUIT = 'c:C000010380';//应聘反馈按钮
+export const RESUME_SUIT = 'c:C000010381'; //应聘反馈  置为合适人选按钮
+export const RESUME_UNSUIT = 'c:C000010382'; //应聘反馈  置为不合适人选按钮
+
+export const ASK_RESUME = 'C000010798';//索要简历
+export const SHIELD_MSG = 'c:C000010544';  //屏蔽消息按钮
+export const SHIELD_MSG_RELIVE = 'c:C000010547';  //解除屏蔽消息按钮
+export const SHIELD_MSG_WINDOW = 'c:C000010545';//弹出的提示屏蔽消息窗口 确定按钮
+export const SHIELD_MSG_RELIVE_WINDOW = 'c:C000010548';  //弹出的解除屏蔽消息窗口

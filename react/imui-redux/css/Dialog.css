@@ -1,0 +1,107 @@
+#im-root .im-dialog{
+  .im-dialog-mask{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.55;
+    filter: alpha(opacity=55);
+    z-index:10;
+  }   
+
+  .im-dialog-main{
+    position:absolute;
+    background: #fff none repeat scroll 0 0;
+    border-radius: 5px;
+    left: 50%;
+    top: 50%;
+    margin: -45px 0 0 -100px;
+    width: 200px;
+    z-index:11;
+  }
+  a.btn-close {
+    position: absolute;
+    padding: 5px;
+    right:0;
+    top:0;
+    color: #444;
+    font-family: 'simsun';
+    text-decoration: none;
+    white-space: nowrap;
+    outline: none;
+  }
+  @at-root {
+    #im-root .im-dialog.im-dialog-bottom .im-dialog-main{
+      top: auto;
+      bottom:0;
+      background: #fff;
+    }
+    #im-root .chatwin .im-dialog .im-dialog-mask{
+      top:5px;
+      bottom:5px;
+      left:5px;
+      right:5px;
+    }
+  }
+  .im-dialog-header {
+    border-bottom: 1px solid #eee;
+    line-height:40px;
+    height:40px;
+    padding:0 40px;
+  }
+  .im-dialog-header .title {
+    display:block;
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+    text-overflow: ellipsis;
+  }
+  .im-dialog-header a.btn-back {
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    text-decoration: none;
+    padding: 0 2px;
+    color: #000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: .3;
+  }
+  .im-dialog-content {
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .im-dialog-footer {
+    height: 40px;
+    border-top: 1px solid #f6f6f6;
+  }
+  .im-dialog-footer a {
+    float: left;
+    width: 50%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 12px;
+    border-left: 1px solid #f6f6f6;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .im-dialog-footer a:first-child {
+    border-left: 0;
+  }
+  .im-dialog-footer .btn-cancel {
+    color: #999;
+  }
+  .im-dialog-alert-footer a:first-child{
+    width:100%;
+  }
+  a {
+    color: #0782ff;
+  }
+  .confirm-msg{
+    padding: 10px 0;
+  }
+}

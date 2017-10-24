@@ -1,0 +1,10 @@
+body{
+  color:red;
+  font-size: 20px;
+  padding:20px;
+  background:url(./image/line.png) center center no-repeat;
+}
+#header{
+  height: 300px;
+  background:url(./image/0.gif) center center no-repeat;
+}

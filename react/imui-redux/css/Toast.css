@@ -1,0 +1,16 @@
+#im-root .toast {
+  width: 130px;
+  min-width: 130px;
+  min-height: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .55);
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 150px;
+  right: 0;  /*bottom: 0;*/
+  margin: auto;
+  border-radius: 5px;
+  z-index:98;
+}
